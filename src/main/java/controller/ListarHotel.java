@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+
 import model.Hotel;
 
 public class ListarHotel {
@@ -9,7 +10,7 @@ public class ListarHotel {
 	
 	public ListarHotel() {
 		
-		//CARREGA CONTEUDO DOS CARDS
+		//LISTA OS HOTÉIS
 		lista = new ArrayList<Hotel>();
 		lista.add(new Hotel(1, "Blue Tree Premium Morumbi", "", "../assets/images/hoteis/blue_tree_morumbi.jpg", "Av. Roque Petroni Júnior, 1000 - Vila Gertrudes, São Paulo - SP, 04707-000", null, 0, "(11) 5187-1200", null, null, null, null, null, null));
 		lista.add(new Hotel(2, "Blue Tree Premium Paulista", "", "../assets/images/hoteis/blue_tree_paulista.jpg", "Rua Peixoto Gomide, 707 - Bela Vista, São Paulo - SP, 01409-001", null, 0, "(11) 3147-7000", null, null, null, null, null, null));

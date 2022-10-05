@@ -68,7 +68,7 @@
 			   <% for (Restaurante r: lista) { %>
 				   <div class="col d-flex">
 				       <div class="card">
-				           <a href="visualizar.jsp?id=<%=r.getId() %>">
+				           <a href="../recupera.do?id=<%=r.getId() %>">
 				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
 				           </a>
 				           <div class="card-body pb-0">

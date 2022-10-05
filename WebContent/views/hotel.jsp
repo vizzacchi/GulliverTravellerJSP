@@ -13,14 +13,14 @@
 		   	<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
-						<h1 class="fw-bold">Hospedagem</h1>
+						<h1 class="fw-bold">Hotéis</h1>
 					</div>
 					<div class="col-sm-12 col-md-6 d-md-flex justify-content-md-end">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="../index.jsp">Index</a></li>
 								<li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Hospedagem</li>
+								<li class="breadcrumb-item active" aria-current="page">Hotéis</li>
 							</ol>
 						</nav>                        
 					</div>
@@ -38,7 +38,7 @@
 			   <% for (Hotel r: lista) { %>
 				   <div class="col d-flex">
 				       <div class="card">
-				           <a href="visualizar.jsp?id=<%=r.getId() %>">
+				           <a href="../recupera.do?id=<%=r.getId() %>">
 				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
 				           </a>
 				           <div class="card-body pb-0">
