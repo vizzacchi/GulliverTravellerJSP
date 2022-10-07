@@ -1,26 +1,72 @@
-<!doctype html>
-<jsp:useBean id="MostarUf" type="model.Uf" scope="session"/> 
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<html lang="pt-br">
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="controller.MostrarUf"%>
+<%@page import="model.Uf" %>
+<%@page import="dao.UfDao" %>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!----- Header ----->
+<%@include file="../include/cabecalho.jsp"%>
+<%@include file="../include/menu.jsp"%>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<!----- Content ----->
+	<main>
+		<section>
+		   	<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<h1 class="fw-bold">UF</h1>
+					</div>
+					<div class="col-sm-12 col-md-6 d-md-flex justify-content-md-end">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="../index.jsp">Index</a></li>
+								<li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Hotéis</li>
+							</ol>
+						</nav>                        
+					</div>
+				</div>
+			</div>
+		</section>
+			
+	    <!------ Card ------>
+	    <article class="container">
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+				<%
+			    UfDao uf = new UfDao(); 
+			     = uf.getUfTeste();
+			    %>			
+			   <% for (Hotel r: lista) { %>
+				   <div class="col d-flex">
+				       <div class="card">
+				           <a href="../recupera.do?id=<%=r.getId() %>">
+				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
+				           </a>
+				           <div class="card-body pb-0">
+				               <h5 class="card-title text-center fw-bold"><%=r.getNome() %></h5>
+				               <div class="card-rate text-center mb-2">
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-half text-warning"></i>
+				               </div>
+				               <div class="card-text">
+				                   <p class="address">
+				                       <strong>Endereço:</strong> <%=r.getDescricao() %>
+				                   <p class="phone">
+				                       <strong>Telefone:</strong> <%=r.getComplemento() %>
+				                   </p>
+				               </div>
+				           </div>
+						   <div class="d-grid mx-auto reserva">
+						   		<a href="<%=r.getSite() %>"target="_blank" class="btn btn-green">Faça sua reserva</a>
+						   </div>
+				       </div>
+				   </div>
+				<% } %>
+			</div>		     
+  		</article>
+	</main>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-            crossorigin="anonymous" />
-
-        <link rel="stylesheet" href="./assets/css/style.css">
-        <title>Projeto Traveller</title>
-    </head>
-
-    <body>
-
-	<h1>Passou</h1>
-
-    </body>
-</html>
+<!----- Footer ----->
+<%@include file="../include/rodape.jsp"%>

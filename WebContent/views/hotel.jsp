@@ -32,8 +32,8 @@
 	    <article class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 				<%
-			    ListarHotel hotel = new ListarHotel(); 
-			            ArrayList<Hotel> lista = hotel.getLista();
+			    	ListarHotel hotel = new ListarHotel(); 
+			        ArrayList<Hotel> lista = hotel.getLista();
 			    %>			
 			   <% for (Hotel r: lista) { %>
 				   <div class="col d-flex">
