@@ -33,19 +33,19 @@ public class HotelDao implements DaoBase<Hotel> {
 			
 			List<Hotel> resultado = new ArrayList<Hotel>();
 			String sql = "SELECT DISTINCT "
-							+ "HT.ID, "
+							+ "TP.ID, "
 							+ "TP.NOME, "
 							+ "TP.SITE, "
 							+ "TP.FOTO_PERFIL, "
 							+ "CONCAT(TE.LOGRADOURO, ', ', TP.NUMERO, ' - ', TB.BAIRRO, ', ', TC.CIDADE, ' - ', TU.UF, ', ', TE.CEP) AS ENDERECO, "
 							+ "TL.NUMERO "
-						+ "FROM tb_hotel HT "
-							+ "JOIN tb_ponto TP ON TP.ID = HT.ID_PONTO "
+						+ "FROM tb_ponto TP "
 							+ "LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE "
 							+ "JOIN tb_endereco TE ON TE.ID = TP.ID_ENDERECO "
 							+ "JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO "
 							+ "JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE "
 							+ "JOIN tb_uf TU ON TU.ID = TC.ID_UF "
+						+ "WHERE TP.ID_CATEGORIA = 6 "
 						+ "ORDER BY TP.NOME ASC";
 			
 			PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);

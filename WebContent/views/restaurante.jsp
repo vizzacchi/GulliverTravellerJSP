@@ -63,7 +63,7 @@
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 				<%
 			    ListarRestaurante restaurante = new ListarRestaurante(); 
-			            ArrayList<Restaurante> lista = restaurante.getLista();
+			            ArrayList<Restaurante> lista = restaurante.listarRestaurante();
 			    %>			
 			   <% for (Restaurante r: lista) { %>
 				   <div class="col d-flex">
@@ -90,9 +90,9 @@
 	                           </div>
 				               <div class="card-text">
 				                   <p class="address">
-				                       <strong>Endereço:</strong> <%=r.getDescricao() %>
+				                       <strong>Endereço:</strong> <%=r.getEndereco() %>
 				                   <p class="phone">
-				                       <strong>Telefone:</strong> <%=r.getComplemento() %>
+				                       <strong>Telefone:</strong> <%=r.getTelefone() %>
 				                   </p>
 				               </div>
 				           </div>

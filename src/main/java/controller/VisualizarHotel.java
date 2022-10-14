@@ -44,7 +44,7 @@ public class VisualizarHotel extends HttpServlet {
 		String paginaDestino;
 		if (result != null) {
 			request.setAttribute("Hotel", result);
-			paginaDestino ="/./views/hoteis/visualizar.jsp";
+			paginaDestino ="/./views/hotel/visualizar.jsp";
 		}
 		else {
 			paginaDestino  ="/erro.jsp";
