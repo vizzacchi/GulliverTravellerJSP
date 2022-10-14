@@ -32,22 +32,9 @@
                     <form method="post" action="./mostrar_uf" >
 
                         <div class="form-group">
-                            <label for="id" class="titulos">Email</label>
+                            <label for="id" class="titulos">Id</label>
                             <input type="text" class="form-control" id="id" name="id"
-                                placeholder="Ex: seuemail@traveller.com.br" autofocus required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="senha" class="titulos">Senha</label>
-                            <div class="input-group mb-2">
-                                <input type="password" class="form-control senha" id="senha" name="senha"
-                                    placeholder="Ex: sua senha" required>
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"> <img src="./assets/images/visibilidade.png"
-                                            class="pointer visibilidade" alt="Imagem para exibir senha">
-                                    </div>
-                                </div>
-                            </div>
+                                placeholder="Informe o Id" autofocus required>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Efetuar Login <span

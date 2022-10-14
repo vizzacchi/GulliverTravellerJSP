@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DataSource {
+	
+	private Connection connection;
 		
 	private static final String hostName = "gulliver.mysql.dbaas.com.br";
 	private static final String usuario = "gulliver";
@@ -12,16 +14,15 @@ public class DataSource {
 	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	
 	//Conectar o banco
-	public Connection getDatasource(){
+	public DataSource(){
 		try {
 			//Registrar o DRIVER
 			Class.forName(DRIVER);
 			//Capturar a conexao
 			
-			Connection  conn = DriverManager.getConnection(url,usuario,senha);
-			if(conn != null) {
+			connection = DriverManager.getConnection(url,usuario,senha);
+			if(connection != null) {
 				System.out.println("Conectado com Sucesso");
-				return conn;
 			}
 			else {
 				System.out.println("Erro ao conectar");
@@ -29,8 +30,9 @@ public class DataSource {
 		}
 		catch(Exception ex){
 			System.out.println("Erro ao conectar com SGDB. Erro: " + ex.getMessage());
-		}
-		return null;
-		
+		}	
+	}
+	public Connection getConnection() {
+		return connection;
 	}
 }
