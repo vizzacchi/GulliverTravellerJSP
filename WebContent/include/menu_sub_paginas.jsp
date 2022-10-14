@@ -19,9 +19,16 @@
 	                    <li class="nav-item"><a href="views/parque.jsp" class="nav-link">Parques</a></li>
 	                    <li class="nav-item"><a href="views/vidaNoturna.jsp" class="nav-link">Vida noturna</a></li>
 	                </ul>
+	                
+	                <!----- Cadastrar ----->
+	            	<ul class="navbar-nav ms-auto pe-3">
+	            		<li class="nav-item">
+	            			<a href="views/cadastro.jsp" class="btn btn-outline-warning">Cadastro</a>
+	            		</li>
+					</ul>
 	            
 		            <!--- Accessibility --->
-		            <ul class="navbar-nav ms-auto pe-3">
+		            <ul class="navbar-nav pe-3">
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								<i class="fas fa-universal-access nav-icon"></i>

@@ -13,6 +13,7 @@
 
 /******** Dark Mode ********/
 :root {
+	--border-radius: 12px;
 	--color-white: #FAF1DE;
     --color-orange: #E07A5F;
     --color-blue: #3D405B;
@@ -104,6 +105,12 @@ section.teste {
 /********* Articles *********/
 article {
 	padding: 2rem 0	
+}
+article .content {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: var(--border-radius)
 }
 article.article-destino {
     width: 50vw;

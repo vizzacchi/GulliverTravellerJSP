@@ -19,7 +19,7 @@
             </div>
         </footer>
 
-		<!------ VLibras ------>
+		<!------ V Libras ------>
 		<div vw class="enabled">
 			<div vw-access-button class="active"></div>
 			<div vw-plugin-wrapper>
@@ -35,6 +35,7 @@
 		<script type="text/javascript" src="../assets/js/accessibility-dark-mode.js"></script>
 		<script type="text/javascript" src="../assets/js/cotacao-dolar.js"></script>
 		<script type="text/javascript" src="../assets/js/geolocalizacao.js"></script>
-		<script type="text/javascript" src="../assets/js/weather.js"></script>
+		<script type="text/javascript" src="../assets/js/weather.js"></script>		
+		<script type="text/javascript" src="../assets/js/api-cep.js"></script>
 	</body>
 </html>
