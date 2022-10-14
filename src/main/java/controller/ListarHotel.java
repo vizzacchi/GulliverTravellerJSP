@@ -7,25 +7,13 @@ import dao.HotelDao;
 import model.Hotel;
 
 public class ListarHotel {
-
-	private ArrayList<Hotel> lista;
+			
+	ArrayList<Hotel> hotel = (ArrayList<Hotel>) this.listarHoteis();
 	
-	public ArrayList<Hotel> ListarHotel() {
-		System.out.println("Passou Aqui");
-		//LISTA OS HOTÉIS
-		lista = new ArrayList<Hotel>();
-		System.out.println("Após Lista");
+	public ArrayList<Hotel> listarHoteis() {
 		DataSource dataSource = new DataSource();
 		HotelDao hotelDao = new HotelDao(dataSource);
 		
 		return (ArrayList<Hotel>)hotelDao.read();
-	}
-	
-	public ArrayList<Hotel> getLista() {
-		return lista;
-	}
-	
-	public void setLista(ArrayList<Hotel> lista) {
-		this.lista = lista;
 	}
 }

@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.Endereco;
-import model.Hotel;
+import model.LocadoraCarro;
 import model.Telefone;
 
-public class HotelDao implements DaoBase<Hotel> {
-	
+public class LocadoraCarroDao implements DaoBase<LocadoraCarro> {
+
 	private DataSource dataSource;
 	
-	public HotelDao(DataSource dataSource) {
+	public LocadoraCarroDao(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
 	
@@ -22,25 +22,25 @@ public class HotelDao implements DaoBase<Hotel> {
 	}
 
 	@Override
-	public void create(Hotel object) {
+	public void create(LocadoraCarro object) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<Hotel> read() {
+	public List<LocadoraCarro> read() {
 		try {
 			
-			List<Hotel> resultado = new ArrayList<Hotel>();
+			List<LocadoraCarro> locadora = new ArrayList<LocadoraCarro>();
 			String sql = "SELECT DISTINCT "
-							+ "HT.ID, "
+							+ "LC.ID, "
 							+ "TP.NOME, "
 							+ "TP.SITE, "
 							+ "TP.FOTO_PERFIL, "
 							+ "CONCAT(TE.LOGRADOURO, ', ', TP.NUMERO, ' - ', TB.BAIRRO, ', ', TC.CIDADE, ' - ', TU.UF, ', ', TE.CEP) AS ENDERECO, "
 							+ "TL.NUMERO "
-						+ "FROM tb_hotel HT "
-							+ "JOIN tb_ponto TP ON TP.ID = HT.ID_PONTO "
+						+ "FROM tb_locadora_carro LC "
+							+ "JOIN tb_ponto TP ON TP.ID = LC.ID_PONTO "
 							+ "LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE "
 							+ "JOIN tb_endereco TE ON TE.ID = TP.ID_ENDERECO "
 							+ "JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO "
@@ -52,40 +52,40 @@ public class HotelDao implements DaoBase<Hotel> {
 			ResultSet rs = stm.executeQuery();
 			
 			while(rs.next()) {
-				Hotel hotel = new Hotel();
-				hotel.setId(rs.getInt("ID"));
-				hotel.setNome(rs.getString("NOME"));
-				hotel.setSite(rs.getString("SITE"));
-				hotel.setFotoPerfil(rs.getString("FOTO_PERFIL"));
+				LocadoraCarro carro = new LocadoraCarro();
+				carro.setId(rs.getInt("ID"));
+				carro.setNome(rs.getString("NOME"));
+				carro.setSite(rs.getString("SITE"));
+				carro.setFotoPerfil(rs.getString("FOTO_PERFIL"));
 				
 				//ENDEREÇO				
 				Endereco endereco = new Endereco(sql);
 				endereco.setLogradouro(rs.getString("ENDERECO"));
-				hotel.setEndereco(endereco);
+				carro.setEndereco(endereco);
 				
 				//TELEFONE
 				Telefone telefone = new Telefone();
 				telefone.setTelefone(rs.getString("NUMERO"));
-				hotel.setTelefone(telefone);
-				
-				resultado.add(hotel);
+				carro.setTelefone(telefone);
+								
+				locadora.add(carro);
 			}			
-			return resultado;
+			return locadora;
 			
 		} catch (Exception e) {
-			System.out.println("Erro ao listar Hotéis " + e.getMessage());
+			System.out.println("Erro ao listar Locadoras de Carros " + e.getMessage());
 			return null;
-		}
+		}		
 	}
 
 	@Override
-	public void update(Hotel object) {
+	public void update(LocadoraCarro object) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void delete(Hotel object) {
+	public void delete(LocadoraCarro object) {
 		// TODO Auto-generated method stub
 		
 	}

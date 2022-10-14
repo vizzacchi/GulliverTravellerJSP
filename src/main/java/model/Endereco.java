@@ -18,6 +18,12 @@ public class Endereco {
 		super();
 	}
 	
+	//CONSTRUTOR LOGRADOURO	
+	public Endereco(String logradouro) {
+		super();
+		this.logradouro = logradouro;
+	}
+
 	//CONSTRUTOR
 	public Endereco(int id, String logradouro, String cep, Bairro bairro,
 			TipoLogradouro tipoLogradouro) {

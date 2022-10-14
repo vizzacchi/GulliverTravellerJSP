@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="controller.ListarHotel"%>
+<%@page import="controller.ListarLocadoraCarro"%>
 <%@page import="java.util.ArrayList" %>
-<%@page import="model.Hotel" %>
+<%@page import="model.LocadoraCarro" %>
 
 <!----- Header ----->
 <%@include file="../include/cabecalho_paginas.jsp"%>
@@ -13,14 +13,14 @@
 		   	<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
-						<h1 class="fw-bold">Hotéis</h1>
+						<h1 class="fw-bold">Aluguel de Carros</h1>
 					</div>
 					<div class="col-sm-12 col-md-6 d-md-flex justify-content-md-end">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="../index.jsp">Index</a></li>
 								<li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Hotéis</li>
+								<li class="breadcrumb-item active" aria-current="page">Aluguel de Carros</li>
 							</ol>
 						</nav>                        
 					</div>
@@ -32,13 +32,13 @@
 	    <article class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 				<%
-			    ListarHotel hotel = new ListarHotel();
-			            ArrayList<Hotel> lista = hotel.listarHoteis();
+			    ListarLocadoraCarro locadora = new ListarLocadoraCarro();
+			            ArrayList<LocadoraCarro> lista = locadora.listarLocadoraCarro();
 			    %>			
-			   <% for (Hotel r: lista) { %>
+			   <% for (LocadoraCarro r: lista) { %>
 				   <div class="col d-flex">
 				       <div class="card">
-				           <a href="../hotel.do?id=<%=r.getId() %>">
+				           <a href="../recupera.do?id=<%=r.getId() %>">
 				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
 				           </a>
 				           <div class="card-body pb-0">

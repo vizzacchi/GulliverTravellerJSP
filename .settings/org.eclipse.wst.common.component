@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="GulliverTravellerJSP">
+    <wb-module deploy-name="GulliverTravellerMVC">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="GulliverTravellerJSP"/>
-        <property name="java-output-path" value="/GulliverTravellerJSP/build/classes"/>
+        <property name="context-root" value="GulliverTravellerMVC"/>
+        <property name="java-output-path" value="/GulliverTravellerMVC/build/classes"/>
     </wb-module>
 </project-modules>

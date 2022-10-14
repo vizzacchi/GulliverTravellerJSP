@@ -4,8 +4,8 @@
 <%@page import="model.Restaurante" %>
 
 <!----- Header ----->
-<%@include file="../include/cabecalho.jsp"%>
-<%@include file="../include/menu.jsp"%>
+<%@include file="../include/cabecalho_paginas.jsp"%>
+<%@include file="../include/menu_paginas.jsp"%>
 
 	<!----- Content ----->
 	<main>
@@ -68,7 +68,7 @@
 			   <% for (Restaurante r: lista) { %>
 				   <div class="col d-flex">
 				       <div class="card">
-				           <a href="../recupera.do?id=<%=r.getId() %>">
+				           <a href="../restaurante.do?id=<%=r.getId() %>">
 				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
 				           </a>
 				           <div class="card-body pb-0">
@@ -107,4 +107,4 @@
 	</main>
 
 <!----- Footer ----->
-<%@include file="../include/rodape.jsp"%>
+<%@include file="../include/rodape_paginas.jsp"%>

@@ -10,12 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.DataSource;
-import dao.UfDao;
 import model.Hotel;
-import model.Uf;
 
-@WebServlet("/recupera.do")
+@WebServlet("/hotel.do")
 public class VisualizarHotel extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,7 +44,7 @@ public class VisualizarHotel extends HttpServlet {
 		String paginaDestino;
 		if (result != null) {
 			request.setAttribute("Hotel", result);
-			paginaDestino ="/visualizar.jsp";
+			paginaDestino ="/./views/hoteis/visualizar.jsp";
 		}
 		else {
 			paginaDestino  ="/erro.jsp";
@@ -55,5 +52,4 @@ public class VisualizarHotel extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(paginaDestino);
 		dispatcher.forward(request, response);
 	}
-
 }

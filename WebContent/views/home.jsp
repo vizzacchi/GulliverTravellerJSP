@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!----- Header ----->
-<%@include file="../include/cabecalho.jsp"%>
-<%@include file="../include/menu.jsp"%>
+<%@include file="../include/cabecalho_paginas.jsp"%>
+<%@include file="../include/menu_paginas.jsp"%>
 
 	<!----- Content ----->
 	<main>
@@ -26,59 +26,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>		
-		<form method="POST" action="hotel.jsp" class="form-viagem">
-       		<div class="container">
-                <h4>Selecione o tipo de viagem:</h4>
-                <div class="mb-3">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="tipoTrabalho">
-                        <label class="form-check-label" for="tipoTrabalho">Trabalho</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="tipoNegocio">
-                        <label class="form-check-label" for="tipoNegocio">Negócio</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="tipoTurismo">
-                        <label class="form-check-label" for="tipoTurismo">Turismo</label>
-                    </div>
-                </div>
-
-                <!----- Input Buscar ----->
-                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-4 row-cols-lg-4">
-                    <div class="col mb-3">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="origem" value="São Paulo" readonly>
-                            <label for="origem">Origem</label>
-                        </div>
-                    </div>
-                    <div class="col mb-3">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="destino" value="São Paulo" readonly>
-                            <label for="destino">Destino</label>
-                        </div>
-                    </div>
-                    <div class="col mb-3">
-                        <div class="form-floating">
-                            <input type="date" class="form-control" id="data_ida">
-                            <label for="data_ida">Data Ida</label>
-                        </div>
-                    </div>
-                    <div class="col mb-3">
-                        <div class="form-floating">
-                            <input type="date" class="form-control" id="data_volta">
-                            <label for="data_volta">Data Volta</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <!----- Botão Buscar ----->
-                <div class="d-flex justify-content-end">
-                    <input type="submit" class="btn btn-green btn-lg" value="BUSCAR">
-                </div>
-       		</div>
-        </form>
+        </div>
         <section>
 		   	<div class="container">
 				<div class="row">
@@ -98,10 +46,39 @@
 	                            </li>
 							</ol>
 						</nav>						
-					</div>
+					</div>					
 				</div>
 			</div>
 		</section>
+		
+		
+		<!--<section class="teste">
+			<div class="container">
+				<div class="row teste-2">							
+					<div class="col-4">
+						<h5 class="">
+							<i class="bi bi-airplane"></i>
+						</h5>
+						<span>Tipo de Viagem</span>
+					</div>
+					
+					<div class="col-4">
+						<h5 class="">
+							<i class="bi bi-geo-alt"></i>
+						</h5>
+						<span>Como Chegar</span>
+					</div>
+				
+					<div class="col-4">
+						<h5 class="">
+							<i class="bi bi-signpost-2"></i>
+						</h5>
+						<span>Dicas Úteis</span>
+					</div>			
+				</div>
+			</div>
+		</section>-->
+		
 			    
 	    <!------- Article ------->	    		  	    
 	    <article class="container">
@@ -240,4 +217,4 @@
 	</main>
 
 <!----- Footer ----->
-<%@include file="../include/rodape.jsp"%>
+<%@include file="../include/rodape_paginas.jsp"%>

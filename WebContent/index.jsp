@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!----- Header ----->
-<%@include file="include/cabecalho_index.jsp"%>
+<%@include file="include/cabecalho.jsp"%>
 
 	<!----- Content ----->
 	<main class="main-destino">
@@ -26,4 +26,4 @@
 	</main>
 
 <!----- Footer ----->
-<%@include file="include/rodape_index.jsp"%>
+<%@include file="include/rodape.jsp"%>

@@ -3,36 +3,33 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import com.mysql.cj.jdbc.Driver;
+
 public class DataSource {
 	
 	private Connection connection;
-		
-	private static final String hostName = "gulliver.mysql.dbaas.com.br";
-	private static final String usuario = "gulliver";
-	private static final String senha = "Fiap@2022";
-	private static final String url = "jdbc:mysql://"+hostName+":3306/gulliver";
-	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 	
-	//Conectar o banco
-	public DataSource(){
+	private String url;
+	private String usuario;
+	private String senha;
+	private int porta;
+		
+	public DataSource() {
 		try {
-			//Registrar o DRIVER
-			Class.forName(DRIVER);
-			//Capturar a conexao
+			DriverManager.registerDriver(new Driver());			
+			connection = DriverManager.getConnection("jdbc:mysql://gulliver.mysql.dbaas.com.br:3306/gulliver","gulliver","Fiap@2022");
 			
-			connection = DriverManager.getConnection(url,usuario,senha);
-			if(connection != null) {
-				System.out.println("Conectado com Sucesso");
-			}
-			else {
+			if (connection != null) {
+				System.out.println("Conectado com sucesso!");
+			} else {
 				System.out.println("Erro ao conectar");
 			}
+		} catch (Exception ex) {
+			System.out.println("Erro ao conectar com o SGBD. Erro: " + ex.getMessage());
 		}
-		catch(Exception ex){
-			System.out.println("Erro ao conectar com SGDB. Erro: " + ex.getMessage());
-		}	
 	}
+
 	public Connection getConnection() {
 		return connection;
-	}
+	}	
 }
