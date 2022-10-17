@@ -8,11 +8,14 @@ public class Endereco {
 	private Bairro bairro;
 	private TipoLogradouro tipoLogradouro;
 	
+
+	
+
 	@Override
 	public String toString() {
-		return tipoLogradouro + " " +  ", logradouro= " + logradouro + ", Cep= " + cep + ", " +  bairro;
+		return logradouro  ;
 	}
-	
+
 	//CONSTRUTOR VAZIO
 	public Endereco() {
 		super();

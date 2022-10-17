@@ -8,7 +8,7 @@ public class Telefone {
 	
 	@Override
 	public String toString() {
-		return "Telefone [id=" + id + ", tipo=" + tipo + ", telefone=" + telefone + "]";
+		return " " + telefone;
 	}
 	
 	//CONSTRUTOR VAZIO

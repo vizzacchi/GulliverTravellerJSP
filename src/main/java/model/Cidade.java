@@ -8,7 +8,7 @@ public class Cidade {
 	
 	@Override
 	public String toString() {
-		return "Cidade=" + cidade + ", " + uf;
+		return cidade + " - " + uf;
 	}
 	
 	//CONSTRUTOR VAZIO

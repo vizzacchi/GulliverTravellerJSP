@@ -7,7 +7,7 @@ public class TipoLogradouro {
 	
 	@Override
 	public String toString() {
-		return " Logradouro= " + tipoLogradouro ;
+		return tipoLogradouro + " ";
 	}
 	
 	//CONSTRUTOR VAZIO

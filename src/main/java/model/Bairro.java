@@ -8,7 +8,7 @@ public class Bairro {
 	
 	@Override
 	public String toString() {
-		return ", Bairro= " + bairro + ", \n" + cidade;
+		return " " + bairro + " - " + cidade ;
 	}
 	
 	//CONSTRUTOR VAZIO

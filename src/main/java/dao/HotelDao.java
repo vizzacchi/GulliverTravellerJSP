@@ -5,9 +5,19 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Avaliacao;
+import model.Bairro;
+import model.Cidade;
+import model.Destino;
 import model.Endereco;
+import model.FaixaPreco;
+import model.Foto;
 import model.Hotel;
+import model.Perfil;
 import model.Telefone;
+import model.TipoLogradouro;
+import model.Uf;
+import model.Usuario;
 
 public class HotelDao implements DaoBase<Hotel> {
 	
@@ -89,4 +99,149 @@ public class HotelDao implements DaoBase<Hotel> {
 		// TODO Auto-generated method stub
 		
 	}
+	@Override
+	public Hotel read(Hotel object) {
+		try {
+			//Crio a String SQL que vou ler
+			String SQL = "SELECT DISTINCT TP.ID as ID_HOTEL, TP.NOME as NOME_HOTEL, TP.SITE, TP.FOTO_PERFIL, TP.DESCRICAO as DESC_HOTEL, TP.NUMERO AS NUM_HOTEL, TP.COMPLEMENTO,\r\n"
+					+ "	TH.MELHORDIA,\r\n"
+					+ "	TE.ID as ID_ENDERECO, TE.LOGRADOURO, TE.CEP, TE.ID_BAIRRO, TE.ID_TIPOLOGRADOURO,\r\n"
+					+ "    TLG.DESCRICAO as DESC_LOGRADOURO,\r\n"
+					+ "	TB.BAIRRO, TB.ID_CIDADE,\r\n"
+					+ "	TC.CIDADE, TC.ID_UF,\r\n"
+					+ "	TU.UF, TU.DESCRICAO AS DESC_UF,\r\n"
+					+ "	TL.ID AS ID_TELEFONE, TL.TIPO AS TIPO_TELEFONE, TL.NUMERO AS TELEFONE,\r\n"
+					+ "	TF.ID AS ID_FOTO, TF.FOTOS, TF.DESCRICAO AS DESC_FOTOS, TF.TITULO AS TITULO_FOTOS,TFP.ID AS ID_FAIXAPRECO, TFP.FAIXA, TFP.DESCRICAO AS DESC_FAIXA,\r\n"
+					+ "	TD.ID AS ID_DESTINO, TD.DESTINO,\r\n"
+					+ "	TA.ID AS ID_AVALIACAO, TA.COMENTARIO, TA.NOTA, TA.DATA, TA.ID_USUARIO,\r\n"
+					+ "	TUS.NOME AS NOME_USUARIO, TUS.EMAIL\r\n"
+					+ "FROM tb_ponto TP\r\n"
+					+ "	LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE \r\n"
+					+ "    JOIN tb_hotel TH on TH.ID_PONTO = TP.ID \r\n"
+					+ "    JOIN tb_endereco TE ON TE.ID = TP.ID_ENDERECO \r\n"
+					+ "    JOIN tb_tipo_logradouro TLG on TE.ID_TIPOLOGRADOURO = TLG.ID\r\n"
+					+ "    JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO \r\n"
+					+ "    JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE \r\n"
+					+ "    JOIN tb_uf TU ON TU.ID = TC.ID_UF \r\n"
+					+ "    LEFT JOIN tb_foto TF ON TF.ID = TP.ID_FOTOS\r\n"
+					+ "    LEFT JOIN tb_faixa_preco TFP on TFP.ID = TP.ID_FAIXAPRECO\r\n"
+					+ "    JOIN tb_destino TD on TD.ID = TP.ID_DESTINO\r\n"
+					+ "    LEFT JOIN tb_avaliacao TA ON TA.ID = TP.ID_AVALIACAO\r\n"
+					+ "    LEFT JOIN tb_usuario TUS on TUS.ID = TA.ID_USUARIO\r\n"
+					+ "WHERE TP.ID = ?";
+			
+			// O ? irá receber o id da chamada
+			// gero o Statement a partir da conexao
+			PreparedStatement stm = dataSource.getConnection().prepareStatement(SQL);
+			//preenche o ?
+			stm.setInt(1, object.getId());
+			
+			//Vamos executar o SQL e armazenar em uma objeto ResultSet
+			ResultSet rs = stm.executeQuery();
+			
+			//o método next() indica se há registro no resultado
+			//se houver, eu preencho o objeto
+			if(rs.next()) {
+				Hotel hotel = new Hotel();
+				hotel.setId(rs.getInt("ID_HOTEL"));
+				hotel.setNome(rs.getString("NOME_HOTEL"));
+				hotel.setSite(rs.getString("SITE"));
+				hotel.setFotoPerfil(rs.getString("FOTO_PERFIL"));
+				hotel.setDescricao(rs.getString("DESC_HOTEL"));
+				hotel.setNumero(rs.getInt("NUM_HOTEL"));
+				hotel.setComplemento(rs.getString("COMPLEMENTO"));
+				hotel.setMelhorDia(rs.getString("MELHORDIA"));
+		
+				Endereco endereco = new Endereco();
+				endereco.setId(rs.getInt("ID_ENDERECO"));
+				endereco.setLogradouro(rs.getString("LOGRADOURO"));
+				endereco.setCep(rs.getString("CEP"));
+				
+				Bairro bairro = new Bairro();
+				bairro.setId(rs.getInt("ID_BAIRRO"));
+				bairro.setBairro(rs.getString("BAIRRO"));
+				
+				Cidade cidade = new Cidade();
+				cidade.setId(rs.getInt("ID_CIDADE"));
+				cidade.setCidade(rs.getString("CIDADE"));
+				
+				Uf uf = new Uf();
+				uf.setId(rs.getInt("ID_UF"));
+				uf.setUf(rs.getString("UF"));
+				uf.setDescricao(rs.getString("DESC_UF"));
+				
+				TipoLogradouro tipoLogradouro = new TipoLogradouro();
+				tipoLogradouro.setId(rs.getInt("id_TIPOLOGRADOURO"));
+				tipoLogradouro.setTipoLogradouro(rs.getString("DESC_LOGRADOURO"));
+				
+				cidade.setUf(uf);
+				bairro.setCidade(cidade);
+				endereco.setBairro(bairro);
+				endereco.setTipoLogradouro(tipoLogradouro);
+				
+				hotel.setEndereco(endereco);
+				
+				//O telefone o relacionamento deveria ser 1 Ponto para n 
+				//telefones, vou incluir um só para não deixar nulo
+				Telefone telefone = new Telefone();
+				telefone.setId(rs.getInt("ID_TELEFONE"));
+				telefone.setTipo(rs.getString("TIPO_TELEFONE"));
+				telefone.setTelefone(rs.getString("TELEFONE"));
+				
+				hotel.setTelefone(telefone);
+				
+				//Fotos o relacionamento também deveria ser 1 ponto para n fotos
+				//incluindo uma foto para mostrar na página, depois alteramos
+				
+				Foto foto = new Foto();
+				foto.setId(rs.getInt("ID_FOTO"));
+				foto.setFoto(rs.getString("FOTOS"));
+				foto.setDescricao(rs.getString("DESC_FOTOS"));
+				foto.setTitulo(rs.getString("TITULO_FOTOS"));
+				
+				hotel.setFotos(foto);
+				
+				FaixaPreco faixaPreco = new FaixaPreco();
+				faixaPreco.setId(rs.getInt("ID_FAIXAPRECO"));
+				faixaPreco.setFaixa(rs.getInt("FAIXA"));
+				faixaPreco.setDescricao(rs.getString("DESC_FAIXA"));
+				hotel.setFaixaPreco(faixaPreco);
+
+				//O relacionamento de Avaliacao também deveria ser 1 ponto para n Avaliações
+				
+				Avaliacao avaliacao = new Avaliacao();
+				avaliacao.setId(rs.getInt("ID_AVALIACAO"));
+				avaliacao.setComentario(rs.getString("COMENTARIO"));
+				avaliacao.setNota(rs.getDouble("NOTA"));
+				avaliacao.setData(rs.getDate("DATA").toLocalDate());
+				
+				//Precisamos do usuário que fez a avaliação
+				
+				Usuario usuario = new Usuario();
+				usuario.setId(rs.getInt("ID_USUARIO"));
+				usuario.setNome(rs.getString("NOME_USUARIO"));
+				usuario.setEmail(rs.getString("EMAIL"));
+				
+				avaliacao.setUsuario(usuario);
+				
+				hotel.setAvaliacao(avaliacao);
+				
+				Destino destino = new Destino();
+				destino.setId(rs.getInt("ID_DESTINO"));
+				destino.setDestino(rs.getString("DESTINO"));
+				
+				hotel.setDestino(destino);
+				
+				return hotel;		
+			}
+			else {
+				return null;
+			}
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+			System.out.println("HotelDao.read=" + ex.getMessage());
+		}
+		return null;
+	}	
 }

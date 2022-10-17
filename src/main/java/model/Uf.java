@@ -8,7 +8,7 @@ public class Uf {
 	
 	@Override
 	public String toString() {
-		return "idUf= " + id + ", Uf= " + uf + ", Descrição= " + descricao;
+		return descricao;
 	}
 	
 	//CONSTRUTOR VAZIO
