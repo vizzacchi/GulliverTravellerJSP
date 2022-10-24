@@ -6,11 +6,13 @@ public class Telefone {
 	private String tipo;	
 	private String telefone;
 	
+
+	
 	@Override
 	public String toString() {
 		return " " + telefone;
 	}
-	
+
 	//CONSTRUTOR VAZIO
 	public Telefone() {
 		super();
