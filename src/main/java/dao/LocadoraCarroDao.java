@@ -89,4 +89,10 @@ public class LocadoraCarroDao implements DaoBase<LocadoraCarro> {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public LocadoraCarro read(LocadoraCarro object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

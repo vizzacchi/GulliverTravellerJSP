@@ -12,7 +12,6 @@
 						<p>Gulliver Traveller | FIAP &copy;2022 - Todos os direitos reservados.</p>
                     </div>
                     <div class="col-sm-12 col-md-3 text-end">
-						<h6 class="fw-bold">O que está achando do Gulliver Traveller?</h6>
 						<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Deixe sua opinião.</button>
 					</div>
                 </div>

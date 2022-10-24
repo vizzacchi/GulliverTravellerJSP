@@ -85,4 +85,10 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public Restaurante read(Restaurante object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
