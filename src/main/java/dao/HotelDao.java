@@ -103,32 +103,60 @@ public class HotelDao implements DaoBase<Hotel> {
 	public Hotel read(Hotel object) {
 		try {
 			//Crio a String SQL que vou ler
-			String SQL = "SELECT DISTINCT TP.ID as ID_HOTEL, TP.NOME as NOME_HOTEL, TP.SITE, TP.FOTO_PERFIL, TP.DESCRICAO as DESC_HOTEL, TP.NUMERO AS NUM_HOTEL, TP.COMPLEMENTO,\r\n"
-					+ "	TH.MELHORDIA,\r\n"
-					+ "	TE.ID as ID_ENDERECO, TE.LOGRADOURO, TE.CEP, TE.ID_BAIRRO, TE.ID_TIPOLOGRADOURO,\r\n"
-					+ "    TLG.DESCRICAO as DESC_LOGRADOURO,\r\n"
-					+ "	TB.BAIRRO, TB.ID_CIDADE,\r\n"
-					+ "	TC.CIDADE, TC.ID_UF,\r\n"
-					+ "	TU.UF, TU.DESCRICAO AS DESC_UF,\r\n"
-					+ "	TL.ID AS ID_TELEFONE, TL.TIPO AS TIPO_TELEFONE, TL.NUMERO AS TELEFONE,\r\n"
-					+ "	TF.ID AS ID_FOTO, TF.FOTOS, TF.DESCRICAO AS DESC_FOTOS, TF.TITULO AS TITULO_FOTOS,TFP.ID AS ID_FAIXAPRECO, TFP.FAIXA, TFP.DESCRICAO AS DESC_FAIXA,\r\n"
-					+ "	TD.ID AS ID_DESTINO, TD.DESTINO,\r\n"
-					+ "	TA.ID AS ID_AVALIACAO, TA.COMENTARIO, TA.NOTA, TA.DATA, TA.ID_USUARIO,\r\n"
-					+ "	TUS.NOME AS NOME_USUARIO, TUS.EMAIL\r\n"
-					+ "FROM tb_ponto TP\r\n"
-					+ "	LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE \r\n"
-					+ "    JOIN tb_hotel TH on TH.ID_PONTO = TP.ID \r\n"
-					+ "    JOIN tb_endereco TE ON TE.ID = TP.ID_ENDERECO \r\n"
-					+ "    JOIN tb_tipo_logradouro TLG on TE.ID_TIPOLOGRADOURO = TLG.ID\r\n"
-					+ "    JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO \r\n"
-					+ "    JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE \r\n"
-					+ "    JOIN tb_uf TU ON TU.ID = TC.ID_UF \r\n"
-					+ "    LEFT JOIN tb_foto TF ON TF.ID = TP.ID_FOTOS\r\n"
-					+ "    LEFT JOIN tb_faixa_preco TFP on TFP.ID = TP.ID_FAIXAPRECO\r\n"
-					+ "    JOIN tb_destino TD on TD.ID = TP.ID_DESTINO\r\n"
-					+ "    LEFT JOIN tb_avaliacao TA ON TA.ID = TP.ID_AVALIACAO\r\n"
-					+ "    LEFT JOIN tb_usuario TUS on TUS.ID = TA.ID_USUARIO\r\n"
-					+ "WHERE TP.ID = ?";
+			String SQL = "SELECT DISTINCT\r\n"
+							+ "	TP.ID AS ID_HOTEL,\r\n"
+							+ "	TP.NOME AS NOME_HOTEL,\r\n"
+							+ "	TP.SITE,\r\n"
+							+ "	TP.FOTO_PERFIL,\r\n"
+							+ "	TP.DESCRICAO AS DESC_HOTEL,\r\n"
+							+ "	TP.NUMERO AS NUM_HOTEL,\r\n"
+							+ "	TP.COMPLEMENTO,\r\n"
+							+ "	TH.MELHORDIA,\r\n"
+							+ "	TE.ID AS ID_ENDERECO,\r\n"
+							+ "	TE.LOGRADOURO,\r\n"
+							+ "	TE.CEP,\r\n"
+							+ "	TE.ID_BAIRRO,\r\n"
+							+ "	TE.ID_TIPOLOGRADOURO,\r\n"
+							+ "	TLG.DESCRICAO AS DESC_LOGRADOURO,\r\n"
+							+ "	TB.BAIRRO,\r\n"
+							+ "	TB.ID_CIDADE,\r\n"
+							+ "	TC.CIDADE,\r\n"
+							+ "	TC.ID_UF,\r\n"
+							+ "	TU.UF,\r\n"
+							+ "	TU.DESCRICAO AS DESC_UF,\r\n"
+							+ "	TL.ID AS ID_TELEFONE,\r\n"
+							+ "	TL.TIPO AS TIPO_TELEFONE,\r\n"
+							+ "	TL.NUMERO AS TELEFONE,\r\n"
+							+ "	TF.ID AS ID_FOTO,\r\n"
+							+ "	TF.FOTOS,\r\n"
+							+ "	TF.DESCRICAO AS DESC_FOTOS,\r\n"
+							+ "	TF.TITULO AS TITULO_FOTOS,\r\n"
+							+ "	TFP.ID AS ID_FAIXAPRECO,\r\n"
+							+ "	TFP.FAIXA,\r\n"
+							+ "	TFP.DESCRICAO AS DESC_FAIXA,\r\n"
+							+ "	TD.ID AS ID_DESTINO,\r\n"
+							+ "	TD.DESTINO,\r\n"
+							+ "	TA.ID AS ID_AVALIACAO,\r\n"
+							+ "	TA.COMENTARIO,\r\n"
+							+ "	TA.NOTA,\r\n"
+							+ "	TA.DATA,\r\n"
+							+ "	TA.ID_USUARIO,\r\n"
+							+ "	TUS.NOME AS NOME_USUARIO,\r\n"
+							+ "	TUS.EMAIL\r\n"
+						+ "FROM tb_ponto TP\r\n"
+							+ "	JOIN tb_hotel TH on TH.ID_PONTO = TP.ID \r\n"
+							+ "	LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE \r\n"
+							+ "	JOIN tb_endereco TE ON TE.ID = TP.ID_ENDERECO \r\n"
+							+ "	JOIN tb_tipo_logradouro TLG on TE.ID_TIPOLOGRADOURO = TLG.ID\r\n"
+							+ "	JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO \r\n"
+							+ "	JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE \r\n"
+							+ "	JOIN tb_uf TU ON TU.ID = TC.ID_UF \r\n"
+							+ "	LEFT JOIN tb_foto TF ON TF.ID = TP.ID_FOTOS\r\n"
+							+ "	LEFT JOIN tb_faixa_preco TFP on TFP.ID = TP.ID_FAIXAPRECO\r\n"
+							+ "	JOIN tb_destino TD on TD.ID = TP.ID_DESTINO\r\n"
+							+ "	LEFT JOIN tb_avaliacao TA ON TA.ID = TP.ID_AVALIACAO\r\n"
+							+ "	LEFT JOIN tb_usuario TUS on TUS.ID = TA.ID_USUARIO\r\n"
+						+ "WHERE TP.ID = ?";
 			
 			// O ? irá receber o id da chamada
 			// gero o Statement a partir da conexao
@@ -191,8 +219,7 @@ public class HotelDao implements DaoBase<Hotel> {
 				hotel.setTelefone(telefone);
 				
 				//Fotos o relacionamento também deveria ser 1 ponto para n fotos
-				//incluindo uma foto para mostrar na página, depois alteramos
-				
+				//incluindo uma foto para mostrar na página, depois alteramos				
 				Foto foto = new Foto();
 				foto.setId(rs.getInt("ID_FOTO"));
 				foto.setFoto(rs.getString("FOTOS"));
@@ -207,16 +234,14 @@ public class HotelDao implements DaoBase<Hotel> {
 				faixaPreco.setDescricao(rs.getString("DESC_FAIXA"));
 				hotel.setFaixaPreco(faixaPreco);
 
-				//O relacionamento de Avaliacao também deveria ser 1 ponto para n Avaliações
-				
+				//O relacionamento de Avaliacao também deveria ser 1 ponto para n Avaliações				
 				Avaliacao avaliacao = new Avaliacao();
 				avaliacao.setId(rs.getInt("ID_AVALIACAO"));
 				avaliacao.setComentario(rs.getString("COMENTARIO"));
 				avaliacao.setNota(rs.getDouble("NOTA"));
 				avaliacao.setData(rs.getDate("DATA").toLocalDate());
 				
-				//Precisamos do usuário que fez a avaliação
-				
+				//Precisamos do usuário que fez a avaliação				
 				Usuario usuario = new Usuario();
 				usuario.setId(rs.getInt("ID_USUARIO"));
 				usuario.setNome(rs.getString("NOME_USUARIO"));
