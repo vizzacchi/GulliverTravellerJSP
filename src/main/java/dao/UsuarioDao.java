@@ -1,4 +1,4 @@
-package dao;
+/*package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -32,4 +32,4 @@ public class UsuarioDao implements DaoBase<Usuario> {
 		// TODO Auto-generated method stub
 		
 	}
-}
+}*/
