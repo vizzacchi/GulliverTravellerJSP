@@ -117,15 +117,14 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="">
-	                        <img src="../assets/images/destinoSP/Roteiros.jpg" class="card-img-top" alt="Um mapa aberto com fotos tiradas em diversos passeios.">
+	                    <a href="historia.jsp">
+	                        <img src="../assets/images/destinoSP/historia.jpg" class="card-img-top" alt="Um mapa aberto com fotos tiradas em diversos passeios.">
 	                    </a>
 	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Roteiros em Alta</h5>
+	                        <h5 class="card-title text-center fw-bold">História</h5>
 	                        <div class="card-text">
 	                            <p>
-	                                Veja alguns <a href="" class="cards-link">passeios</a> da cidade de São Paulo em destaque,
-	                                roteiros exclusivos para parceiros Gulliver Traveller. 
+	                                Os melhores passeios para quem quer explorar um pouco mais da <a href="historia.jsp" class="cards-link"> história </a> da cidade de São Paulo. 
 	                            </p>
 	                        </div>
 	                    </div>
@@ -133,7 +132,7 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="">
+	                    <a href="festaNoturna.jsp">
 	                        <img src="../assets/images/destinoSP/FestasNoturnas.jpg" class="card-img-top" alt="Pessoas curtindo uma festa em uma casa noturna">
 	                    </a>
 	                    <div class="card-body">
@@ -141,7 +140,7 @@
 	                        <div class="card-text">
 	                            <p>
 	                                São Paulo a cidade que não dorme, possui uma noite vibrante com as melhores
-	                                <a href="" class="cards-link">casas noturnas</a> do país.
+	                                <a href="festaNoturna.jsp" class="cards-link">casas noturnas</a> do país.
 	                            </p>
 	                        </div>
 	                    </div>
@@ -149,15 +148,15 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="">
-	                        <img src="../assets/images/destinoSP/Dicas.jpg" class="card-img-top" alt="Um mapa mundo com fundo preto, com um avião miniatura sendo empurrado por uma mão">
+	                    <a href="entretenimento.jsp">
+	                        <img src="../assets/images/destinoSP/entretenimento.jpg" class="card-img-top" alt="Um mapa mundo com fundo preto, com um avião miniatura sendo empurrado por uma mão">
 	                    </a>
 	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Dicas Para Qualquer Viagem</h5>
+	                        <h5 class="card-title text-center fw-bold">Entretenimento</h5>
 	                        <div class="card-text">
 	                            <p>
-	                                Planeje sua viagem com segurança com nossas <a href="" class="cards-link">dicas</a>
-	                                e experiência de outros usuários que visitaram a cidade de São Paulo.
+	                                Os melhores <a href="entretenimento.jsp" class="cards-link">entretenimentos</a>
+	                                quem quer experiências incriveis na cidade de São Paulo.
 	                            </p>
 	                        </div>
 	                    </div>
@@ -165,14 +164,14 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="">
+	                    <a href="cultura.jsp">
 	                        <img src="../assets/images/destinoSP/Cultura.jpg" class="card-img-top" alt="Pintura de um rosto indigena num grafite de rua.">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Passeios Culturais</h5>
 	                        <div class="card-text">
 	                            <p>
-	                                São Paulo é uma <a href="" class="cards-link">cidade multi-cultural</a>,
+	                                São Paulo é uma <a href="cultura.jsp" class="cards-link">cidade multi-cultural</a>,
 	                                de museus as mais diversificadas feiras e exposições, explore.
 	                            </p>
 	                        </div>
@@ -181,7 +180,7 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="">
+	                    <a href="aluguelCarros.jsp">
 	                        <img src="../assets/images/destinoSP/aluguelCarros.jpg" class="card-img-top" alt="Carros da mercedes enfileirados a 45 graus">
 	                    </a>
 	                    <div class="card-body">
@@ -189,7 +188,7 @@
 	                        <div class="card-text">
 	                            <p>
 	                                De carros populares a super esportivos, veja as principais
-	                                <a href="" class="cards-link"> locadoras</a> de veículos da cidade de São Paulo. 
+	                                <a href="aluguelCarros.jsp" class="cards-link"> locadoras</a> de veículos da cidade de São Paulo. 
 	                            </p>
 	                        </div>
 	                    </div>
@@ -197,7 +196,7 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="">
+	                    <a href="parque.jsp">
 	                        <img src="../assets/images/destinoSP/parquesdeSP.jpg" class="card-img-top" alt="Foto de um belo parque com um lago ao fundo de folhas vermelhas">
 	                    </a>
 	                    <div class="card-body">
@@ -206,7 +205,7 @@
 	                            <p>
 	                                Seja para dar uma caminhada,
 	                                fazer um belo piqui-nique ou apenas para relaxar embaixo de uma árvore,
-	                                São Paulo oferece diversos <a href="" class="cards-link">parques</a>.
+	                                São Paulo oferece diversos <a href="parque.jsp" class="cards-link">parques</a>.
 	                            </p>
 	                        </div>
 	                    </div>
