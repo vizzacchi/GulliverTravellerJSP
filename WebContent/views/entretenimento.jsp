@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="controller.ListarEntretenimento"%>
+<%@page import="java.util.ArrayList" %>
+<%@page import="model.Entretenimento" %>
 
 <!----- Header ----->
 <%@include file="../include/cabecalho_paginas.jsp"%>
@@ -28,7 +31,36 @@
 	    <!------ Card ------>
 	    <article class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-				
+				<%
+			    ListarEntretenimento entretenimento = new ListarEntretenimento();
+			            ArrayList<Entretenimento> lista = entretenimento.listarEntretenimento();
+			    %>			
+			   <% for (Entretenimento r: lista) { %>
+				   <div class="col d-flex">
+				       <div class="card">
+				           <a href="../entretenimento.do?id=<%=r.getId() %>">
+				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
+				           </a>
+				           <div class="card-body pb-0">
+				               <h5 class="card-title text-center fw-bold"><%=r.getNome() %></h5>
+				               <div class="card-rate text-center mb-2">
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-fill text-warning"></i>
+				                   <i class="bi bi-star-half text-warning"></i>
+				               </div>
+				               <div class="card-text">
+				                   <p class="address">
+				                       <strong>Endereço:</strong> <%=r.getEndereco() %>
+				                   <p class="phone">
+				                       <strong>Telefone:</strong> <%=r.getTelefone() %>
+				                   </p>
+				               </div>
+				           </div>						   
+				       </div>
+				   </div>
+				<% } %>
 			</div>		     
   		</article>
 	</main>
