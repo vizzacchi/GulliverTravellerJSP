@@ -114,10 +114,18 @@
 								<tr>
 									<td class="fw-bold text-nowrap"><i class="bi bi-display mx-2"></i> Site</td>
 									<td class="text-end"><a href= "<c:out value="${Entretenimento.site}"></c:out>" target="_black"><c:out value="${Entretenimento.site}"></c:out></a></td>
-								</tr>
+								</tr>								
 								<tr>
-									<td class="fw-bold text-nowrap"><i class="bi bi-calendar-event mx-2"></i>Melhor Dia</td>
-									<td class="text-end"><c:out value="${Entretenimento.melhorDia}"></c:out></a></td>
+									<td class="fw-bold text-nowrap"><i class="bi bi-map mx-2"></i>Região</td>
+									<td class="text-end"><c:out value="${Entretenimento.regiao}"></c:out></a></td>
+								</tr>							
+								<tr>
+									<td class="fw-bold text-nowrap"><i class="bi bi-currency-dollar mx-2"></i>Preço</td>
+									<td class="text-end"><c:out value="${Entretenimento.faixaPreco.descricao}"></c:out></a></td>
+								</tr>						
+								<tr>
+									<td class="fw-bold text-nowrap"><i class="bi bi-clock mx-2"></i>Horário</td>
+									<td class="text-end"><c:out value="${Entretenimento.horarioFuncionamento.dia} ${Entretenimento.horarioFuncionamento.abre} ${Entretenimento.horarioFuncionamento.fecha}"></c:out></a></td>
 								</tr>
 							</tbody>
 						</table>
@@ -126,7 +134,7 @@
 				</div>
 			</div>
 			<div class="col">
-				<h4>Acomodações:</h4>
+				<h4>Imagens:</h4>
 				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mb-4">
 					<div class="col">
 						<div class="card">
