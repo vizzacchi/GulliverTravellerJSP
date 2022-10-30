@@ -28,8 +28,8 @@
 		</div>
 	</section>
 	<article class="container">
-		<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
-			<div class="col">
+		<div class="row">
+			<div class="col-md-6 mb-3">
 				<div class="card">
 					<div class="card-body">
 						<p class="mb-3">
@@ -157,13 +157,13 @@
 		                        <tr>
 		                            <td class="fw-bold"><i class="bi bi-shop mx-2"></i> Tipo de culinária</td>
 		                            <td class="text-end">
-		                            	<c:out value="${Restaurante.culinaria}"></c:out>
+		                            	<c:out value="${Restaurante.culinaria.tipoCulinaria}"></c:out>
 		                            </td>
 		                        </tr>
 		                        <tr>
 		                            <td class="fw-bold"><i class="bi bi-currency-dollar mx-2"></i> Faixa de preço</td>
 		                            <td class="text-end">
-		                            	<c:out value="${Restaurante.faixaPreco}"></c:out>
+		                            	<c:out value="${Restaurante.faixaPreco.descricao}"></c:out>
 		                            </td>
 		                        </tr>
 		                        <tr>
@@ -192,36 +192,64 @@
 					</div>
 				</div>
 			</div>
-							
-			<!------ Acomodações ------>
-			<div class="col">
-				<h4>Acomodações:</h4>
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mb-4">
-					<div class="col">
-						<div class="card">
-							<img src="" class="card-img-top" alt="">
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="" class="card-img-top" alt="">
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="" class="card-img-top" alt="">
-						</div>
+						
+			<!--------- Fotos --------->
+			<div class="col-md-6">
+				<div class="card mb-3">
+					<div class="card-body">
+						<div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
+							<div class="carousel-indicators">
+								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+							</div>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="./assets/images/restaurantes/dom/prato_1.jpg" class="d-block w-100" alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5>First slide label</h5>
+										<p>Some representative placeholder content for the first slide.</p>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="./assets/images/restaurantes/dom/prato_2.jpg" class="d-block w-100" alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5>Second slide label</h5>
+										<p>Some representative placeholder content for the first slide.</p>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<img src="./assets/images/restaurantes/dom/prato_3.jpg" class="d-block w-100" alt="...">
+									<div class="carousel-caption d-none d-md-block">
+										<h5>Third slide label</h5>
+										<p>Some representative placeholder content for the first slide.</p>
+									</div>
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>				
 					</div>
 				</div>
 				
 				<!------ Como Chegar ------>
-				<h4>Como Chegar:</h4>
-				<div class="alert alert-primary mb-3">
-					<div id="endereco"></div>
-					<div id="distancia"></div>
-					<div id="tempo"></div>
+				<div class="card">
+					<div class="card-body">
+						<h4>Como Chegar:</h4>
+						<div class="alert alert-primary mb-3">
+							<div id="endereco"></div>
+							<div id="distancia"></div>
+							<div id="tempo"></div>
+						</div>
+						<div id="map"></div>
+					</div>
 				</div>
-				<div id="map"></div>
 			</div>
 		</div>
 	</article>
@@ -230,5 +258,5 @@
 <!----- Footer ----->
 <%@include file="../../include/rodape_sub_paginas.jsp"%>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA32PDmcZkbv37_Jb-GU9ZOTu9OW4j1n4o" defer></script>
-<script src="../../assets/js/geolocalizacao.js"></script>
+<script src="./assets/js/geolocalizacao.js"></script>
 <script>geolocation("<c:out value='${Restaurante.endereco}'></c:out>, <c:out value='${Restaurante.numero}'></c:out><c:out value='${Restaurante.endereco.bairro}'></c:out> CEP: <c:out value='${Restaurante.endereco.cep}'></c:out>");</script>
