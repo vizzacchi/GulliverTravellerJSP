@@ -32,8 +32,6 @@
 			<div class="col">
 				<div class="card">
 					<div class="card-body">
-			
-			
 						<p class="mb-3">
 							<c:out value="${Hotel.descricao }"></c:out>
 						</p>

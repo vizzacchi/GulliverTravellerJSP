@@ -5,10 +5,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import model.Hotel;
 import dao.HotelDao;
 import dao.DataSource;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
