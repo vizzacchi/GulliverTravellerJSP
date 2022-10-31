@@ -168,7 +168,7 @@
 	                        <img src="../assets/images/destinoSP/Cultura.jpg" class="card-img-top" alt="Pintura de um rosto indigena num grafite de rua.">
 	                    </a>
 	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Passeios Culturais</h5>
+	                        <h5 class="card-title text-center fw-bold">Cultura</h5>
 	                        <div class="card-text">
 	                            <p>
 	                                São Paulo é uma <a href="cultura.jsp" class="cards-link">cidade multi-cultural</a>,
