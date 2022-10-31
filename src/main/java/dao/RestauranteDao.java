@@ -27,6 +27,10 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 	public RestauranteDao(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
+	
+	public DataSource getDataSource() {
+		return dataSource;
+	}
 
 	@Override
 	public void create(Restaurante object) {
@@ -47,7 +51,7 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 							+ " CONCAT(TE.LOGRADOURO, ', ', TP.NUMERO, ' - ', TB.BAIRRO, ', ', TC.CIDADE, ' - ', TU.UF, ', ', TE.CEP) AS ENDERECO, "
 							+ " TL.NUMERO "
 					    + "FROM tb_ponto TP "
-					    	+ " JOIN tb_restaurante TR on TR.ID_PONTO = TP.ID "
+					    	+ " JOIN tb_restaurante TR ON TR.ID_PONTO = TP.ID "
 							+ " LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE "
 							+ " LEFT JOIN tb_endereco TE ON TE.ID = TP.ID_ENDERECO "
 							+ " LEFT JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO "
