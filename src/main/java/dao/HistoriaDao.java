@@ -48,7 +48,7 @@ public class HistoriaDao implements DaoBase<Historia> {
 							+ "TP.NOME, "
 							+ "TP.SITE, "
 							+ "TP.FOTO_PERFIL, "
-							+ "CONCAT(TE.LOGRADOURO, ', ', TP.NUMERO, ' - ', TB.BAIRRO, ', ', TC.CIDADE, ' - ', TU.UF, ', ', TE.CEP) AS ENDERECO, "
+							+ "CONCAT(TTL.DESCRICAO,' ', TE.LOGRADOURO, ', ', TP.NUMERO, ' - ', TB.BAIRRO, ', ', TC.CIDADE, ' - ', TU.UF, ', ', TE.CEP) AS ENDERECO, "
 							+ "TL.NUMERO "
 						+ "FROM tb_ponto TP "
 							+ "LEFT JOIN tb_telefone TL ON TL.ID = TP.ID_TELEFONE "
@@ -56,6 +56,7 @@ public class HistoriaDao implements DaoBase<Historia> {
 							+ "JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO "
 							+ "JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE "
 							+ "JOIN tb_uf TU ON TU.ID = TC.ID_UF "
+							+ "JOIN tb_tipo_logradouro TTL  ON TTL.ID = TE.ID_TIPOLOGRADOURO "
 						+ "WHERE TP.ID_CATEGORIA = 5 "
 						+ "ORDER BY TP.NOME ASC";
 			
