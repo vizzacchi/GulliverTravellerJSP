@@ -8,10 +8,10 @@
 		<article class="container">
 			<div class="row">
 				<div class="col-6">
-					<h1> Hotel não encontrado!</h1>
+					<h1>Página não encontrada!</h1>
 				</div>
 				<div class="col-6">
-					<a href="views/hotel.jsp" class="btn btn-outline-primary">Voltar</a>
+					<a href="views/home.jsp" class="btn btn-outline-primary">Voltar</a>
 				</div>
 			</div>			
 		</article>

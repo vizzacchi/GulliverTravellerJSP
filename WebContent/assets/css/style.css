@@ -154,6 +154,9 @@ article table tbody tr td {
     border: none !important;
     box-shadow: var(--box-shadow);
 }
+.card.card-d-flex {
+	min-height: 34rem
+}
 .card img {
     height: 9rem
 }
