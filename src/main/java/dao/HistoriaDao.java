@@ -40,7 +40,7 @@ public class HistoriaDao implements DaoBase<Historia> {
 	@Override
 	public List<Historia> read() {
 		// TODO Auto-generated method stub
-try {
+		try {
 			
 			List<Historia> resultado = new ArrayList<Historia>();
 			String sql = "SELECT DISTINCT "
