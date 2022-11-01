@@ -122,11 +122,28 @@
 								<tr>
 									<td class="fw-bold text-nowrap"><i class="bi bi-currency-dollar mx-2"></i>Preço</td>
 									<td class="text-end"><c:out value="${Entretenimento.faixaPreco.descricao}"></c:out></a></td>
-								</tr>						
-								<tr>
-									<td class="fw-bold text-nowrap"><i class="bi bi-clock mx-2"></i>Horário</td>
-									<td class="text-end"><c:out value="${Entretenimento.horarioFuncionamento.dia} ${Entretenimento.horarioFuncionamento.abre} ${Entretenimento.horarioFuncionamento.fecha}"></c:out></a></td>
 								</tr>
+		                        <tr>
+		                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Horário</td>
+		                            <td class="text-end">
+		                                <div class="dropdown">
+		                                    <div class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+		                                        data-bs-toggle="dropdown" aria-expanded="false">
+		                                        <strong class="text-danger">fechado</strong>
+		                                    </div>
+		                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+		                                        aria-labelledby="navbarDarkDropdownMenuLink">
+		                                        <li class="dropdown-item">Fechado ⋅ segunda-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ terça-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ quarta-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ quinta-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ sexta-feira</li>
+		                                        <li class="dropdown-item">12:00–23:00 ⋅ sábado</li>
+		                                        <li class="dropdown-item">12:00–21:00 ⋅ domingo</li>
+		                                    </ul>
+		                                </div>
+		                            </td>
+		                        </tr>
 							</tbody>
 						</table>
 				

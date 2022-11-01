@@ -1,7 +1,5 @@
 package model;
 
-import java.time.LocalDate;
-
 public class Entretenimento extends Ponto {
 	
 	private String regiao;
