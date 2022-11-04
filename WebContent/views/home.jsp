@@ -132,15 +132,15 @@
 	            </div>
 	            <div class="col d-flex">
 	                <div class="card">
-	                    <a href="festaNoturna.jsp">
+	                    <a href="vidaNoturna.jsp">
 	                        <img src="../assets/images/destinoSP/FestasNoturnas.jpg" class="card-img-top" alt="Pessoas curtindo uma festa em uma casa noturna">
 	                    </a>
 	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Vida Noturna e Entretenimento</h5>
+	                        <h5 class="card-title text-center fw-bold">Vida Noturna</h5>
 	                        <div class="card-text">
 	                            <p>
 	                                São Paulo a cidade que não dorme, possui uma noite vibrante com as melhores
-	                                <a href="festaNoturna.jsp" class="cards-link">casas noturnas</a> do país.
+	                                <a href="vidaNoturna.jsp" class="cards-link">casas noturnas</a> do país.
 	                            </p>
 	                        </div>
 	                    </div>
