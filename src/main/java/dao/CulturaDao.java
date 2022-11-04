@@ -13,8 +13,6 @@ import model.Destino;
 import model.Endereco;
 import model.FaixaPreco;
 import model.Foto;
-import model.Hotel;
-import model.Perfil;
 import model.Telefone;
 import model.TipoLogradouro;
 import model.Uf;
@@ -105,14 +103,13 @@ public class CulturaDao implements DaoBase<Cultura> {
 		try {
 			//Crio a String SQL que vou ler
 			String SQL = "SELECT DISTINCT\r\n"
-							+ "	TP.ID AS ID_,\r\n"
+							+ "	TP.ID AS ID_CULTURA,\r\n"
 							+ "	TP.NOME AS NOME_CULTURA,\r\n"
 							+ "	TP.SITE,\r\n"
 							+ "	TP.FOTO_PERFIL,\r\n"
 							+ "	TP.DESCRICAO AS DESC_CULTURA,\r\n"
 							+ "	TP.NUMERO AS NUM_CULTURA,\r\n"
 							+ "	TP.COMPLEMENTO,\r\n"
-							+ "	TH.MELHORDIA,\r\n"
 							+ "	TE.ID AS ID_ENDERECO,\r\n"
 							+ "	TE.LOGRADOURO,\r\n"
 							+ "	TE.CEP,\r\n"
@@ -172,14 +169,14 @@ public class CulturaDao implements DaoBase<Cultura> {
 			//se houver, eu preencho o objeto
 			if(rs.next()) {
 				Cultura cultura = new Cultura();
-				cultura.setId(rs.getInt("ID_Cultura"));
+				cultura.setId(rs.getInt("ID_CULTURA"));
 				cultura.setNome(rs.getString("NOME_CULTURA"));
 				cultura.setSite(rs.getString("SITE"));
 				cultura.setFotoPerfil(rs.getString("FOTO_PERFIL"));
 				cultura.setDescricao(rs.getString("DESC_CULTURA"));
 				cultura.setNumero(rs.getInt("NUM_CULTURA"));
 				cultura.setComplemento(rs.getString("COMPLEMENTO"));
-				cultura.setMelhorDia(rs.getString("MELHORDIA"));
+				//cultura.setMelhorDia(rs.getString("MELHORDIA"));
 		
 				Endereco endereco = new Endereco();
 				endereco.setId(rs.getInt("ID_ENDERECO"));

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import javax.servlet.ServletException;
 import java.io.IOException;
 
-@WebServlet("/Cultura.do")
+@WebServlet("/cultura.do")
 public class VisualizarCultura extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -40,7 +40,7 @@ public class VisualizarCultura extends HttpServlet {
 				// Se consegui carregar os dados na instância hotel
 				// mantenho o usuário conectado
 				request.getSession().setAttribute("Cultura", cultura);
-				pagina = "/views/Cultura/cultura.jsp";
+				pagina = "/views/cultura/visualizar.jsp";
 			}
 			else {
 				request.setAttribute("ErroMSG", "pagina não encontrado");
