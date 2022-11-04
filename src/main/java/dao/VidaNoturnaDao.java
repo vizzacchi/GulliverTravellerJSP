@@ -181,7 +181,7 @@ public class VidaNoturnaDao implements DaoBase<VidaNoturna> {
 				vidaNoturna.setDescricao(rs.getString("DESC_VIDANOTURNA"));
 				vidaNoturna.setNumero(rs.getInt("NUM_VIDANOTURNA"));
 				vidaNoturna.setComplemento(rs.getString("COMPLEMENTO"));
-				//vidaNoturna.setRegiao(rs.getString("REGIAO"));
+				vidaNoturna.setRegiao(rs.getString("REGIAO"));
 		
 				Endereco endereco = new Endereco();
 				endereco.setId(rs.getInt("ID_ENDERECO"));

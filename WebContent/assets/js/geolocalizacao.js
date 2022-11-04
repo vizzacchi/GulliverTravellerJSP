@@ -56,9 +56,9 @@ function initMap(endereco) {
             var retorno = JSON.stringify(response);
             new_end = response.originAddresses[0];
             var endUser =  new_end; 
-            var endDestino = document.getElementById("endereco").innerText = endereco;
-            var tempo = document.getElementById("tempo").innerText = response.rows[0].elements[0].duration.text;
-            var duracao = document.getElementById("distancia").innerText = response.rows[0].elements[0].distance.text
+            var endDestino = document.getElementById("endereco").innerText = "Endereço: " + endereco;
+            var tempo = document.getElementById("tempo").innerText = "Tempo de viagem: " + response.rows[0].elements[0].duration.text;
+            var duracao = document.getElementById("distancia").innerText = "Distância de carro: " + response.rows[0].elements[0].distance.text
             var directionsService = new google.maps.DirectionsService();
             var directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
             directionsRenderer.setMap(map);
