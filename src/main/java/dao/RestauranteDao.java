@@ -238,7 +238,7 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 				endereco.setTipoLogradouro(tipoLogradouro);
 				
 				restaurante.setEndereco(endereco);
-
+								
 				//TELEFONE
 				Telefone telefone = new Telefone();
 				telefone.setId(rs.getInt("ID_TELEFONE"));
@@ -247,7 +247,7 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 				
 				restaurante.setTelefone(telefone);
 				
-				//FOTOS
+				//FOTOS			
 				Foto foto = new Foto();
 				foto.setId(rs.getInt("ID_FOTO"));
 				foto.setFoto(rs.getString("FOTOS"));
