@@ -28,18 +28,31 @@
 		</div>
 	</section>
 	<article class="container">
-		<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
-			<div class="col">
+		<div id="photo-gallery" class="mb-3 px-0 py-0">
+			<img src="./assets/images/" class="image-grid-col-2 image-grid-row-2" alt="">
+			<img src="./assets/images/" alt="">
+			<img src="./assets/images/" alt="">
+			<img src="./assets/images/" alt="">
+			<img src="./assets/images/" alt="">
+		</div>
+		<div class="row">
+			<div class="col-md-12 mb-3">
 				<div class="card">
 					<div class="card-body">
-						<p class="mb-3">
-							<c:out value="${Hotel.descricao }"></c:out>
-						</p>
-		
-						<!------ Avaliações ------>
+						<h4 class="card-title">Descrição</h4>
+						<p><c:out value="${Hotel.descricao}"></c:out></p>
+					</div>
+				</div>
+			</div>
+
+			<!------ Informações ------>
+			<div class="col-md-7 mb-3">
+				<div class="card card-d-flex">
+					<div class="card-body">
+						<h4 class="card-title">Avaliações e informações</h4>
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<h6>4.852 avaliações nota 4,4 estrelas</h6>
+								<h5>4.852 avaliações nota 4,4 estrelas</h5>
 								<div class="card-rate">
 									<i class="bi bi-star-fill text-warning"></i>
 									<i class="bi bi-star-fill text-warning"></i>
@@ -119,38 +132,39 @@
 								</tr>
 							</tbody>
 						</table>
-				
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<h4>Acomodações:</h4>
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mb-4">
-					<div class="col">
-						<div class="card">
-							<img src="<c:out value="${Hotel.fotos.foto}"></c:out>" class="card-img-top" alt="<c:out value="${Hotel.fotos.titulo}"></c:out>">
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="./assets/images/hoteis/blue_tree_morumbi/area de lazer.webp" class="card-img-top" alt="blue tree premium morumbi area de lazer">
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="../../images/hoteis/blue_tree_morumbi/quartosolteiro.jpeg" class="card-img-top" alt="ALTEr">
-						</div>
+
+			<!------ Como Chegar ------>
+			<div class="col-md-5 mb-3">
+				<div class="card card-d-flex">
+					<div class="card-body">
+						<div id="map" class="mb-3"></div>
+						<table class="table">
+							<tbody>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-geo-alt-fill mx-2"></i>
+									</td>
+									<td id="endereco"></td>
+								</tr>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-car-front-fill mx-2"></i>
+									</td>
+									<td id="distancia"></td>
+								</tr>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-clock mx-2"></i>
+									</td>
+									<td id="tempo"></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
-				
-				<!------ Como Chegar ------>
-				<h4>Como Chegar:</h4>
-				<div class="alert alert-primary mb-3">
-					<div id="endereco"></div>
-					<div id="distancia"></div>
-					<div id="tempo"></div>
-				</div>
-				<div id="map"></div>
 			</div>
 		</div>
 	</article>
