@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Restaurante" scope="session" type="model.Restaurante"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="model.Foto" %>
+
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>
@@ -29,11 +32,12 @@
 	</section>
 	<article class="container">
 		<div id="photo-gallery" class="mb-3 px-0 py-0">
-			<img src="./assets/images/restaurantes/dom/image_01.png" class="image-grid-col-2 image-grid-row-2" alt="">
-			<img src="./assets/images/restaurantes/dom/image_02.png" alt="">
-			<img src="./assets/images/restaurantes/dom/image_03.png" alt="">
-			<img src="./assets/images/restaurantes/dom/image_04.png" alt="">
-			<img src="./assets/images/restaurantes/dom/image_05.png" alt="">
+			<%
+		    	ArrayList<Foto> lista = Restaurante.getFotos();
+		    %>			
+			<% for (Foto r: lista) { %>
+				<img src="<%=r.getFoto() %>" class="<% if (lista.indexOf(r) == 0) { %> image-grid-col-2 image-grid-row-2 <% } %>" alt="<%=r.getDescricao() %>" title="<%=r.getTitulo() %>">			
+			<% } %>
 		</div>
 		<div class="row">
 			<div class="col-md-12 mb-3">

@@ -125,10 +125,6 @@ public class LocadoraCarroDao implements DaoBase<LocadoraCarro> {
 							+ "	TL.ID AS ID_TELEFONE, "
 							+ "	TL.TIPO AS TIPO_TELEFONE, "
 							+ "	TL.NUMERO AS TELEFONE, "
-							+ "	TF.ID AS ID_FOTO, "
-							+ "	TF.FOTOS, "
-							+ "	TF.DESCRICAO AS DESC_FOTOS, "
-							+ "	TF.TITULO AS TITULO_FOTOS, "
 							+ "	TFP.ID AS ID_FAIXAPRECO, "
 							+ "	TFP.FAIXA, "
 							+ "	TFP.DESCRICAO AS DESC_FAIXA, "
@@ -149,7 +145,6 @@ public class LocadoraCarroDao implements DaoBase<LocadoraCarro> {
 							+ "	LEFT JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO "
 							+ "	LEFT JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE "
 							+ "	LEFT JOIN tb_uf TU ON TU.ID = TC.ID_UF "
-							+ "	LEFT JOIN tb_foto TF ON TF.ID = TP.ID_FOTOS "
 							+ "	LEFT JOIN tb_faixa_preco TFP on TFP.ID = TP.ID_FAIXAPRECO "
 							+ "	LEFT JOIN tb_destino TD on TD.ID = TP.ID_DESTINO "
 							+ "	LEFT JOIN tb_avaliacao TA ON TA.ID = TP.ID_AVALIACAO "
@@ -216,14 +211,38 @@ public class LocadoraCarroDao implements DaoBase<LocadoraCarro> {
 				
 				locadora.setTelefone(telefone);
 				
-				//FOTOS			
-				Foto foto = new Foto();
-				foto.setId(rs.getInt("ID_FOTO"));
-				foto.setFoto(rs.getString("FOTOS"));
-				foto.setDescricao(rs.getString("DESC_FOTOS"));
-				foto.setTitulo(rs.getString("TITULO_FOTOS"));
-				
-				locadora.setFotos(foto);
+				ArrayList<Foto> fotos = new ArrayList<Foto>();
+                
+                //Crio a String SQL que vou ler
+                String SQLFoto = "SELECT \r\n"
+                                + " TF.ID AS ID_FOTO,\r\n"
+                                + " TF.FOTOS,\r\n"
+                                + " TF.DESCRICAO AS DESC_FOTOS,\r\n"
+                                + " TF.TITULO AS TITULO_FOTOS\r\n"
+                            + "FROM tb_foto TF \r\n"
+                            + "WHERE TF.ID_PONTO = ?";
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmFoto = dataSource.getConnection().prepareStatement(SQLFoto);
+                //preenche o ?
+                stmFoto.setInt(1, object.getId());
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsFoto = stmFoto.executeQuery();
+                                
+                //o método next() indica se há registro no resultado
+                //se houver, eu preencho o objeto
+                while(rsFoto.next()) {
+                    Foto foto = new Foto();
+                    foto.setId(rsFoto.getInt("ID_FOTO"));
+                    foto.setFoto(rsFoto.getString("FOTOS"));
+                    foto.setDescricao(rsFoto.getString("DESC_FOTOS"));
+                    foto.setTitulo(rsFoto.getString("TITULO_FOTOS"));
+                    fotos.add(foto);                
+                }
+                
+                locadora.setFotos(fotos);
 				
 				//FAIXA DE PREÇO
 				FaixaPreco faixaPreco = new FaixaPreco();

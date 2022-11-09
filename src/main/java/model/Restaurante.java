@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Restaurante extends Ponto {
 	
@@ -23,7 +24,7 @@ public class Restaurante extends Ponto {
 	
 	//CONSTRUTOR
 	public Restaurante(int id, String nome, String site, String fotoPerfil, String descricao, Endereco endereco,
-			int numero, String complemento, Telefone telefone, Foto fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
+			int numero, String complemento, Telefone telefone, ArrayList<Foto> fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
 			Destino destino, boolean refeicaoLocal, boolean entrega, boolean estacionamento, Culinaria culinaria,
 			LocalDate horarioFuncionamento) {
 		super(id, nome, site, fotoPerfil, descricao, endereco, numero, complemento, telefone, fotos, faixaPreco,
