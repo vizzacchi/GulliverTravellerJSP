@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Restaurante" scope="session" type="model.Restaurante"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="controller.ListarAvaliacao"%>
+<%@page import="java.util.ArrayList" %>
+<%@page import="model.Avaliacao" %>
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>
@@ -71,26 +74,31 @@
 											</div>
 										</div>
 		
+										
+												
+				<%
+			    ListarAvaliacao avaliacao = new ListarAvaliacao(); 
+			            ArrayList<Avaliacao> lista = avaliacao.listarAvaliacoes();
+					
+			    %>			
+			   <% for (Avaliacao r: lista) { %>
 										<!----- Comentários ----->
 										<div class="border p-3 mb-3">
 											<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
 												<div class="col">
 													<h5>
-														<c:out value="${Restaurante.avaliacao.usuario.nome}"></c:out>
+														<%=r.getUsuario() %>
 													</h5>
 												</div>
 												<div class="col text-end">
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-half text-warning"></i>
+													<%=r.getNota() %>
 												</div>
 											</div>
 											<p>
-												<c:out value="${Restaurante.avaliacao.comentario}"></c:out>
+												<%=r.getComentario() %>
 											</p>
 										</div>
+							<% } %>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-green" data-bs-toggle="collapse" data-bs-target="#collapseExample">Inserir Comentários</button>
