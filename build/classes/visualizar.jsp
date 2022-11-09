@@ -1,9 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Restaurante" scope="session" type="model.Restaurante"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<<<<<<< HEAD
 <%@page import="controller.ListarAvaliacao"%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Avaliacao" %>
+=======
+<%@page import="java.util.ArrayList" %>
+<%@page import="model.Foto" %>
+
+>>>>>>> ae901651df382a4ebf52119cf25ba3ac2fbf6850
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>
@@ -31,18 +37,32 @@
 		</div>
 	</section>
 	<article class="container">
+		<div id="photo-gallery" class="mb-3 px-0 py-0">
+			<%
+		    	ArrayList<Foto> lista = Restaurante.getFotos();
+		    %>			
+			<% for (Foto r: lista) { %>
+				<img src="<%=r.getFoto() %>" class="<% if (lista.indexOf(r) == 0) { %> image-grid-col-2 image-grid-row-2 <% } %>" alt="<%=r.getDescricao() %>" title="<%=r.getTitulo() %>">			
+			<% } %>
+		</div>
 		<div class="row">
-			<div class="col-md-6 mb-3">
+			<div class="col-md-12 mb-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Descrição</h4>
+						<p><c:out value="${Restaurante.descricao}"></c:out></p>
+					</div>
+				</div>
+			</div>
+
+			<!------ Informações ------>
+			<div class="col-md-7 mb-3">
 				<div class="card card-d-flex">
 					<div class="card-body">
-						<p class="mb-3">
-							<c:out value="${Restaurante.descricao}"></c:out>
-						</p>
-		
-						<!------ Avaliações ------>
+						<h4 class="card-title">Avaliações e informações</h4>
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<h6>4.852 avaliações nota 4,4 estrelas</h6>
+								<h5>4.852 avaliações nota 4,4 estrelas</h5>
 								<div class="card-rate">
 									<i class="bi bi-star-fill text-warning"></i>
 									<i class="bi bi-star-fill text-warning"></i>
@@ -78,10 +98,10 @@
 												
 				<%
 			    ListarAvaliacao avaliacao = new ListarAvaliacao(); 
-			            ArrayList<Avaliacao> lista = avaliacao.listarAvaliacoes();
+			            ArrayList<Avaliacao> listaAvaliacao = avaliacao.listarAvaliacoes();
 					
 			    %>			
-			   <% for (Avaliacao r: lista) { %>
+			   <% for (Avaliacao r: listaAvaliacao) { %>
 										<!----- Comentários ----->
 										<div class="border p-3 mb-3">
 											<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
@@ -150,7 +170,7 @@
 		                            </td>
 		                        </tr>
 		                        <tr>
-		                            <td class="fw-bold"><i class="fas fa-car mx-2"></i>Estacionamento</td>
+		                            <td class="fw-bold"><i class="bi bi-car-front-fill mx-2"></i>Estacionamento</td>
 		                            <td class="text-end">
 		                            	<c:choose>
 											<c:when test="${Restaurante.estacionamento == true}">
@@ -200,62 +220,34 @@
 					</div>
 				</div>
 			</div>
-						
-			<!--------- Fotos --------->
-			<div class="col-md-6">
+
+			<!------ Como Chegar ------>
+			<div class="col-md-5 mb-3">
 				<div class="card card-d-flex">
 					<div class="card-body">
-						<div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="false">
-							<div class="carousel-indicators">
-								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-								<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-							</div>
-							<div class="carousel-inner">
-								<div class="carousel-item active">
-									<img src="./assets/images/restaurantes/dom/prato_01.jpg" class="d-block w-100" alt="...">
-									<div class="carousel-caption d-none d-md-block">
-										<h5>First slide label</h5>
-										<p>Some representative placeholder content for the first slide.</p>
-									</div>
-								</div>
-								<div class="carousel-item">
-									<img src="./assets/images/restaurantes/dom/prato_02.jpg" class="d-block w-100" alt="...">
-									<div class="carousel-caption d-none d-md-block">
-										<h5>Second slide label</h5>
-										<p>Some representative placeholder content for the first slide.</p>
-									</div>
-								</div>
-								<div class="carousel-item">
-									<img src="./assets/images/restaurantes/dom/prato_03.jpg" class="d-block w-100" alt="...">
-									<div class="carousel-caption d-none d-md-block">
-										<h5>Third slide label</h5>
-										<p>Some representative placeholder content for the first slide.</p>
-									</div>
-								</div>
-							</div>
-							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Previous</span>
-							</button>
-							<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
-								<span class="visually-hidden">Next</span>
-							</button>
-						</div>				
-					</div>
-				</div>
-				
-				<!------ Como Chegar ------>
-				<div class="card">
-					<div class="card-body">
-						<h4>Como Chegar:</h4>
-						<div class="alert alert-primary mb-3">
-							<div id="endereco"></div>
-							<div id="distancia"></div>
-							<div id="tempo"></div>
-						</div>
-						<div id="map"></div>
+						<div id="map" class="mb-3"></div>
+						<table class="table">
+							<tbody>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-geo-alt-fill mx-2"></i>
+									</td>
+									<td id="endereco"></td>
+								</tr>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-car-front-fill mx-2"></i>
+									</td>
+									<td id="distancia"></td>
+								</tr>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-clock mx-2"></i>
+									</td>
+									<td id="tempo"></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Historia extends Ponto {
 	
 	private String melhorDia;
@@ -17,7 +19,7 @@ public class Historia extends Ponto {
 	
 	//CONSTRUTOR
 	public Historia(int id, String nome, String site, String fotoPerfil, String descricao, Endereco endereco,
-			int numero, String complemento, Telefone telefone, Foto fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
+			int numero, String complemento, Telefone telefone, ArrayList<Foto> fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
 			Destino destino, String melhorDia, Roteiro roteiro) {
 		super(id, nome, site, fotoPerfil, descricao, endereco, numero, complemento, telefone, fotos, faixaPreco,
 				avaliacao, destino);
