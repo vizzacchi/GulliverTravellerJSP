@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Foto" %>
+<%@page import="model.Avaliacao" %>
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>
@@ -87,26 +88,29 @@
 											</div>
 										</div>
 		
+				<%
+			    	ArrayList<Avaliacao> listaAvaliacao = Entretenimento.getAvaliacoes();
+					
+			    %>			
+			   <% for (Avaliacao r: listaAvaliacao) { %>
 										<!----- Comentários ----->
 										<div class="border p-3 mb-3">
 											<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
 												<div class="col">
 													<h5>
-														<c:out value="${Entretenimento.avaliacao.usuario.nome}"></c:out>
+														<%=r.getUsuario() %>
 													</h5>
 												</div>
 												<div class="col text-end">
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-half text-warning"></i>
+													<%=r.getNota() %>
 												</div>
 											</div>
 											<p>
-												<c:out value="${Entretenimento.avaliacao.comentario}"></c:out>
+												<%=r.getComentario() %>
 											</p>
 										</div>
+							<% } %>
+
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-green" data-bs-toggle="collapse" data-bs-target="#collapseExample">Inserir Comentários</button>

@@ -2,7 +2,6 @@
 <jsp:useBean id="Restaurante" scope="session" type="model.Restaurante"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <<<<<<< HEAD
-<%@page import="controller.ListarAvaliacao"%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Avaliacao" %>
 =======
@@ -97,8 +96,7 @@
 										
 												
 				<%
-			    ListarAvaliacao avaliacao = new ListarAvaliacao(); 
-			            ArrayList<Avaliacao> listaAvaliacao = avaliacao.listarAvaliacoes();
+			    ArrayList<Avaliacao> listaAvaliacao = Restaurante.getAvaliacoes();
 					
 			    %>			
 			   <% for (Avaliacao r: listaAvaliacao) { %>

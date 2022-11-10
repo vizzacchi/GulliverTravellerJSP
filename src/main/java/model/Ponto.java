@@ -15,15 +15,17 @@ public class Ponto {
 	private Telefone telefone;
 	private ArrayList<Foto> fotos;
 	private FaixaPreco faixaPreco;
-	private Avaliacao avaliacao;
+	private ArrayList<Avaliacao> avaliacoes;
 	private Destino destino;
+    private float numAvaliacao;
+    private float mediaAvaliacao;
 	
 	@Override
 	public String toString() {
 		return "Hotel [id=" + id + ", nome=" + nome + ", \nsite=" + site + ", \nfotoPerfil=" + fotoPerfil + ", \ndescricao="
 				+ descricao + ", \nendereco=" + endereco + ", numero=" + numero + ", complemento=" + complemento
 				+ ", \ntelefone=" + telefone + ", \nfotos=" + fotos + ", \nfaixaPreco=" + faixaPreco + ", \navaliacao="
-				+ avaliacao + ", \ndestino=" + destino + "]";
+				+ avaliacoes + ", \ndestino=" + destino + "]";
 	}
 	
 	//CONSTRUTOR VAZIO
@@ -47,15 +49,37 @@ public class Ponto {
 		this.telefone = telefone;
 		this.fotos = fotos;
 		this.faixaPreco = faixaPreco;
-		this.avaliacao = avaliacao;
+		this.avaliacoes = avaliacoes;
 		this.destino = destino;
+		this.numAvaliacao = numAvaliacao;
+	    this.mediaAvaliacao = mediaAvaliacao;
 	}
 	
 	//GETTERS AND SETTERS
+	
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public float getNumAvaliacao() {
+        return numAvaliacao;
+    }
+
+    public void setNumAvaliacao(float numAvaliacao) {
+        this.numAvaliacao = numAvaliacao;
+    }
+    public float getMediaAvaliacao() {
+        return mediaAvaliacao;
+    }
+
+    public void setMediaAvaliacao(float mediaAvaliacao) {
+        this.mediaAvaliacao = mediaAvaliacao;
+    }
+
+    public void setAvaliacoes(ArrayList<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
+    }
+
+    public void setId(int id) {
 		this.id = id;
 	}
 	public String getNome() {
@@ -118,11 +142,11 @@ public class Ponto {
 	public void setFaixaPreco(FaixaPreco faixaPreco) {
 		this.faixaPreco = faixaPreco;
 	}
-	public Avaliacao getAvaliacao() {
-		return avaliacao;
+	public ArrayList<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
 	}
-	public void setAvaliacao(Avaliacao avaliacao) {
-		this.avaliacao = avaliacao;
+	public void setAvaliacao(ArrayList<Avaliacao> avaliacoes) {
+		this.avaliacoes = avaliacoes;
 	}
 	public Destino getDestino() {
 		return destino;

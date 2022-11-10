@@ -250,22 +250,40 @@ public class CulturaDao implements DaoBase<Cultura> {
 				faixaPreco.setDescricao(rs.getString("DESC_FAIXA"));
 				cultura.setFaixaPreco(faixaPreco);
 
-				//O relacionamento de Avaliacao também deveria ser 1 ponto para n Avaliações				
-				Avaliacao avaliacao = new Avaliacao();
-				avaliacao.setId(rs.getInt("ID_AVALIACAO"));
-				avaliacao.setComentario(rs.getString("COMENTARIO"));
-				avaliacao.setNota(rs.getDouble("NOTA"));
-				avaliacao.setData(rs.getDate("DATA").toLocalDate());
+                //AVALIAÇÕES    
+                ArrayList<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
+                String sqlAvaliacao = "SELECT  TA.ID as ID_AVALIACAO, TA.NOTA, TA.DATA, TA.COMENTARIO, TA.ID_USUARIO, TA.ID_PONTO, "
+                        + "TU.NOME, TU.EMAIL, TU.SENHA, TU.ID_PERFIL, TU.ATIVO as SIT_USUARIO, "
+                        + "TP.PERFIL, TP.ATIVO AS SIT_PERFIL "
+                    + "FROM `tb_avaliacao` TA "
+                         + "JOIN tb_usuario        TU on TA.ID_USUARIO = TU.ID "
+                         + "JOIN tb_usuario_perfil TP on TP.ID         = TU.ID_PERFIL "
+                    + "WHERE TA.ID_PONTO = ?";
+                
+                PreparedStatement stmAvaliacao = dataSource.getConnection().prepareStatement(sqlAvaliacao);
+                stmAvaliacao.setInt(1, object.getId());
+                ResultSet rsAvaliacao = stmAvaliacao.executeQuery();
+                
+                
+                while(rsAvaliacao.next()) {
+                    Avaliacao avaliacao = new Avaliacao();
+                    avaliacao.setId(rsAvaliacao.getInt("ID_AVALIACAO"));
+                    avaliacao.setComentario(rsAvaliacao.getString("COMENTARIO"));
+                    avaliacao.setNota(rsAvaliacao.getDouble("NOTA"));
+                    avaliacao.setData(rsAvaliacao.getDate("DATA").toLocalDate());
+                    
+                    //Precisamos do usuário que fez a avaliação             
+                    Usuario usuario = new Usuario();
+                    usuario.setId(rsAvaliacao.getInt("ID_USUARIO"));
+                    usuario.setNome(rsAvaliacao.getString("NOME"));
+                    usuario.setEmail(rsAvaliacao.getString("EMAIL"));
+                    
+                    avaliacao.setUsuario(usuario);
+                    
+                    avaliacoes.add(avaliacao);
+                } 
 				
-				//Precisamos do usuário que fez a avaliação				
-				Usuario usuario = new Usuario();
-				usuario.setId(rs.getInt("ID_USUARIO"));
-				usuario.setNome(rs.getString("NOME_USUARIO"));
-				usuario.setEmail(rs.getString("EMAIL"));
-				
-				avaliacao.setUsuario(usuario);
-				
-				cultura.setAvaliacao(avaliacao);
+				cultura.setAvaliacao(avaliacoes);
 				
 				Destino destino = new Destino();
 				destino.setId(rs.getInt("ID_DESTINO"));

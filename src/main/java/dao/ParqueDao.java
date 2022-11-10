@@ -40,7 +40,7 @@ public class ParqueDao implements DaoBase<Parque>{
 	@Override
 	public List<Parque> read() {
 		// TODO Auto-generated method stub
-try {
+	    try {
 			
 			List<Parque> resultado = new ArrayList<Parque>();
 			String sql = "SELECT DISTINCT " 
@@ -244,22 +244,77 @@ try {
 				faixaPreco.setDescricao(rs.getString("DESC_FAIXA"));
 				parque.setFaixaPreco(faixaPreco);
 
-				//O relacionamento de Avaliacao também deveria ser 1 ponto para n Avaliações				
-				Avaliacao avaliacao = new Avaliacao();
-				avaliacao.setId(rs.getInt("ID_AVALIACAO"));
-				avaliacao.setComentario(rs.getString("COMENTARIO"));
-				avaliacao.setNota(rs.getDouble("NOTA"));
-				avaliacao.setData(rs.getDate("DATA").toLocalDate());
+                //AVALIAÇÕES    
+                ArrayList<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
+                String sqlAvaliacao = "SELECT  TA.ID as ID_AVALIACAO, TA.NOTA, TA.DATA, TA.COMENTARIO, TA.ID_USUARIO, TA.ID_PONTO, "
+                        + "TU.NOME, TU.EMAIL, TU.SENHA, TU.ID_PERFIL, TU.ATIVO as SIT_USUARIO, "
+                        + "TP.PERFIL, TP.ATIVO AS SIT_PERFIL "
+                    + "FROM `tb_avaliacao` TA "
+                         + "JOIN tb_usuario        TU on TA.ID_USUARIO = TU.ID "
+                         + "JOIN tb_usuario_perfil TP on TP.ID         = TU.ID_PERFIL "
+                    + "WHERE TA.ID_PONTO = ?";
+                
+                PreparedStatement stmAvaliacao = dataSource.getConnection().prepareStatement(sqlAvaliacao);
+                stmAvaliacao.setInt(1, object.getId());
+                ResultSet rsAvaliacao = stmAvaliacao.executeQuery();
+                
+                
+                while(rsAvaliacao.next()) {
+                    Avaliacao avaliacao = new Avaliacao();
+                    avaliacao.setId(rsAvaliacao.getInt("ID_AVALIACAO"));
+                    avaliacao.setComentario(rsAvaliacao.getString("COMENTARIO"));
+                    avaliacao.setNota(rsAvaliacao.getDouble("NOTA"));
+                    avaliacao.setData(rsAvaliacao.getDate("DATA").toLocalDate());
+                    
+                    //Precisamos do usuário que fez a avaliação             
+                    Usuario usuario = new Usuario();
+                    usuario.setId(rsAvaliacao.getInt("ID_USUARIO"));
+                    usuario.setNome(rsAvaliacao.getString("NOME"));
+                    usuario.setEmail(rsAvaliacao.getString("EMAIL"));
+                    
+                    avaliacao.setUsuario(usuario);
+                    
+                    avaliacoes.add(avaliacao);
+                } 
 				
-				//Precisamos do usuário que fez a avaliação				
-				Usuario usuario = new Usuario();
-				usuario.setId(rs.getInt("ID_USUARIO"));
-				usuario.setNome(rs.getString("NOME_USUARIO"));
-				usuario.setEmail(rs.getString("EMAIL"));
+				parque.setAvaliacao(avaliacoes);
 				
-				avaliacao.setUsuario(usuario);
+				//Numero de Avaliações
 				
-				parque.setAvaliacao(avaliacao);
+	            //Crio a String SQL que vou ler
+	            String sqlNumAvaliacao = "SELECT COUNT(`NOTA`) as NUM_AVALIACOES "
+	                            + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
+	            
+	            // O ? irá receber o id da chamada
+	            // gero o Statement a partir da conexao
+	            PreparedStatement stmNumAvaliacao = dataSource.getConnection().prepareStatement(sqlNumAvaliacao);
+	            //preenche o ?
+	            stmNumAvaliacao.setInt(1, object.getId());
+	            
+	            //Vamos executar o SQL e armazenar em uma objeto ResultSet
+	            ResultSet rsNumAvaliacao = stmNumAvaliacao.executeQuery();
+	            if(rsNumAvaliacao.next()) {
+	                parque.setNumAvaliacao(rsNumAvaliacao.getFloat("NUM_AVALIACOES"));
+	            }	
+	            
+	            
+	            //Média de avaliações
+                //Crio a String SQL que vou ler
+                String sqlMediaAvaliacao = "SELECT AVG(`NOTA`) as AVALIACOES_MEDIA "
+                                + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmMediaAvaliacao = dataSource.getConnection().prepareStatement(sqlMediaAvaliacao);
+                //preenche o ?
+                stmMediaAvaliacao.setInt(1, object.getId());
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsMediaAvaliacao = stmMediaAvaliacao.executeQuery();
+                if(rsMediaAvaliacao.next()) {
+                    parque.setMediaAvaliacao(rsMediaAvaliacao.getFloat("AVALIACOES_MEDIA"));
+                }	            
+				
 				
 				Destino destino = new Destino();
 				destino.setId(rs.getInt("ID_DESTINO"));
@@ -293,5 +348,4 @@ try {
 		
 	}
 	
-
 }
