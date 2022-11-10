@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Ponto {
 	
 	private int id;
@@ -11,7 +13,7 @@ public class Ponto {
 	private int numero;
 	private String complemento;
 	private Telefone telefone;
-	private Foto fotos;
+	private ArrayList<Foto> fotos;
 	private FaixaPreco faixaPreco;
 	private Avaliacao avaliacao;
 	private Destino destino;
@@ -31,7 +33,7 @@ public class Ponto {
 		
 	//CONSTRUTOR
 	public Ponto(int id, String nome, String site, String fotoPerfil, String descricao, Endereco endereco, int numero,
-			String complemento, Telefone telefone, Foto fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
+			String complemento, Telefone telefone, ArrayList<Foto> fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
 			Destino destino) {
 		super();
 		this.id = id;
@@ -104,10 +106,10 @@ public class Ponto {
 	public void setTelefone(Telefone telefone) {
 		this.telefone = telefone;
 	}
-	public Foto getFotos() {
+	public ArrayList<Foto> getFotos() {
 		return fotos;
 	}
-	public void setFotos(Foto fotos) {
+	public void setFotos(ArrayList<Foto> fotos) {
 		this.fotos = fotos;
 	}
 	public FaixaPreco getFaixaPreco() {

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class LocadoraCarro extends Ponto {
 	
 	private Carro carro;
@@ -11,7 +13,7 @@ public class LocadoraCarro extends Ponto {
 	
 	//CONSTRUTOR
 	public LocadoraCarro(int id, String nome, String site, String fotoPerfil, String descricao, Endereco endereco,
-			int numero, String complemento, Telefone telefone, Foto fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
+			int numero, String complemento, Telefone telefone, ArrayList<Foto> fotos, FaixaPreco faixaPreco, Avaliacao avaliacao,
 			Destino destino, Carro carro) {
 		super(id, nome, site, fotoPerfil, descricao, endereco, numero, complemento, telefone, fotos, faixaPreco,
 				avaliacao, destino);

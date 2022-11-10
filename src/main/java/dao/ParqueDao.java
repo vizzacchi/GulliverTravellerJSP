@@ -119,10 +119,6 @@ try {
 							+ "	TL.ID AS ID_TELEFONE,\r\n"
 							+ "	TL.TIPO AS TIPO_TELEFONE,\r\n"
 							+ "	TL.NUMERO AS TELEFONE,\r\n"
-							+ "	TF.ID AS ID_FOTO,\r\n"
-							+ "	TF.FOTOS,\r\n"
-							+ "	TF.DESCRICAO AS DESC_FOTOS,\r\n"
-							+ "	TF.TITULO AS TITULO_FOTOS,\r\n"
 							+ "	TFP.ID AS ID_FAIXAPRECO,\r\n"
 							+ "	TFP.FAIXA,\r\n"
 							+ "	TFP.DESCRICAO AS DESC_FAIXA,\r\n"
@@ -143,7 +139,6 @@ try {
 							+ "	JOIN tb_bairro TB ON TB.ID = TE.ID_BAIRRO \r\n"
 							+ "	JOIN tb_cidade TC ON TC.ID = TB.ID_CIDADE \r\n"
 							+ "	JOIN tb_uf TU ON TU.ID = TC.ID_UF \r\n"
-							+ "	LEFT JOIN tb_foto TF ON TF.ID = TP.ID_FOTOS\r\n"
 							+ "	LEFT JOIN tb_faixa_preco TFP on TFP.ID = TP.ID_FAIXAPRECO\r\n"
 							+ "	JOIN tb_destino TD on TD.ID = TP.ID_DESTINO\r\n"
 							+ "	LEFT JOIN tb_avaliacao TA ON TA.ID = TP.ID_AVALIACAO\r\n"
@@ -210,15 +205,38 @@ try {
 				
 				parque.setTelefone(telefone);
 				
-				//Fotos o relacionamento também deveria ser 1 ponto para n fotos
-				//incluindo uma foto para mostrar na página, depois alteramos				
-				Foto foto = new Foto();
-				foto.setId(rs.getInt("ID_FOTO"));
-				foto.setFoto(rs.getString("FOTOS"));
-				foto.setDescricao(rs.getString("DESC_FOTOS"));
-				foto.setTitulo(rs.getString("TITULO_FOTOS"));
-				
-				parque.setFotos(foto);
+				ArrayList<Foto> fotos = new ArrayList<Foto>();
+                
+                //Crio a String SQL que vou ler
+                String SQLFoto = "SELECT \r\n"
+                                + " TF.ID AS ID_FOTO,\r\n"
+                                + " TF.FOTOS,\r\n"
+                                + " TF.DESCRICAO AS DESC_FOTOS,\r\n"
+                                + " TF.TITULO AS TITULO_FOTOS\r\n"
+                            + "FROM tb_foto TF \r\n"
+                            + "WHERE TF.ID_PONTO = ?";
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmFoto = dataSource.getConnection().prepareStatement(SQLFoto);
+                //preenche o ?
+                stmFoto.setInt(1, object.getId());
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsFoto = stmFoto.executeQuery();
+                                
+                //o método next() indica se há registro no resultado
+                //se houver, eu preencho o objeto
+                while(rsFoto.next()) {
+                    Foto foto = new Foto();
+                    foto.setId(rsFoto.getInt("ID_FOTO"));
+                    foto.setFoto(rsFoto.getString("FOTOS"));
+                    foto.setDescricao(rsFoto.getString("DESC_FOTOS"));
+                    foto.setTitulo(rsFoto.getString("TITULO_FOTOS"));
+                    fotos.add(foto);                
+                }
+                
+                parque.setFotos(fotos);
 				
 				FaixaPreco faixaPreco = new FaixaPreco();
 				faixaPreco.setId(rs.getInt("ID_FAIXAPRECO"));

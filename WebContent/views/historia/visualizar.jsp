@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Historia" scope="session" type="model.Historia"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="model.Foto" %>
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>
@@ -19,7 +21,7 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../index.jsp">Index</a></li>
 							<li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
-							<li class="breadcrumb-item"><a href="views/historia.jsp">Histórias</a></li>
+							<li class="breadcrumb-item"><a href="views/historia.jsp">História</a></li>
 							<li class="breadcrumb-item active" aria-current="page"><c:out value="${Historia.nome}"></c:out></li>
 						</ol>
 					</nav>                        
@@ -28,20 +30,32 @@
 		</div>
 	</section>
 	<article class="container">
-		<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2">
-			<div class="col">
+		<div id="photo-gallery" class="mb-3 px-0 py-0">
+			<%
+		    	ArrayList<Foto> lista = Historia.getFotos();
+		    %>			
+			<% for (Foto r: lista) { %>
+				<img src="<%=r.getFoto() %>" class="<% if (lista.indexOf(r) == 0) { %> image-grid-col-2 image-grid-row-2 <% } %>" alt="<%=r.getDescricao() %>" title="<%=r.getTitulo() %>">			
+			<% } %>
+		</div>
+		<div class="row">
+			<div class="col-md-12 mb-3">
 				<div class="card">
 					<div class="card-body">
-			
-			
-						<p class="mb-3">
-							<c:out value="${Historia.descricao }"></c:out>
-						</p>
-		
-						<!------ Avaliações ------>
+						<h4 class="card-title">Descrição</h4>
+						<p><c:out value="${Historia.descricao}"></c:out></p>
+					</div>
+				</div>
+			</div>
+
+			<!------ Informações ------>
+			<div class="col-md-7 mb-3">
+				<div class="card card-d-flex">
+					<div class="card-body">
+						<h4 class="card-title">Avaliações e informações</h4>
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<h6>4.852 avaliações nota 4,4 estrelas</h6>
+								<h5>4.852 avaliações nota 4,4 estrelas</h5>
 								<div class="card-rate">
 									<i class="bi bi-star-fill text-warning"></i>
 									<i class="bi bi-star-fill text-warning"></i>
@@ -121,38 +135,39 @@
 								</tr>
 							</tbody>
 						</table>
-				
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<h4>Acomodações:</h4>
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 mb-4">
-					<div class="col">
-						<div class="card">
-							<img src="<c:out value="${Historia.fotos.foto}"></c:out>" class="card-img-top" alt="<c:out value="${Historia.fotos.titulo}"></c:out>">
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="./assets/images/hoteis/blue_tree_morumbi/area de lazer.webp" class="card-img-top" alt="blue tree premium morumbi area de lazer">
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="../../images/hoteis/blue_tree_morumbi/quartosolteiro.jpeg" class="card-img-top" alt="ALTEr">
-						</div>
+
+			<!------ Como Chegar ------>
+			<div class="col-md-5 mb-3">
+				<div class="card card-d-flex">
+					<div class="card-body">
+						<div id="map" class="mb-3"></div>
+						<table class="table">
+							<tbody>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-geo-alt-fill mx-2"></i>
+									</td>
+									<td id="endereco"></td>
+								</tr>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-car-front-fill mx-2"></i>
+									</td>
+									<td id="distancia"></td>
+								</tr>
+								<tr>
+									<td class="fw-bold">
+										<i class="bi bi-clock mx-2"></i>
+									</td>
+									<td id="tempo"></td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
-				
-				<!------ Como Chegar ------>
-				<h4>Como Chegar:</h4>
-				<div class="alert alert-primary mb-3">
-					<div id="endereco"></div>
-					<div id="distancia"></div>
-					<div id="tempo"></div>
-				</div>
-				<div id="map"></div>
 			</div>
 		</div>
 	</article>
