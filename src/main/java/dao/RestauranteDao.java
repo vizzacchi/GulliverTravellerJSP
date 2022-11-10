@@ -317,6 +317,42 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 	            }           
 							
 				restaurante.setAvaliacao(avaliacoes);
+//Numero de Avaliações
+                
+                //Crio a String SQL que vou ler
+                String sqlNumAvaliacao = "SELECT COUNT(`NOTA`) as NUM_AVALIACOES "
+                                + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmNumAvaliacao = dataSource.getConnection().prepareStatement(sqlNumAvaliacao);
+                //preenche o ?
+                stmNumAvaliacao.setInt(1, object.getId());
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsNumAvaliacao = stmNumAvaliacao.executeQuery();
+                if(rsNumAvaliacao.next()) {
+                    restaurante.setNumAvaliacao(rsNumAvaliacao.getFloat("NUM_AVALIACOES"));
+                }   
+                
+                
+                //Média de avaliações
+                //Crio a String SQL que vou ler
+                String sqlMediaAvaliacao = "SELECT AVG(`NOTA`) as AVALIACOES_MEDIA "
+                                + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmMediaAvaliacao = dataSource.getConnection().prepareStatement(sqlMediaAvaliacao);
+                //preenche o ?
+                stmMediaAvaliacao.setInt(1, object.getId());
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsMediaAvaliacao = stmMediaAvaliacao.executeQuery();
+                if(rsMediaAvaliacao.next()) {
+                    restaurante.setMediaAvaliacao(rsMediaAvaliacao.getFloat("AVALIACOES_MEDIA"));
+                }   
+				
 				
 				//DESTINO
 				Destino destino = new Destino();
