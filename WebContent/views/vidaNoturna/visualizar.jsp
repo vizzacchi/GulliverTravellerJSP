@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Foto" %>
+<%@page import="model.Avaliacao" %>
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>
@@ -55,7 +56,8 @@
 						<h4 class="card-title">Avaliações e informações</h4>
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<h5>4.852 avaliações nota 4,4 estrelas</h5>
+								<h5><p><c:out value="${VidaNoturna.numAvaliacao}"></c:out> 
+								avaliações nota <c:out value="${VidaNoturna.mediaAvaliacao}"></c:out> estrelas</h5>
 								<div class="card-rate">
 									<i class="bi bi-star-fill text-warning"></i>
 									<i class="bi bi-star-fill text-warning"></i>
@@ -87,26 +89,28 @@
 											</div>
 										</div>
 		
+						<%
+			    			ArrayList<Avaliacao> listaAvaliacao = VidaNoturna.getAvaliacoes();
+					
+			    		%>			
+			   			<% for (Avaliacao r: listaAvaliacao) { %>
 										<!----- Comentários ----->
 										<div class="border p-3 mb-3">
 											<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
 												<div class="col">
 													<h5>
-														<c:out value="${VidaNoturna.avaliacao.usuario.nome}"></c:out>
+														<%=r.getUsuario() %>
 													</h5>
 												</div>
 												<div class="col text-end">
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-fill text-warning"></i>
-													<i class="bi bi-star-half text-warning"></i>
+													<%=r.getNota() %><br><%=r.getData() %>
 												</div>
 											</div>
 											<p>
-												<c:out value="${VidaNoturna.avaliacao.comentario}"></c:out>
+												<%=r.getComentario() %>
 											</p>
 										</div>
+							<% } %>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-green" data-bs-toggle="collapse" data-bs-target="#collapseExample">Inserir Comentários</button>

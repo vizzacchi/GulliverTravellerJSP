@@ -44,11 +44,7 @@
 				           <div class="card-body pb-0">
 				               <h5 class="card-title text-center fw-bold"><%=r.getNome() %></h5>
 				               <div class="card-rate text-center mb-2">
-				                   <i class="bi bi-star-fill text-warning"></i>
-				                   <i class="bi bi-star-fill text-warning"></i>
-				                   <i class="bi bi-star-fill text-warning"></i>
-				                   <i class="bi bi-star-fill text-warning"></i>
-				                   <i class="bi bi-star-half text-warning"></i>
+				                   <%=r.getMediaAvaliacao() %>
 				               </div>
 				               <div class="card-text">
 				                   <p class="address">

@@ -56,7 +56,8 @@
 						<h4 class="card-title">Avaliações e informações</h4>
 						<div class="row mb-3">
 							<div class="col-md-6">
-								<h5>4.852 avaliações nota 4,4 estrelas</h5>
+								<h5><p><c:out value="${Entretenimento.numAvaliacao}"></c:out> 
+								avaliações nota <c:out value="${Entretenimento.mediaAvaliacao}"></c:out> estrelas</h5>
 								<div class="card-rate">
 									<i class="bi bi-star-fill text-warning"></i>
 									<i class="bi bi-star-fill text-warning"></i>
@@ -102,7 +103,7 @@
 													</h5>
 												</div>
 												<div class="col text-end">
-													<%=r.getNota() %>
+													<%=r.getNota() %><br><%=r.getData() %>
 												</div>
 											</div>
 											<p>

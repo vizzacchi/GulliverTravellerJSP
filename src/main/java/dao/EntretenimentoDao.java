@@ -75,6 +75,20 @@ public class EntretenimentoDao implements DaoBase<Entretenimento> {
 				telefone.setTelefone(rs.getString("NUMERO"));
 				entretenimento.setTelefone(telefone);
 				
+				//Média de avaliações
+                //Crio a String SQL que vou ler
+                String sqlMedia = "SELECT AVG(`NOTA`) as AVALIACOES_MEDIA "
+                                + " FROM `tb_avaliacao` WHERE `ID_PONTO` = " + rs.getInt("ID");
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmMediaAvaliacao = dataSource.getConnection().prepareStatement(sqlMedia);
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsMediaAvaliacao = stmMediaAvaliacao.executeQuery();
+                if(rsMediaAvaliacao.next()) {
+                    entretenimento.setMediaAvaliacao(rsMediaAvaliacao.getFloat("AVALIACOES_MEDIA"));
+                }
 				resultado.add(entretenimento);
 			}			
 			return resultado;

@@ -76,6 +76,21 @@ public class LocadoraCarroDao implements DaoBase<LocadoraCarro> {
 				Telefone telefone = new Telefone();
 				telefone.setTelefone(rs.getString("NUMERO"));
 				carro.setTelefone(telefone);
+				
+				//Média de avaliações
+                //Crio a String SQL que vou ler
+                String sqlMedia = "SELECT AVG(`NOTA`) as AVALIACOES_MEDIA "
+                                + " FROM `tb_avaliacao` WHERE `ID_PONTO` = " + rs.getInt("ID");
+                
+                // O ? irá receber o id da chamada
+                // gero o Statement a partir da conexao
+                PreparedStatement stmMediaAvaliacao = dataSource.getConnection().prepareStatement(sqlMedia);
+                
+                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                ResultSet rsMediaAvaliacao = stmMediaAvaliacao.executeQuery();
+                if(rsMediaAvaliacao.next()) {
+                    carro.setMediaAvaliacao(rsMediaAvaliacao.getFloat("AVALIACOES_MEDIA"));
+                }
 								
 				locadora.add(carro);
 			}			
