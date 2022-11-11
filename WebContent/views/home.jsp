@@ -50,8 +50,7 @@
 				</div>
 			</div>
 		</section>
-		
-		
+
 		<!--<section class="teste">
 			<div class="container">
 				<div class="row teste-2">							
@@ -78,15 +77,14 @@
 				</div>
 			</div>
 		</section>-->
-		
-			    
-	    <!------- Article ------->	    		  	    
+
+	    <!------- Article ------->
 	    <article class="container">
 	        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="hotel.jsp">
-	                        <img src="../assets/images/destinoSP/Hospedagens.jpg" class="card-img-top" alt="Foto de um quarto de hotel aconchegante">
+	                        <img src="../assets/images/home/Hospedagens.jpg" class="card-img-top" alt="Foto de um quarto de hotel aconchegante">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Melhores Hospedagens</h5>
@@ -102,7 +100,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="restaurante.jsp">
-	                        <img src="../assets/images/destinoSP/Gastronomia.jpg" class="card-img-top" alt="Um chefe de cozinha preparando um belo prato">
+	                        <img src="../assets/images/home/Gastronomia.jpg" class="card-img-top" alt="Um chefe de cozinha preparando um belo prato">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Destaques Gastronomicos</h5>
@@ -118,7 +116,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="historia.jsp">
-	                        <img src="../assets/images/destinoSP/historia.jpg" class="card-img-top" alt="Um mapa aberto com fotos tiradas em diversos passeios.">
+	                        <img src="../assets/images/home/historia.jpg" class="card-img-top" alt="Um mapa aberto com fotos tiradas em diversos passeios.">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">História</h5>
@@ -133,7 +131,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="vidaNoturna.jsp">
-	                        <img src="../assets/images/destinoSP/FestasNoturnas.jpg" class="card-img-top" alt="Pessoas curtindo uma festa em uma casa noturna">
+	                        <img src="../assets/images/home/FestasNoturnas.jpg" class="card-img-top" alt="Pessoas curtindo uma festa em uma casa noturna">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Vida Noturna</h5>
@@ -149,7 +147,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="entretenimento.jsp">
-	                        <img src="../assets/images/destinoSP/entretenimento.jpg" class="card-img-top" alt="Um mapa mundo com fundo preto, com um avião miniatura sendo empurrado por uma mão">
+	                        <img src="../assets/images/home/entretenimento.jpg" class="card-img-top" alt="Um mapa mundo com fundo preto, com um avião miniatura sendo empurrado por uma mão">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Entretenimento</h5>
@@ -165,7 +163,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="cultura.jsp">
-	                        <img src="../assets/images/destinoSP/Cultura.jpg" class="card-img-top" alt="Pintura de um rosto indigena num grafite de rua.">
+	                        <img src="../assets/images/home/Cultura.jpg" class="card-img-top" alt="Pintura de um rosto indigena num grafite de rua.">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Cultura</h5>
@@ -181,7 +179,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="aluguelCarros.jsp">
-	                        <img src="../assets/images/destinoSP/aluguelCarros.jpg" class="card-img-top" alt="Carros da mercedes enfileirados a 45 graus">
+	                        <img src="../assets/images/home/aluguelCarros.jpg" class="card-img-top" alt="Carros da mercedes enfileirados a 45 graus">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Aluguel de Carro</h5>
@@ -197,7 +195,7 @@
 	            <div class="col d-flex">
 	                <div class="card">
 	                    <a href="parque.jsp">
-	                        <img src="../assets/images/destinoSP/parquesdeSP.jpg" class="card-img-top" alt="Foto de um belo parque com um lago ao fundo de folhas vermelhas">
+	                        <img src="../assets/images/home/parquesdeSP.jpg" class="card-img-top" alt="Foto de um belo parque com um lago ao fundo de folhas vermelhas">
 	                    </a>
 	                    <div class="card-body">
 	                        <h5 class="card-title text-center fw-bold">Parques</h5>

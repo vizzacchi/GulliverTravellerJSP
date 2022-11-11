@@ -14,7 +14,6 @@ import model.Entretenimento;
 import model.FaixaPreco;
 import model.Foto;
 import model.HorarioFuncionamento;
-import model.Entretenimento;
 import model.Telefone;
 import model.TipoLogradouro;
 import model.Uf;

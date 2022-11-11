@@ -89,7 +89,7 @@
 	                            <label for="floatingPassword">Password</label>
 	                        </div>
 	                        <div class="text-end">
-	                            <button type="submit" class="btn btn-success w-50">Login</button>
+	                            <button type="submit" class="btn btn-green w-50">Login</button>
 	                        </div>
 	                    </form>
 	                </div>

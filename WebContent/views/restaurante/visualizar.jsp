@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Restaurante" scope="session" type="model.Restaurante"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+
+<%@page import="controller.ListarAvaliacao"%>
+>>>>>>> Stashed changes
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Avaliacao" %>
-=======
+
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Foto" %>
-
->>>>>>> ae901651df382a4ebf52119cf25ba3ac2fbf6850
 
 <!----- Header ----->
 <%@include file="../../include/cabecalho_sub_paginas.jsp"%>

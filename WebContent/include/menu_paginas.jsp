@@ -79,17 +79,17 @@
 	
 	                <!------ Sign in ------>
 	                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-	                    <form method="" action="" autocomplete="off">
+	                    <form method="POST" action="../login" autocomplete="off">
 	                        <div class="form-floating mb-3">
-	                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="name@example.com">
-	                            <label for="floatingInput">Email address</label>
+	                            <input type="email" class="form-control" id="email" name="email">
+	                            <label for="email">E-mail</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
-	                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="123456">
-	                            <label for="floatingPassword">Password</label>
+	                            <input type="password" class="form-control" id="senha" name="senha">
+	                            <label for="senha">Senha</label>
 	                        </div>
 	                        <div class="text-end">
-	                            <button type="submit" class="btn btn-success w-50">Login</button>
+	                            <button type="submit" class="btn btn-primary w-50">Login</button>
 	                        </div>
 	                    </form>
 	                </div>

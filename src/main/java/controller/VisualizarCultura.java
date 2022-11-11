@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import model.Cultura;
 import dao.CulturaDao;
 import dao.DataSource;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import java.io.IOException;

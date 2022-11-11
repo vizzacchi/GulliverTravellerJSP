@@ -13,7 +13,6 @@ import model.Endereco;
 import model.FaixaPreco;
 import model.Foto;
 import model.Hotel;
-import model.Perfil;
 import model.Telefone;
 import model.TipoLogradouro;
 import model.Uf;

@@ -22,6 +22,7 @@ import model.Usuario;
 
 public class RestauranteDao implements DaoBase<Restaurante> {
 	
+    //DATASOURCE
 	private DataSource dataSource;
 	
 	public RestauranteDao(DataSource dataSource) {

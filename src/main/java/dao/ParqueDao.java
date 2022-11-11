@@ -12,7 +12,6 @@ import model.Destino;
 import model.Endereco;
 import model.FaixaPreco;
 import model.Foto;
-import model.Hotel;
 import model.Parque;
 import model.Telefone;
 import model.TipoLogradouro;

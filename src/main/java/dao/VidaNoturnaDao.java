@@ -14,7 +14,6 @@ import model.VidaNoturna;
 import model.FaixaPreco;
 import model.Foto;
 import model.HorarioFuncionamento;
-import model.VidaNoturna;
 import model.Telefone;
 import model.TipoLogradouro;
 import model.Uf;

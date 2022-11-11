@@ -44,8 +44,8 @@ public class VisualizarParque extends HttpServlet  {
 							pagina = "/views/parque/visualizar.jsp";
 						}
 						else {
+						    pagina = "/erro.jsp";
 							request.setAttribute("ErroMSG", "Parque não encontrado");
-							pagina = "/erro.jsp";
 						}
 						// redirecionando para a página resultante
 						RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
