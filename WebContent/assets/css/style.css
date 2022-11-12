@@ -42,10 +42,13 @@
 	--box-shadow: 0 2px 10px 0 rgb(32 34 37 / 43%)
 }
 /****************************/
+
+/*********** Body ***********/
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 15px !important
 }
+/****************************/
 
 /********** Header **********/
 header nav.navbar {
@@ -73,7 +76,7 @@ main {
 }
 main.main-destino {
 	height: 100vh;
-	margin-top: 0;	
+	margin-top: 0;
 	background-image: url('../images/fundo_2.jpg');
 	background-size: cover;
 	background-position: center;
@@ -95,10 +98,6 @@ section nav {
 }
 section h1, h4, h5, h6, label {
     color: var(--font-color)
-}
-section.teste {	
-	text-align: center;
-	background-color: var(--color-yellow) 
 }
 /****************************/
 
@@ -171,7 +170,7 @@ article table tbody tr td {
 
 /********* Carousel *********/
 .carousel > .carousel-inner > .carousel-item {
-	height: 70vh
+	height: 60vh
 }
 /****************************/
 

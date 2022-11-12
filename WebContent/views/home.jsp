@@ -16,29 +16,27 @@
 				<div class="carousel-item active">
 					<img src="../assets/images/home/carousel_01.jpg" class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Parque Ibirapuera</h5>
-						<p>Some representative placeholder content for the first slide.</p>
+						<div class="carousel-card">
+							<h5>Parque Ibirapuera</h5>
+							<p>Some representative placeholder content for the first slide.</p>
+						</div>
 					</div>
 				</div>
-				
-				
-						    <div class="carousel-item">
-						      <img src="..." class="d-block w-100" alt="...">
-						      <div class="carousel-caption d-none d-md-block">
-						        <h5>Second slide label</h5>
-						        <p>Some representative placeholder content for the second slide.</p>
-						      </div>
-						    </div>
-						    <div class="carousel-item">
-						      <img src="..." class="d-block w-100" alt="...">
-						      <div class="carousel-caption d-none d-md-block">
-						        <h5>Third slide label</h5>
-						        <p>Some representative placeholder content for the third slide.</p>
-						      </div>
-						    </div>
-						  </div>
-						  
-						  
+			    <div class="carousel-item">
+				    <img src="..." class="d-block w-100" alt="...">
+				    <div class="carousel-caption d-none d-md-block">
+				    	<h5>Second slide label</h5>
+				    	<p>Some representative placeholder content for the second slide.</p>
+				    </div>
+			    </div>
+			    <div class="carousel-item">
+			    	<img src="..." class="d-block w-100" alt="...">
+			      	<div class="carousel-caption d-none d-md-block">
+			        	<h5>Third slide label</h5>
+			        	<p>Some representative placeholder content for the third slide.</p>
+			    	</div>
+			    </div>
+			</div>
 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Previous</span>
@@ -49,14 +47,14 @@
 			</button>
 		</div>
 		
-		
-		<div class="container">
-			<section>
-				<div class="row">
-					<div class="col-sm-12 col-md-6">
+		<!------- Section ------->
+		<section>
+			<div class="container">
+				<div class="row mb-3">
+					<div class="col-md-6">
 						<h1 class="fw-bold">São Paulo</h1>
 					</div>
-					<div class="col-sm-12 col-md-6 d-md-flex justify-content-md-end">
+					<div class="col-md-6 d-md-flex justify-content-md-end">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item">
@@ -68,39 +66,32 @@
 									<img src="../assets/images/weather.png" width="28" height="28">
 	                            </li>
 							</ol>
-						</nav>						
-					</div>					
+						</nav>
+					</div>
 				</div>
-				<div class="row">
-					<div class="col-4">
-						<h5 class="">
+				<div class="row mb-3">
+					<div class="col-md-4 d-grid gap-2">
+						<a href="" class="btn btn-outline-primary btn-lg">
+							<span>Tipo de Viagem</span>
 							<i class="bi bi-airplane"></i>
-						</h5>
-						<span>Tipo de Viagem</span>
+						</a>
 					</div>
-					
-					<div class="col-4">
-						<h5 class="">
+					<div class="col-md-4 d-grid gap-2">
+						<a href="" class="btn btn-outline-primary btn-lg">
+							<span>Como Chegar</span>
 							<i class="bi bi-geo-alt"></i>
-						</h5>
-						<span>Como Chegar</span>
+						</a>
 					</div>
-				
-					<div class="col-4">
-						<h5 class="">
+					<div class="col-md-4 d-grid gap-2">
+						<a href="dicasUteis.jsp" class="btn btn-outline-primary btn-lg">
+							<span>Dicas Úteis</span>
 							<i class="bi bi-signpost-2"></i>
-						</h5>
-						<span>Dicas Úteis</span>
+						</a>
 					</div>			
 				</div>
-			</section>
-		</div>
-        
-        
-
-
-		
-
+			</div>
+		</section>
+           
 	    <!------- Article ------->
 	    <article class="container">
 	        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
