@@ -10,13 +10,13 @@ Header -->
 	<main>
 		<section>
 			<div class="container-home-img">
-				<img src="..." class="img-fluid" alt="...">
+				<img src="../assets/images/home/fundo.jpg" class="img-fluid" alt="...">
 			</div>
 			<div class="container">
-				<div class="container-home">
-					<div class="row mb-3">
+				<div class="container-home container-home-margin">
+					<div class="row">
 						<div class="col-md-6">
-							<h1 class="fw-bold">São Paulo</h1>
+							<h1 class="fw-bold">Resultados da busca por: <span>São Paulo</span></h1>
 						</div>
 						<div class="col-md-6 d-md-flex justify-content-md-end">
 							<nav aria-label="breadcrumb">
@@ -33,25 +33,25 @@ Header -->
 							</nav>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 d-grid gap-2">
-							<a href="" class="btn btn-outline-primary btn-lg">
-								<span>Tipo de Viagem</span>
-								<i class="bi bi-airplane"></i>
-							</a>
-						</div>
-						<div class="col-md-4 d-grid gap-2">
-							<a href="" class="btn btn-outline-primary btn-lg">
-								<span>Como Chegar</span>
-								<i class="bi bi-geo-alt"></i>
-							</a>
-						</div>
-						<div class="col-md-4 d-grid gap-2">
-							<a href="dicasUteis.jsp" class="btn btn-outline-primary btn-lg">
-								<span>Dicas Úteis</span>
-								<i class="bi bi-info-circle"></i>
-							</a>
-						</div>			
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="container-home">
+					<div class="container-home-link">
+						<a href="">
+							<i class="bi bi-airplane"></i>
+							<h4>Tipo de Viagem</h4>
+						</a>
+						<a href="">
+							<i class="bi bi-geo-alt"></i>
+							<h4>Como Chegar</h4>
+						</a>
+						<a href="dicasUteis.jsp">
+							<i class="bi bi-info-circle"></i>
+							<h4>Dicas Úteis</h4>
+						</a>
 					</div>
 				</div>
 			</div>

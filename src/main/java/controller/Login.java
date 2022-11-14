@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
         }
     }
     
-    //VALIDA USUÁRIO E SENHA
+    //EFETIVA O LOGIN
     private Usuario buscarUsuario(String email, String senha) {
         DataSource dataSource = new DataSource();
         UsuarioDao usuarioDao = new UsuarioDao(dataSource);

@@ -19,7 +19,7 @@
     --color-blue: #3D405B;
     --color-green: #81B29A;
     --color-yellow: #F2CC8F;
-    --body-background: #F8F9FB;
+    --body-background: #EFEFEF;
     --body-background-card: #FFF;    	
     --bg-header: #3D405B;
 	--bg-section: #FFF;
@@ -217,14 +217,46 @@ INDEX.JSP */
 /*****************************
 HOME.JSP */
 .container-home {
+	position: relative;
 	padding: 2rem;
 	background: var(--bg-card);
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow)
 }
-.container .container-home {
-	position: relative;
-	margin-top: -6rem
+.container-home h1,
+.container-home nav {
+	margin-top: .6rem;
+	margin-bottom: 0
+}
+.container-home h1 {
+	font-size: 1.6rem
+}
+.container-home h1 span {
+	color: #4070F4
+}
+.container-home .container-home-link {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center
+}
+.container-home .container-home-link a {
+	width: calc(100% / 2 - 10px);
+	text-decoration: none;
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important
+}
+.container-home .container-home-link a:first-child {
+	border-left: 0 !important
+}
+.container-home .container-home-link a > i {
+	font-size: 3rem
+}
+.container-home .container-home-link a > h4 {
+	font-size: 1rem
+}
+.container .container-home-margin {	
+	margin-top: -4rem
 }
 .container .text-justify {
     text-align: justify;
@@ -237,12 +269,12 @@ HOME.JSP */
 	padding: 2rem;
 	background: var(--bg-card);
 }
+.container-home-img {
+	box-shadow: var(--box-shadow)
+}
 .container-home-img,
 .container-home-img > img {
-	height: 64vh
-}
-.container-home-img > img {
-	width: 100vw
+	height: 60vh
 }
 /****************************/
 
@@ -485,6 +517,16 @@ footer i.bi {
 	}
 	.content-destino img {
 		width: 30rem
+	}
+	.container-home .container-home-link {
+		display: flex;
+		flex-direction: column
+	}
+	.container-home .container-home-link a {
+		border-left: 0 !important
+	}
+	.container .container-home-margin {
+		margin-top: -4rem
 	}
 }
 /****************************/

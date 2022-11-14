@@ -12,7 +12,7 @@ Header -->
 			<img src="assets/images/GulliverTraveller.png" alt="Logo Gulliver Traveller">
 			<form method="GET" action="views/home.jsp" class="input-box" autocomplete="off">
 				<i class="bi bi-search"></i>
-				<input type="text" class="input-search" placeholder="Escolha um destino..." autofocus>
+				<input type="text" class="input-search" id="destino" name="destino" placeholder="Escolha um destino..." autofocus>
 				<input type="submit" class="btn btn-dark" value="Buscar">
 			</form>
 		</article>

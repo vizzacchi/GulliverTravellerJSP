@@ -20,10 +20,24 @@ public class UsuarioDao implements DaoBase<Usuario> {
         return dataSource;
     }
 
+    //CREATE - CADASTRAR USUÁRIO
     @Override
     public void create(Usuario object) {
-        // TODO Auto-generated method stub
-        
+        try {
+            String sql = "INSERT INTO tb_usuario (NOME, EMAIL, SENHA, ID_PERFIL, ATIVO) VALUES "
+                       + " (?, ?, ?, ?, ?)";
+            
+            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+            stm.setString(1, object.getNome());
+            stm.setString(2, object.getEmail());
+            stm.setString(3, object.getSenha());
+            stm.setInt(4, object.getPerfil().getId());
+            stm.setInt(5, object.getAtivo());
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("UsuarioDao.create = " + e.getMessage());
+        }
     }
 
     @Override
@@ -32,7 +46,7 @@ public class UsuarioDao implements DaoBase<Usuario> {
         return null;
     }
     
-    //BUSCA E-MAIL NO BANCO
+    //LOGIN - BUSCA E-MAIL NO BANCO
     public Usuario getByEmailSenha(String email, String senha) {
         try {
             
@@ -59,7 +73,7 @@ public class UsuarioDao implements DaoBase<Usuario> {
                 usuario.setNome(rs.getString("NOME"));
                 usuario.setEmail(rs.getString("EMAIL"));
                 usuario.setSenha(rs.getString("SENHA"));
-                usuario.setAtivo(rs.getBoolean("ATIVO"));
+                usuario.setAtivo(rs.getInt("ATIVO"));
                 
                 //PERFIL
                 Perfil perfil = new Perfil();

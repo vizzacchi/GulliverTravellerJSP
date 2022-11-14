@@ -96,18 +96,18 @@
 	
 	                <!------ Sign up ------>
 	                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-	                    <form method="" action="" autocomplete="off">
+	                    <form method="POST" action="../cadastrar_usuario" autocomplete="off">
 	                        <div class="form-floating mb-3">
-	                            <input type="email" class="form-control" id="floatingInput" placeholder="Usuário" value="user">
-	                            <label for="floatingInput">User</label>
+	                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuário" value="user">
+	                            <label for="usuario">User</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
-	                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="name@example.com">
-	                            <label for="floatingInput">Email address</label>
+	                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="name@example.com">
+	                            <label for="email">Email address</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
-	                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="123456">
-	                            <label for="floatingPassword">Password</label>
+	                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Password" value="123456">
+	                            <label for="senha">Password</label>
 	                        </div>
 	                        <div class="text-end">
 	                            <button type="submit" class="btn btn-primary w-50">Cadastrar</button>

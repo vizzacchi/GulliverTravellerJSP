@@ -7,7 +7,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private Perfil perfil;
-	private boolean ativo;
+	private int ativo;
 	
 	@Override
 	public String toString() {
@@ -20,7 +20,7 @@ public class Usuario {
 	}
 	
 	//CONSTRUTOR
-	public Usuario(int id, String nome, String email, String senha, Perfil perfil, boolean ativo) {
+	public Usuario(int id, String nome, String email, String senha, Perfil perfil, int ativo) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -61,10 +61,10 @@ public class Usuario {
 	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
-	public boolean isAtivo() {
+	public int getAtivo() {
 		return ativo;
 	}
-	public void setAtivo(boolean ativo) {
+	public void setAtivo(int ativo) {
 		this.ativo = ativo;
 	}	
 }
