@@ -170,6 +170,48 @@ INDEX.JSP */
 	right: 20px;
 	padding: 12px 30px
 }
+
+.wrapper-cookie {
+	position: fixed;
+	width: 100%;
+	max-width: 345px;
+	right: -370px;
+	bottom: 2rem;
+	padding: 15px 25px 22px;
+	background: #FFF;
+	border-radius: var(--border-radius);
+	transition: right 0.3s ease
+}
+.wrapper-cookie.show {
+	right: 2rem
+}
+.wrapper-cookie-header {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	column-gap: 15px
+}
+.wrapper-cookie-header i {
+	color: #4070F4;
+	font-size: 32px
+}
+.wrapper-cookie-header h4 {
+	margin-top: .5rem;
+	color: #4070F4;
+	font-weight: 400
+}
+.wrapper-cookie-body {
+	margin-bottom: 1rem
+}
+.wrapper-cookie-button {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+.wrapper-cookie-button button {
+	width: calc(100% / 2 - 10px)
+}
 /****************************/
 
 /*****************************
