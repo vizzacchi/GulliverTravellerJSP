@@ -9,7 +9,7 @@
 
 	<!----- Content ----->
 	<main>
-		<section>
+		<section class="section-page">
 		   	<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
@@ -37,7 +37,7 @@
 			    %>			
 			   <% for (Entretenimento r: lista) { %>
 				   <div class="col d-flex">
-				       <div class="card">
+				       <div class="card card-d-flex">
 				           <a href="../entretenimento.do?id=<%=r.getId() %>">
 				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
 				           </a>

@@ -74,8 +74,6 @@
 		<script type="text/javascript" src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 		<script type="text/javascript">new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
 		<script type="text/javascript" src="assets/js/accessibility-dark-mode.js"></script>
-		<script type="text/javascript" src="assets/js/cotacao-dolar.js"></script>
 		<script type="text/javascript" src="assets/js/geolocalizacao.js"></script>
-		<script type="text/javascript" src="assets/js/weather.js"></script>
 	</body>
 </html>

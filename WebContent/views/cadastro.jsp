@@ -6,7 +6,7 @@
 
 	<!----- Content ----->
 	<main>
-		<section>
+		<section class="section-page">
 		   	<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">

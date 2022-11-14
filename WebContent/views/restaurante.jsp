@@ -9,7 +9,7 @@
 
 	<!----- Content ----->
 	<main>
-		<section>
+		<section class="section-page">
 		   	<div class="container">
 				<div class="row mb-3">
 					<div class="col-sm-12 col-md-6">
@@ -67,14 +67,14 @@
 			    %>			
 			   <% for (Restaurante r: lista) { %>
 				   <div class="col d-flex">
-				       <div class="card">
+				       <div class="card card-d-flex">
 				           <a href="../restaurante.do?id=<%=r.getId() %>">
 				               <img src="<%=r.getFotoPerfil() %>" class="card-img-top" alt="<%=r.getNome() %>">
 				           </a>
 				           <div class="card-body pb-0">
 				               <h5 class="card-title text-center fw-bold"><%=r.getNome() %></h5>
 				               <div class="card-rate text-center row mb-2">
-                               <div class="col text-start text-nowrap">
+                               	  <div class="col text-start text-nowrap">
 										<%=r.getMediaAvaliacao() %>
 	                              </div>
 	                              <div class="col text-end">
@@ -87,6 +87,7 @@
 				               <div class="card-text">
 				                   <p class="address">
 				                       <strong>Endereço:</strong> <%=r.getEndereco() %>
+				                   </p>
 				                   <p class="phone">
 				                       <strong>Telefone:</strong> <%=r.getTelefone() %>
 				                   </p>

@@ -13,7 +13,7 @@
 
 <!----- Content ----->
 <main>
-	<section>
+	<section class="section-page">
 	   	<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-md-6">
@@ -53,7 +53,7 @@
 
 			<!------ Informações ------>
 			<div class="col-md-7 mb-3">
-				<div class="card card-d-flex">
+				<div class="card">
 					<div class="card-body">
 						<h4 class="card-title">Avaliações e informações</h4>
 						<div class="row mb-3">
@@ -219,7 +219,7 @@
 
 			<!------ Como Chegar ------>
 			<div class="col-md-5 mb-3">
-				<div class="card card-d-flex">
+				<div class="card">
 					<div class="card-body">
 						<div id="map" class="mb-3"></div>
 						<table class="table">

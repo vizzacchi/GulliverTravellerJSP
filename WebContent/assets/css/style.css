@@ -13,17 +13,15 @@
 
 /******** Dark Mode ********/
 :root {
-	--border-radius: 12px;
+	--border-radius: 12px !important;
 	--color-white: #FAF1DE;
     --color-orange: #E07A5F;
     --color-blue: #3D405B;
     --color-green: #81B29A;
     --color-yellow: #F2CC8F;
-    --body-background: #F3F5F8;
-    --body-background-card: #FFF;
-    	
-    --bg-header: #3D405B;	
-	--bg-main: #F3F5F8;
+    --body-background: #F8F9FB;
+    --body-background-card: #FFF;    	
+    --bg-header: #3D405B;
 	--bg-section: #FFF;
 	--bg-footer: #F2CC8F;
 	--bg-card: #FFF;
@@ -33,9 +31,9 @@
 }
 .dark-mode {
 	--bg-header: #010409;
-	--bg-main: #010409;
+	--body-background: #010409;
 	--bg-section: #161B22;
-	--bg-footer: #161B22;
+	--bg-footer: #010409;
 	--bg-card: #161B22;
 	--font-color: #FFF;
     --font-color-link: #0D6EFD;
@@ -45,6 +43,7 @@
 
 /*********** Body ***********/
 body {
+	background-color: var(--body-background);
     font-family: 'Roboto', sans-serif;
     font-size: 15px !important
 }
@@ -71,23 +70,13 @@ header nav.navbar .nav-item .nav-icon {
 
 /*********** Main ***********/
 main {
-    margin-top: 4.3rem;
-    background-color: var(--bg-main)
-}
-main.main-destino {
-	height: 100vh;
-	margin-top: 0;
-	background-image: url('../images/fundo_2.jpg');
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat
+    margin-top: 4.3rem
 }
 /****************************/
 
 /********* Sections *********/
 section {
-	padding: 1rem 0;
-	background-color: var(--bg-section)
+	margin-bottom: 1rem !important
 }
 section h1 {
 	margin-bottom: 0
@@ -99,30 +88,163 @@ section nav {
 section h1, h4, h5, h6, label {
     color: var(--font-color)
 }
+section.section-page {
+	padding: 1rem 0;
+	background-color: var(--bg-section);
+	box-shadow: var(--box-shadow)
+}
 /****************************/
 
 /********* Articles *********/
 article {
 	padding: 2rem 0	
 }
+article table tbody tr td {
+	color: var(--font-color)
+}
+/****************************/
+
+/*****************************
+INDEX.JSP */
+.bg-destino {
+	width: 100vw;
+	height: 100vh;
+	margin-top: 0;
+	background-image: url('../images/Fundo.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat
+}
+.bg-destino .bg-destino-overlay {
+     position: absolute;
+     width: 100vw;
+     height: 100vh;
+     top: 0;
+     left: 0;
+     background: linear-gradient(135deg, rgba(61, 64, 91, 0.4) 0%, rgba(61, 64, 91, 0.95) 100%)
+}
+.content-destino {
+	position: relative;
+	min-height: 88vh;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+    padding: 2rem
+}
+.content-destino img {
+	width: 50rem
+}
+.content-destino .input-box {
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	height: 76px;
+	background: #FFF;
+	margin: 0 20px;
+	border-radius: var(--border-radius);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1)
+}
+.content-destino .input-box i,
+.content-destino .input-box .btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%)
+}
+.content-destino .input-box i {
+	left: 15px;
+	font-size: 30px;
+	color: #707070
+}
+.content-destino .input-box .input-search {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	font-size: 18px;
+	font-weight: 400;
+	border: none;
+	padding: 0 155px 0 65px;
+	background-color: transparent;
+}
+.content-destino .input-box .btn {
+	right: 20px;
+	padding: 12px 30px
+}
+/****************************/
+
+/*****************************
+HOME.JSP */
+.container-home {
+	padding: 2rem;
+	background: var(--bg-card);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow)
+}
+.container .container-home {
+	position: relative;
+	margin-top: -6rem
+}
+.container .text-justify {
+    text-align: justify;
+}
+.container .text-justify p {
+    color: var(--font-color);
+	font-size: 1.1rem !important
+}
+.container-home-wrapper {
+	padding: 2rem;
+	background: var(--bg-card);
+}
+.container-home-img,
+.container-home-img > img {
+	height: 64vh
+}
+.container-home-img > img {
+	width: 100vw
+}
+/****************************/
+
+/*****************************
+PAGINAS.JSP */
+
+/****************************/
+
+/*****************************
+CADASTRO.JSP */
 article .content {
   margin-bottom: 1rem;
   padding: 1rem;
   background: var(--bg-card);
   border-radius: var(--border-radius)
 }
-article.article-destino {
-    width: 50vw;
-    height: 100vh;
-    margin: 0 auto;
-    padding: 2rem
+/****************************/
+
+/*****************************
+VISUALIZAR.JSP */
+#photo-gallery {
+	box-sizing: border-box;
+	padding: .8rem;	
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 9rem;
+	gap: .8rem
 }
-article table tbody tr td {
-	color: var(--font-color)	
+#photo-gallery > img {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius);
+	object-fit: cover
+}
+.image-grid-col-2 {
+	grid-column: span 2
+}
+.image-grid-row-2 {
+	grid-row: span 2
 }
 /****************************/
 
-/********** Button **********/
+/*****************************
+BUTTON */
 .btn-green {
   --bs-btn-color: #FFF;
   --bs-btn-bg: var(--color-green);
@@ -140,85 +262,99 @@ article table tbody tr td {
   --bs-btn-disabled-border-color: var(--color-green)
 }
 /****************************/
-
-/****** Photos Gallery ******/
-#photo-gallery {
-	--gap: .8rem;
-	--num-cols: 4;
-	--row-height: 9rem;
-	--border-radius: .3rem;
-	box-sizing: border-box;
-	padding: var(--gap);	
-	display: grid;
-	grid-template-columns: repeat(var(--num-cols), 1fr);
-	grid-auto-rows: var(--row-height);
-	gap: var(--gap)
-}
-#photo-gallery > img {
-	width: 100%;
-	height: 100%;
-	border-radius: var(--border-radius);
-	object-fit: cover
-}
-.image-grid-col-2 {
-	grid-column: span 2
-}
-.image-grid-row-2 {
-	grid-row: span 2
-}
-/****************************/
-
-/********* Carousel *********/
-.carousel > .carousel-inner > .carousel-item {
-	height: 60vh
-}
-/****************************/
-
-/*********** Card ***********/
+ 
+/*****************************
+CARD */
 .card {
     background-color: var(--bg-card);
     border: none !important;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow)
 }
+.card,
+.card.swiper-slide img {
+	border-radius: var(--border-radius)
+}
+
+/******** Card Slide ********/
+.swiper-navBtn {
+  color: #000;
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 18px;
+}
+.swiper-pagination-bullet {
+  background-color: #000;
+}
+
+.card.swiper-slide {
+	height: 28em
+}
+.card.swiper-slide img {
+	height: 100vh
+}
+.card.swiper-slide h5,
+.card.swiper-slide p {
+	color: #FFF !important
+}
+.card.swiper-slide h5 {
+	font-size: 1.4rem !important
+}
+.card.swiper-slide p {
+	font-size: 1rem !important
+}
+.card.swiper-slide.swiper-slide-destaques {
+	background-position: center left;
+	background-size: cover;
+	box-shadow: none !important
+}
+.card.swiper-slide.swiper-slide-destaques .card-body {
+	margin-right: 4rem !important;
+	margin-left: 4rem !important;
+	padding: 1.4rem !important;
+	background-color: var(--bg-card);
+	border-radius: var(--border-radius)
+}
+.card.swiper-slide.swiper-slide-destaques .card-body p {
+	color: #000 !important;
+	font-size: .9rem !important
+}
+
+/******** Card DFlex ********/
 .card.card-d-flex {
-	min-height: 30.2rem
+	min-height: 24rem
 }
-.card img {
-    height: 9rem
+.card.card-d-flex img {
+    height: 9rem;
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
 }
-.card .card-body h5, p {
-	color: var(--font-color);
-    font-size: .8rem
-}
-.card .card-body .cards-link {
-    text-decoration: none;
-    color: var(--font-color-link);
-    font-weight: 700
-}
-.reserva {
+.card.card-d-flex .reserva {
 	width: 100%;
     padding: 0 1rem 1rem 1rem
 }
+.card.card-d-flex .card-body h5,
+.card.card-d-flex .card-body p {
+	color: var(--font-color);
+    font-size: .9rem
+}
 /****************************/
 
-/********* Offcanva *********/
+/******** Off-Canvas ********/
 .offcanvas {
     background-color: var(--body-background-card)
 }
-
 .offcanvas .offcanvas-header h5 {
     color: var(--font-color)
 }
 /****************************/
 
-/*********** Text ***********/
-.text-left {
-    text-align: justify;
-}
-/****************************/
-
 /******** Google Map ********/
-#map{
+#map {
     position: relative;
     height: 0;
     padding-bottom: 56.25%;
@@ -301,11 +437,12 @@ footer i.bi {
 	}
 }
 @media(max-width: 720px) {
-	article.article-destino {
-		width: 100vw
+	.container-home-img,
+	.container-home-img > img {
+		height: 30vh
 	}
-	.carousel {
-        display: none;
-    }
+	.content-destino img {
+		width: 30rem
+	}
 }
 /****************************/

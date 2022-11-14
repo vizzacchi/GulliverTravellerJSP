@@ -77,6 +77,8 @@
 		<script type="text/javascript" src="../assets/js/cotacao-dolar.js"></script>
 		<script type="text/javascript" src="../assets/js/geolocalizacao.js"></script>
 		<script type="text/javascript" src="../assets/js/weather.js"></script>		
-		<script type="text/javascript" src="../assets/js/api-cep.js"></script>
+		<script type="text/javascript" src="../assets/js/api-cep.js"></script>		
+		<script type="text/javascript" src="../assets/js/swiper-bundle.min.js"></script>
+		<script type="text/javascript" src="../assets/js/swiper-config.js"></script>
 	</body>
 </html>

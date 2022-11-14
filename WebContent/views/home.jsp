@@ -1,231 +1,361 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!----- Header ----->
+<!-- =======================
+Header -->
 <%@include file="../include/cabecalho_paginas.jsp"%>
 <%@include file="../include/menu_paginas.jsp"%>
 
-	<!----- Content ----->
-	<main>        
-		<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-indicators">
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+	<!-- =======================
+	Content START -->
+	<main>
+		<section>
+			<div class="container-home-img">
+				<img src="..." class="img-fluid" alt="...">
 			</div>
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="../assets/images/home/carousel_01.jpg" class="d-block w-100" alt="...">
-					<div class="carousel-caption d-none d-md-block">
-						<div class="carousel-card">
-							<h5>Parque Ibirapuera</h5>
-							<p>Some representative placeholder content for the first slide.</p>
+			<div class="container">
+				<div class="container-home">
+					<div class="row mb-3">
+						<div class="col-md-6">
+							<h1 class="fw-bold">São Paulo</h1>
+						</div>
+						<div class="col-md-6 d-md-flex justify-content-md-end">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">
+										<span id="valorDolar"></span>
+										<img src="../assets/images/cotacao_dollar.png" width="22" height="22">
+									</li>
+		                            <li class="breadcrumb-item">
+		                            	<span id="description"></span>
+										<img src="../assets/images/weather.png" width="28" height="28">
+		                            </li>
+								</ol>
+							</nav>
 						</div>
 					</div>
-				</div>
-			    <div class="carousel-item">
-				    <img src="..." class="d-block w-100" alt="...">
-				    <div class="carousel-caption d-none d-md-block">
-				    	<h5>Second slide label</h5>
-				    	<p>Some representative placeholder content for the second slide.</p>
-				    </div>
-			    </div>
-			    <div class="carousel-item">
-			    	<img src="..." class="d-block w-100" alt="...">
-			      	<div class="carousel-caption d-none d-md-block">
-			        	<h5>Third slide label</h5>
-			        	<p>Some representative placeholder content for the third slide.</p>
-			    	</div>
-			    </div>
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-		
-		<!------- Section ------->
-		<section>
-			<div class="container">
-				<div class="row mb-3">
-					<div class="col-md-6">
-						<h1 class="fw-bold">São Paulo</h1>
+					<div class="row">
+						<div class="col-md-4 d-grid gap-2">
+							<a href="" class="btn btn-outline-primary btn-lg">
+								<span>Tipo de Viagem</span>
+								<i class="bi bi-airplane"></i>
+							</a>
+						</div>
+						<div class="col-md-4 d-grid gap-2">
+							<a href="" class="btn btn-outline-primary btn-lg">
+								<span>Como Chegar</span>
+								<i class="bi bi-geo-alt"></i>
+							</a>
+						</div>
+						<div class="col-md-4 d-grid gap-2">
+							<a href="dicasUteis.jsp" class="btn btn-outline-primary btn-lg">
+								<span>Dicas Úteis</span>
+								<i class="bi bi-info-circle"></i>
+							</a>
+						</div>			
 					</div>
-					<div class="col-md-6 d-md-flex justify-content-md-end">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb">
-								<li class="breadcrumb-item">
-									<span id="valorDolar"></span>
-									<img src="../assets/images/cotacao_dollar.png" width="22" height="22">
-								</li>
-	                            <li class="breadcrumb-item">
-	                            	<span id="description"></span>
-									<img src="../assets/images/weather.png" width="28" height="28">
-	                            </li>
-							</ol>
-						</nav>
-					</div>
-				</div>
-				<div class="row mb-3">
-					<div class="col-md-4 d-grid gap-2">
-						<a href="" class="btn btn-outline-primary btn-lg">
-							<span>Tipo de Viagem</span>
-							<i class="bi bi-airplane"></i>
-						</a>
-					</div>
-					<div class="col-md-4 d-grid gap-2">
-						<a href="" class="btn btn-outline-primary btn-lg">
-							<span>Como Chegar</span>
-							<i class="bi bi-geo-alt"></i>
-						</a>
-					</div>
-					<div class="col-md-4 d-grid gap-2">
-						<a href="dicasUteis.jsp" class="btn btn-outline-primary btn-lg">
-							<span>Dicas Úteis</span>
-							<i class="bi bi-signpost-2"></i>
-						</a>
-					</div>			
 				</div>
 			</div>
 		</section>
-           
-	    <!------- Article ------->
-	    <article class="container">
-	        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="hotel.jsp">
-	                        <img src="../assets/images/home/Hospedagens.jpg" class="card-img-top" alt="Foto de um quarto de hotel aconchegante">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Melhores Hospedagens</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                Veja os <a href="hotel.jsp" class="cards-link">hotéis</a> 
-	                                em destaque na cidade de São Paulo, explore suas acomodações e serviços.
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="restaurante.jsp">
-	                        <img src="../assets/images/home/Gastronomia.jpg" class="card-img-top" alt="Um chefe de cozinha preparando um belo prato">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Destaques Gastronomicos</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                São Paulo impressiona qualquer visitante pela diversidade de sua
-	                                <span class="cards-link">gastronomia</span>, veja os <a href="restaurante.jsp" class="cards-link">restaurantes</a> em destaque.
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="historia.jsp">
-	                        <img src="../assets/images/home/historia.jpg" class="card-img-top" alt="Um mapa aberto com fotos tiradas em diversos passeios.">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">História</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                Os melhores passeios para quem quer explorar um pouco mais da <a href="historia.jsp" class="cards-link"> história </a> da cidade de São Paulo. 
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="vidaNoturna.jsp">
-	                        <img src="../assets/images/home/FestasNoturnas.jpg" class="card-img-top" alt="Pessoas curtindo uma festa em uma casa noturna">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Vida Noturna</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                São Paulo a cidade que não dorme, possui uma noite vibrante com as melhores
-	                                <a href="vidaNoturna.jsp" class="cards-link">casas noturnas</a> do país.
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="entretenimento.jsp">
-	                        <img src="../assets/images/home/entretenimento.jpg" class="card-img-top" alt="Um mapa mundo com fundo preto, com um avião miniatura sendo empurrado por uma mão">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Entretenimento</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                Os melhores <a href="entretenimento.jsp" class="cards-link">entretenimentos</a>
-	                                quem quer experiências incriveis na cidade de São Paulo.
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="cultura.jsp">
-	                        <img src="../assets/images/home/Cultura.jpg" class="card-img-top" alt="Pintura de um rosto indigena num grafite de rua.">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Cultura</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                São Paulo é uma <a href="cultura.jsp" class="cards-link">cidade multi-cultural</a>,
-	                                de museus as mais diversificadas feiras e exposições, explore.
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="aluguelCarros.jsp">
-	                        <img src="../assets/images/home/aluguelCarros.jpg" class="card-img-top" alt="Carros da mercedes enfileirados a 45 graus">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Aluguel de Carro</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                De carros populares a super esportivos, veja as principais
-	                                <a href="aluguelCarros.jsp" class="cards-link"> locadoras</a> de veículos da cidade de São Paulo. 
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="col d-flex">
-	                <div class="card">
-	                    <a href="parque.jsp">
-	                        <img src="../assets/images/home/parquesdeSP.jpg" class="card-img-top" alt="Foto de um belo parque com um lago ao fundo de folhas vermelhas">
-	                    </a>
-	                    <div class="card-body">
-	                        <h5 class="card-title text-center fw-bold">Parques</h5>
-	                        <div class="card-text">
-	                            <p>
-	                                Seja para dar uma caminhada,
-	                                fazer um belo piqui-nique ou apenas para relaxar embaixo de uma árvore,
-	                                São Paulo oferece diversos <a href="parque.jsp" class="cards-link">parques</a>.
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </article>
-	</main>
 
-<!----- Footer ----->
+		<!-- =======================
+		SOBRE START -->		
+		<article class="container">
+			<div class="text-center">
+				<h2>Gulliver Traveller</h2>
+			</div>						
+			<div class="text-justify">
+				<p class="lead">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+					when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					It has survived not only five centuries.
+				</p>					
+			</div>
+		</article>
+		<!-- =======================
+		SOBRE END -->
+				
+		<!-- =======================
+		CARDS START -->
+		<article class="container-home-wrapper">
+			<div class="container swiper">
+				<div class="slide-container">
+					<div class="card-wrapper swiper-wrapper">
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_locadora.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Aluguel de Carro</h5>
+									<p class="card-text">
+										De carros populares a super esportivos, veja as principais locadoras de veículos da cidade de São Paulo.
+									</p>
+									<a href="aluguelCarros.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_cultura.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Cultura</h5>
+									<p class="card-text">
+										São Paulo é uma cidade multi-cultural, de museus as mais diversificadas feiras e exposições, explore.
+									</p>
+									<a href="cultura.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_entretenimento.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Entretenimento</h5>
+									<p class="card-text">
+										Os melhores entretenimentos para quem busca experiências incríveis e inesquecíveis na cidade de São Paulo.
+									</p>
+									<a href="entretenimento.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_gastronomia.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Gastronomia</h5>
+									<p class="card-text">
+										São Paulo impressiona pela diversidade de sua gastronomia, veja os restaurantes em destaque.
+									</p>
+									<a href="restaurante.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_historia.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">História</h5>
+									<p class="card-text">
+										Os melhores passeios para quem quer explorar um pouco mais da história da cidade de São Paulo.
+									</p>
+									<a href="historia.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_hotel.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Hospedagens</h5>
+									<p class="card-text">
+										Veja os hotéis em destaque na cidade de São Paulo, explore suas acomodações e serviços.
+									</p>
+									<a href="hotel.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_parque.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Parques</h5>
+									<p class="card-text">
+										Seja para dar uma caminhada, fazer um belo piqui-nique ou apenas para relaxar embaixo de uma árvore, São Paulo oferece diversos parques.
+									</p>
+									<a href="parque.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide">
+							<img src="../assets/images/home/card_vida_noturna.jpg" class="card-img" alt="...">
+							<div class="card-img-overlay d-flex">
+								<div class="card-text mt-auto">
+									<h5 class="card-title text-light fw-bold">Vida Noturna</h5>
+									<p class="card-text">
+										São Paulo a cidade que não dorme, possui uma noite vibrante com as melhores casas noturnas do país.
+									</p>
+									<a href="vidaNoturna.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+		        	</div>
+		      	</div>
+		      	<div class="swiper-button-next swiper-navBtn"></div>
+				<div class="swiper-button-prev swiper-navBtn"></div>					
+				<!--<div class="swiper-pagination"></div>-->
+			</div>
+		</article>
+		<!-- =======================
+		CARDS END -->
+				
+		<!-- =======================
+		DESCRIÇÃO START -->		
+		<article class="container">
+			<div class="text-center">
+				<h2>Lugares em destaque</h2>
+			</div>						
+			<div class="text-justify">
+				<p class="lead">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+					when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					It has survived not only five centuries.
+				</p>					
+			</div>			
+			<div class="row">
+				<div class="col-lg-10 m-auto text-center">
+					<ul class="list-inline hstack gap-4 flex-wrap justify-content-center mt-4">
+						<li class="list-inline-item">
+							<h5 class="mb-0 fw-normal"><i class="bi bi-star fa-fw text-warning me-1"></i>Mais bem avaliados</h5>
+						</li>
+						<li class="list-inline-item"> 
+							<h5 class="mb-0 fw-normal"><i class="bi bi-pin-map fa-fw text-primary me-1"></i>Lugares mais visitados</h5>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</article>
+		<!-- =======================
+		DESCRIÇÃO END -->
+		
+		<!-- =======================
+		DESTAQUES START -->
+		<article class="container-home-wrapper">
+			<div class="container swiper">
+				<div class="slide-container-destaques">
+					<div class="card-wrapper swiper-wrapper">
+						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(../assets/images/home/card_gastronomia_destaque.jpg);">
+							<div class="row mt-auto mb-auto justify-content-end">
+								<div class="col-md-8">
+									<div class="card-body">
+										<h4 class="text-truncate">Figueira Rubaiyat</h4>
+										<div class="card-rate text-center row mb-2">
+											<div class="col text-start text-nowrap">
+												<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-half text-warning"></i>
+											</div>
+											<div class="col text-end">
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+											</div>
+										</div>
+										<div class="card-text">
+											<p class="address">
+										    	<strong>Endereço:</strong> Rua Haddock Lobo, 1738 - Jardins, São Paulo - SP, 01414-002
+										    </p>
+											<p class="phone">
+										    	<strong>Telefone:</strong> (11) 3087-1399
+										    </p>
+										</div>
+										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+											<a href="#" class="btn btn-dark mb-0">Detalhes</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(../assets/images/home/card_hotel_destaque.jpg);">
+							<div class="row mt-auto mb-auto justify-content-end">
+								<div class="col-md-8">
+									<div class="card-body">
+										<h4 class="text-truncate">Blue Tree Premium Paulista</h4>
+										<div class="card-rate text-center row mb-2">
+											<div class="col text-start text-nowrap">
+												<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-half text-warning"></i>
+											</div>
+											<div class="col text-end">
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+											</div>
+										</div>
+										<div class="card-text">
+											<p class="address">
+										    	<strong>Endereço:</strong> Rua Peixoto Gomide, 707 - Cerqueira César, São Paulo - SP, 01409-001
+										    </p>
+											<p class="phone">
+										    	<strong>Telefone:</strong> (11) 3147-7000
+										    </p>
+										</div>
+										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+											<a href="#" class="btn btn-dark mb-0">Detalhes</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(../assets/images/home/card_entretenimento_destaque.jpg);">
+							<div class="row mt-auto mb-auto justify-content-end">
+								<div class="col-md-8">
+									<div class="card-body">
+										<h4 class="text-truncate">Jockey Club</h4>
+										<div class="card-rate text-center row mb-2">
+											<div class="col text-start text-nowrap">
+												<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-fill text-warning"></i>
+		                                      	<i class="bi bi-star-half text-warning"></i>
+											</div>
+											<div class="col text-end">
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+												<i class="bi bi-currency-dollar text-success"></i>
+											</div>
+										</div>
+										<div class="card-text">
+											<p class="address">
+										    	<strong>Endereço:</strong> Av. Lineu de Paula Machado, 1263 - Cidade Jardim, São Paulo - SP, 05601-000
+										    </p>
+											<p class="phone">
+										    	<strong>Telefone:</strong> (11) 2161-8300
+										    </p>
+										</div>
+										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+											<a href="#" class="btn btn-dark mb-0">Detalhes</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+		        	</div>
+		      	</div>
+		      	<div class="swiper-button-next swiper-navBtn"></div>
+				<div class="swiper-button-prev swiper-navBtn"></div>
+			</div>
+		</article>
+		<!-- =======================
+		DESTAQUES END -->
+	</main>
+	<!-- =======================
+	Content END -->
+
+<!-- =======================
+Footer -->
 <%@include file="../include/rodape_paginas.jsp"%>
