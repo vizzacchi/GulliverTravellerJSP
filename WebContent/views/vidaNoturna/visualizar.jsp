@@ -20,8 +20,8 @@
 				<div class="col-sm-12 col-md-6 d-md-flex justify-content-md-end">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="../index.jsp">Index</a></li>
-							<li class="breadcrumb-item"><a href="home.jsp">Home</a></li>
+							<li class="breadcrumb-item"><a href="index.jsp">Index</a></li>
+							<li class="breadcrumb-item"><a href="views/home.jsp">Home</a></li>
 							<li class="breadcrumb-item"><a href="views/vidaNoturna.jsp">Vida Noturna</a></li>
 							<li class="breadcrumb-item active" aria-current="page"><c:out value="${VidaNoturna.nome}"></c:out></li>
 						</ol>
@@ -89,21 +89,21 @@
 											</div>
 										</div>
 		
-						<%
-			    			ArrayList<Avaliacao> listaAvaliacao = VidaNoturna.getAvaliacoes();
+				<%
+			    	ArrayList<Avaliacao> listaAvaliacao = VidaNoturna.getAvaliacoes();
 					
-			    		%>			
-			   			<% for (Avaliacao r: listaAvaliacao) { %>
+			   %>			
+			   <% for (Avaliacao r: listaAvaliacao) { %>
 										<!----- Comentários ----->
 										<div class="border p-3 mb-3">
 											<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
 												<div class="col">
 													<h5>
-														<%=r.getUsuario() %>
+														<%=r.getUsuario() %><br><%=r.getData() %>
 													</h5>
 												</div>
 												<div class="col text-end">
-													<%=r.getNota() %><br><%=r.getData() %>
+													<%=r.getNota() %>
 												</div>
 											</div>
 											<p>
@@ -111,6 +111,7 @@
 											</p>
 										</div>
 							<% } %>
+
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-green" data-bs-toggle="collapse" data-bs-target="#collapseExample">Inserir Comentários</button>
@@ -124,26 +125,45 @@
 						<table class="table">
 							<tbody>
 								<tr>
-									<td class="fw-bold text-nowrap"><i class="bi bi-telephone mx-2"></i> Telefone</td>
-									<td class="text-end">
-										<c:out value="${VidaNoturna.telefone}"></c:out>
-									</td>
+		                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Horário de funcionamento</td>
+		                            <td class="text-end">
+		                                <div class="dropdown">
+		                                    <div class="dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+		                                        data-bs-toggle="dropdown" aria-expanded="false">
+		                                        <strong class="text-danger">fechado</strong>
+		                                    </div>
+		                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+		                                        aria-labelledby="navbarDarkDropdownMenuLink">
+		                                        <li class="dropdown-item">Fechado ⋅ segunda-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ terça-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ quarta-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ quinta-feira</li>
+		                                        <li class="dropdown-item">12:00–16:00 ⋅ sexta-feira</li>
+		                                        <li class="dropdown-item">12:00–23:00 ⋅ sábado</li>
+		                                        <li class="dropdown-item">12:00–21:00 ⋅ domingo</li>
+		                                    </ul>
+		                                </div>
+		                            </td>
+		                        </tr>
+		                        <tr>
+									<td class="fw-bold text-nowrap"><i class="bi bi-calendar-event mx-2"></i>Melhor Dia</td>
+									<td class="text-end"><c:out value="${VidaNoturna.melhorDia}"></c:out></a></td>
 								</tr>
 								<tr>
+		                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Horário de maior procura</td>
+		                            <td class="text-end"><c:out value="${VidaNoturna.horarioProcura}"></c:out></a></td>
+		                        </tr>
+		                        <tr>
+		                            <td class="fw-bold"><i class="bi bi-currency-dollar mx-2"></i> Faixa de preço</td>
+		                            <td class="text-end">
+		                            	<c:out value="${VidaNoturna.faixaPreco.descricao}"></c:out>
+		                            </td>
+		                        </tr>
+								<tr>
 									<td class="fw-bold text-nowrap"><i class="bi bi-display mx-2"></i> Site</td>
-									<td class="text-end"><a href= "<c:out value="${VidaNoturna.site}"></c:out>" target="_black"><c:out value="${VidaNoturna.site}"></c:out></a></td>
-								</tr>								
-								<tr>
-									<td class="fw-bold text-nowrap"><i class="bi bi-map mx-2"></i>Região</td>
-									<td class="text-end"><c:out value="${VidaNoturna.regiao}"></c:out></td>
-								</tr>							
-								<tr>
-									<td class="fw-bold text-nowrap"><i class="bi bi-currency-dollar mx-2"></i>Preço</td>
-									<td class="text-end"><c:out value="${VidaNoturna.faixaPreco.descricao}"></c:out></td>
-								</tr>						
-								<tr>
-									<td class="fw-bold text-nowrap"><i class="bi bi-clock mx-2"></i>Horário</td>
-									<td class="text-end"><c:out value="${VidaNoturna.horarioFuncionamento.dia} ${VidaNoturna.horarioFuncionamento.abre} ${VidaNoturna.horarioFuncionamento.fecha}"></c:out></td>
+									<td class="text-end">
+										<a href= "<c:out value="${VidaNoturna.site}"></c:out>" target="_black"><c:out value="${VidaNoturna.site}"></c:out></a>
+									</td>
 								</tr>
 							</tbody>
 						</table>
