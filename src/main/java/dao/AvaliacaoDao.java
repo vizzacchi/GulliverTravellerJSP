@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +22,37 @@ public class AvaliacaoDao implements DaoBase<Avaliacao> {
 	}
 
 	@Override
-	public void create(Avaliacao object) {
+	public Avaliacao create(Avaliacao object) {
 		// TODO Auto-generated method stub
-		
+	    try {
+	       String SqlCreate = "INSERT INTO `tb_avaliacao` ( `NOTA`, `COMENTARIO`, `ID_USUARIO`, `ID_PONTO`, `DATA`)"
+	                        + " VALUES ( ? , ? , '1', ?, '"
+	                        + LocalDate.now() + "')";
+	       
+	       System.out.println(SqlCreate);
+	       System.out.println(object.getNota());
+	       System.out.println(object.getComentario());
+	       System.out.println(object.getIdPonto());
+	       
+           // O ? irá receber os valores da chamada
+           // gero o Statement a partir da conexao
+           PreparedStatement stmCreate = dataSource.getConnection().prepareStatement(SqlCreate);
+           //preenche o ?
+           stmCreate.setDouble(1, object.getNota());
+           stmCreate.setString(2, object.getComentario());
+           stmCreate.setInt(3, object.getIdPonto());
+           
+           //Vamos executar o SQL e armazenar em uma objeto ResultSet
+           int res = stmCreate.executeUpdate();
+           if(res !=0){
+               System.out.println("Deu CERTOOOOOOOOO");
+           }
+	    }
+        catch(Exception ex) {
+            ex.printStackTrace();
+            System.out.println("AvaliacaoDao.create=" + ex.getMessage());
+        }
+        return object;
 	}
 
 	@Override

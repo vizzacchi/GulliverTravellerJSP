@@ -34,6 +34,11 @@ public class UsuarioDao implements DaoBase<Usuario> {
             stm.setInt(4, object.getPerfil().getId());
             stm.setInt(5, object.getAtivo());
             
+            ResultSet rs = stm.executeQuery();
+            if(rs.next()) {
+                System.out.println("Usuário Cadastrado");
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("UsuarioDao.create = " + e.getMessage());
