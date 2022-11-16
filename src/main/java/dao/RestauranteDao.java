@@ -258,28 +258,26 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 				
 				restaurante.setTelefone(telefone);
 				
+				/*************************
+				//CARREGA LISTA DE FOTOS*/
 				ArrayList<Foto> fotos = new ArrayList<Foto>();
                 
-                //Crio a String SQL que vou ler
-                String SQLFoto = "SELECT \r\n"
-                                + " TF.ID AS ID_FOTO,\r\n"
-                                + " TF.FOTOS,\r\n"
-                                + " TF.DESCRICAO AS DESC_FOTOS,\r\n"
-                                + " TF.TITULO AS TITULO_FOTOS\r\n"
-                            + "FROM tb_foto TF \r\n"
-                            + "WHERE TF.ID_PONTO = ?";
+                String SQLFoto = "SELECT "
+                                    + " TF.ID AS ID_FOTO, "
+                                    + " TF.FOTOS, "
+                                    + " TF.DESCRICAO AS DESC_FOTOS, "
+                                    + " TF.TITULO AS TITULO_FOTOS "
+                                + "FROM tb_foto TF "
+                                + "WHERE TF.ID_PONTO = ?";
                 
-                // O ? irá receber o id da chamada
-                // gero o Statement a partir da conexao
+                // O ? IRÁ RECEBER O (ID) DA CHAMADA
                 PreparedStatement stmFoto = dataSource.getConnection().prepareStatement(SQLFoto);
-                //preenche o ?
                 stmFoto.setInt(1, object.getId());
                 
-                //Vamos executar o SQL e armazenar em uma objeto ResultSet
+                //EXECUTA O SQL E ARMAZENA EM UM OBJETO ResultSet
                 ResultSet rsFoto = stmFoto.executeQuery();
                                 
-                //o método next() indica se há registro no resultado
-                //se houver, eu preencho o objeto
+                //O MÉTODO next() INDICA SE HÁ REGISTRO NO RESULTADO
                 while(rsFoto.next()) {
                     Foto foto = new Foto();
                     foto.setId(rsFoto.getInt("ID_FOTO"));
@@ -288,7 +286,6 @@ public class RestauranteDao implements DaoBase<Restaurante> {
                     foto.setTitulo(rsFoto.getString("TITULO_FOTOS"));
                     fotos.add(foto);                
                 }
-                
                 restaurante.setFotos(fotos);
 				
 				//FAIXA DE PREÇO
@@ -301,19 +298,29 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 
 				//AVALIAÇÕES	
 				ArrayList<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
-				String sqlAvaliacao = "SELECT  TA.ID as ID_AVALIACAO, TA.NOTA, TA.DATA, TA.COMENTARIO, TA.ID_USUARIO, TA.ID_PONTO, "
-	                    + "TU.NOME, TU.EMAIL, TU.SENHA, TU.ID_PERFIL, TU.ATIVO as SIT_USUARIO, "
-	                    + "TP.PERFIL, TP.ATIVO AS SIT_PERFIL "
-	                + "FROM `tb_avaliacao` TA "
-	                     + "JOIN tb_usuario        TU on TA.ID_USUARIO = TU.ID "
-	                     + "JOIN tb_usuario_perfil TP on TP.ID         = TU.ID_PERFIL "
-	                + "WHERE TA.ID_PONTO = ?";
+				String sqlAvaliacao = "SELECT "
+                				        + "TA.ID as ID_AVALIACAO, "
+                				        + "TA.NOTA, "
+                				        + "TA.DATA, "
+                				        + "TA.COMENTARIO, "
+                				        + "TA.ID_USUARIO, "
+                				        + "TA.ID_PONTO, "
+                	                    + "TU.NOME,"
+                	                    + "TU.EMAIL,"
+                	                    + "TU.SENHA,"
+                	                    + "TU.ID_PERFIL,"
+                	                    + "TU.ATIVO AS SIT_USUARIO, "
+                	                    + "TP.PERFIL, TP.ATIVO AS SIT_PERFIL "
+                	                + "FROM `tb_avaliacao` TA "
+                	                     + "JOIN tb_usuario TU ON TA.ID_USUARIO = TU.ID "
+                	                     + "JOIN tb_usuario_perfil TP ON TP.ID = TU.ID_PERFIL "
+                	                + "WHERE TA.ID_PONTO = ?";
 	            
 	            PreparedStatement stmAvaliacao = dataSource.getConnection().prepareStatement(sqlAvaliacao);
 	            stmAvaliacao.setInt(1, object.getId());
 	            ResultSet rsAvaliacao = stmAvaliacao.executeQuery();
 	            
-	            
+	            //O MÉTODO next() INDICA SE HÁ REGISTRO NO RESULTADO
 	            while(rsAvaliacao.next()) {
 	                Avaliacao avaliacao = new Avaliacao();
 	                avaliacao.setId(rsAvaliacao.getInt("ID_AVALIACAO"));
@@ -321,7 +328,7 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 	                avaliacao.setNota(rsAvaliacao.getDouble("NOTA"));
 	                avaliacao.setData(rsAvaliacao.getDate("DATA").toLocalDate());
 	                
-	                //Precisamos do usuário que fez a avaliação             
+	                //USUÁRIO   
 	                Usuario usuario = new Usuario();
 	                usuario.setId(rsAvaliacao.getInt("ID_USUARIO"));
 	                usuario.setNome(rsAvaliacao.getString("NOME"));
@@ -333,11 +340,11 @@ public class RestauranteDao implements DaoBase<Restaurante> {
 	            }           
 							
 				restaurante.setAvaliacao(avaliacoes);
-//Numero de Avaliações
+				//Numero de Avaliações
                 
                 //Crio a String SQL que vou ler
                 String sqlNumAvaliacao = "SELECT COUNT(`NOTA`) as NUM_AVALIACOES "
-                                + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
+                                        + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
                 
                 // O ? irá receber o id da chamada
                 // gero o Statement a partir da conexao
@@ -350,13 +357,12 @@ public class RestauranteDao implements DaoBase<Restaurante> {
                 if(rsNumAvaliacao.next()) {
                     restaurante.setNumAvaliacao(rsNumAvaliacao.getFloat("NUM_AVALIACOES"));
                 }   
-                
-                
+
                 //Média de avaliações
                 //Crio a String SQL que vou ler
                 String sqlMediaAvaliacao = "SELECT AVG(`NOTA`) as AVALIACOES_MEDIA "
                                 + " FROM `tb_avaliacao` WHERE `ID_PONTO` = ?";
-                
+
                 // O ? irá receber o id da chamada
                 // gero o Statement a partir da conexao
                 PreparedStatement stmMediaAvaliacao = dataSource.getConnection().prepareStatement(sqlMediaAvaliacao);
@@ -368,8 +374,7 @@ public class RestauranteDao implements DaoBase<Restaurante> {
                 if(rsMediaAvaliacao.next()) {
                     restaurante.setMediaAvaliacao(rsMediaAvaliacao.getFloat("AVALIACOES_MEDIA"));
                 }   
-				
-				
+
 				//DESTINO
 				Destino destino = new Destino();
 				destino.setId(rs.getInt("ID_DESTINO"));

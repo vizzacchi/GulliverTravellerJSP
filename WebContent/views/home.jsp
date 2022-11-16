@@ -13,31 +13,6 @@ Header -->
 				<img src="../assets/images/home/fundo.jpg" class="img-fluid" alt="...">
 			</div>
 			<div class="container">
-				<div class="container-home container-home-margin">
-					<div class="row">
-						<div class="col-md-6">
-							<h1 class="fw-bold">Resultados da busca por: <span>São Paulo</span></h1>
-						</div>
-						<div class="col-md-6 d-md-flex justify-content-md-end">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item">
-										<span id="valorDolar"></span>
-										<img src="../assets/images/cotacao_dollar.png" width="22" height="22">
-									</li>
-		                            <li class="breadcrumb-item">
-		                            	<span id="description"></span>
-										<img src="../assets/images/weather.png" width="28" height="28">
-		                            </li>
-								</ol>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section>
-			<div class="container">
 				<div class="container-home">
 					<div class="container-home-link">
 						<a href="">
@@ -59,17 +34,25 @@ Header -->
 
 		<!-- =======================
 		SOBRE START -->		
-		<article class="container">
-			<div class="text-center">
-				<h2>Gulliver Traveller</h2>
-			</div>						
-			<div class="text-justify">
-				<p class="lead">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-					when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-					It has survived not only five centuries.
-				</p>					
+		<article class="container container-resultado-busca">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 class="fw-bold">Resultados da busca por: <span>São Paulo</span></h1>
+				</div>
+				<div class="col-md-6 d-md-flex justify-content-md-end">
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<span id="valorDolar"></span>
+								<img src="../assets/images/cotacao_dollar.png" width="22" height="22">
+							</li>
+                            <li class="breadcrumb-item">
+                            	<span id="description"></span>
+								<img src="../assets/images/weather.png" width="28" height="28">
+                            </li>
+						</ol>
+					</nav>
+				</div>
 			</div>
 		</article>
 		<!-- =======================

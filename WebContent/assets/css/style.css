@@ -218,6 +218,7 @@ INDEX.JSP */
 HOME.JSP */
 .container-home {
 	position: relative;
+	margin-top: -4rem;
 	padding: 2rem;
 	background: var(--bg-card);
 	border-radius: var(--border-radius);
@@ -254,9 +255,6 @@ HOME.JSP */
 }
 .container-home .container-home-link a > h4 {
 	font-size: 1rem
-}
-.container .container-home-margin {	
-	margin-top: -4rem
 }
 .container .text-justify {
     text-align: justify;
