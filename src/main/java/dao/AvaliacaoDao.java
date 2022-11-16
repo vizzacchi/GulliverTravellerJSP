@@ -22,7 +22,7 @@ public class AvaliacaoDao implements DaoBase<Avaliacao> {
 	}
 
 	@Override
-	public Avaliacao create(Avaliacao object) {
+	public void create(Avaliacao object) {
 		// TODO Auto-generated method stub
 	    try {
 	       String SqlCreate = "INSERT INTO `tb_avaliacao` ( `NOTA`, `COMENTARIO`, `ID_USUARIO`, `ID_PONTO`, `DATA`)"
@@ -52,7 +52,7 @@ public class AvaliacaoDao implements DaoBase<Avaliacao> {
             ex.printStackTrace();
             System.out.println("AvaliacaoDao.create=" + ex.getMessage());
         }
-        return object;
+        
 	}
 
 	@Override

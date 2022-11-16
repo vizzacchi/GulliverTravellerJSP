@@ -31,8 +31,7 @@ public class HistoriaDao implements DaoBase<Historia> {
 	}
 
 	@Override
-	public Historia create(Historia object) {
-        return object;
+	public void create(Historia object) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -44,18 +44,10 @@ public class CadastrarAvaliacao extends HttpServlet {
 			avaliacaoPost.setUsuario(usuario);
 			
 			//Cadastrando os dados do metodo create(avaliacaoDAO)
-			Avaliacao avaliacao = avaliacaoDao.create(avaliacaoPost);
+			avaliacaoDao.create(avaliacaoPost);
 			
-			if(avaliacao != null) {
-				// Se consegui carregar os dados na instância hotel
-				// mantenho o usuário conectado
-				//request.getSession().setAttribute("Hotel", hotel);
-				pagina = "/views/hotel/visualizar.jsp";
-			}
-			else {
-				request.setAttribute("ErroMSG", "Avaliação não cadastrada");
-				pagina = "/erro.jsp";
-			}
+			pagina = "/views/hotel/visualizar.jsp";
+			
 			// redirecionando para a página resultante
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
 			dispatcher.forward(request, response);

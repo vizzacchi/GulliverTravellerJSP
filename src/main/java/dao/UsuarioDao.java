@@ -34,8 +34,8 @@ public class UsuarioDao implements DaoBase<Usuario> {
             stm.setInt(4, object.getPerfil().getId());
             stm.setInt(5, object.getAtivo());
             
-            ResultSet rs = stm.executeQuery();
-            if(rs.next()) {
+            int res = stm.executeUpdate();
+            if(res != 0) {
                 System.out.println("Usuário Cadastrado");
             }
             
