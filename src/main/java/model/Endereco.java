@@ -8,11 +8,6 @@ public class Endereco {
 	private Bairro bairro;
 	private TipoLogradouro tipoLogradouro;
 	
-
-	
-
-
-
 	@Override
 	public String toString() {
 		return logradouro ;

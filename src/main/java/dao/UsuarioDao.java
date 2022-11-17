@@ -73,6 +73,8 @@ public class UsuarioDao implements DaoBase<Usuario> {
             
             ResultSet rs = stm.executeQuery();
             if(rs.next()) {
+                
+                //USUÁRIO
                 Usuario usuario = new Usuario();
                 usuario.setId(rs.getInt("ID"));
                 usuario.setNome(rs.getString("NOME"));

@@ -171,6 +171,7 @@ INDEX.JSP */
 	padding: 12px 30px
 }
 
+/*** Cookies ***/
 .wrapper-cookie {
 	position: fixed;
 	width: 100%;
@@ -216,57 +217,6 @@ INDEX.JSP */
 
 /*****************************
 HOME.JSP */
-.container-home {
-	position: relative;
-	margin-top: -4rem;
-	padding: 2rem;
-	background: var(--bg-card);
-	border-radius: var(--border-radius);
-	box-shadow: var(--box-shadow)
-}
-.container-home h1,
-.container-home nav {
-	margin-top: .6rem;
-	margin-bottom: 0
-}
-.container-home h1 {
-	font-size: 1.6rem
-}
-.container-home h1 span {
-	color: #4070F4
-}
-.container-home .container-home-link {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	text-align: center
-}
-.container-home .container-home-link a {
-	width: calc(100% / 2 - 10px);
-	text-decoration: none;
-	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important
-}
-.container-home .container-home-link a:first-child {
-	border-left: 0 !important
-}
-.container-home .container-home-link a > i {
-	font-size: 3rem
-}
-.container-home .container-home-link a > h4 {
-	font-size: 1rem
-}
-.container .text-justify {
-    text-align: justify;
-}
-.container .text-justify p {
-    color: var(--font-color);
-	font-size: 1.1rem !important
-}
-.container-home-wrapper {
-	padding: 2rem;
-	background: var(--bg-card);
-}
 .container-home-img {
 	box-shadow: var(--box-shadow)
 }
@@ -274,11 +224,64 @@ HOME.JSP */
 .container-home-img > img {
 	height: 60vh
 }
-/****************************/
 
-/*****************************
-PAGINAS.JSP */
+.container-home {
+	position: relative;
+	margin-top: -4rem !important;
+	padding: 1rem;
+	background: var(--bg-card);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow)
+}
+.container-home > .container-home-link {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center
+}
+.container-home > .container-home-link a {
+	width: calc(100% / 2 - 10px);
+	text-decoration: none;
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important
+}
+.container-home > .container-home-link a:first-child {
+	border-left: 0 !important
+}
+.container-home > .container-home-link a > i {
+	font-size: 3rem
+}
+.container-home > .container-home-link a > h4 {
+	font-size: 1rem
+}
 
+.container-destino {
+	margin-top: 2rem	
+}
+.container-destino h1,
+.container-destino nav {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important
+}
+.container-destino h1 {
+	font-size: 1.6rem
+}
+.container-destino h1 span {
+	color: #4070F4
+}
+
+.container .text-justify {
+    text-align: justify;
+}
+.container .text-justify p {
+    color: var(--font-color);
+	font-size: 1.1rem !important
+}
+
+.container-home-wrapper {
+	padding: 2rem;
+	background: var(--bg-card);
+}
 /****************************/
 
 /*****************************
@@ -347,7 +350,7 @@ CARD */
 	border-radius: var(--border-radius)
 }
 
-/******** Card Slide ********/
+/*** Card Slide ***/
 .swiper-navBtn {
   color: #000;
   height: 40px;
@@ -396,7 +399,7 @@ CARD */
 	font-size: .9rem !important
 }
 
-/******** Card DFlex ********/
+/*** Card DFlex ***/
 .card.card-d-flex {
 	min-height: 24rem
 }

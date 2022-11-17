@@ -18,14 +18,15 @@ public class Login extends HttpServlet {
             String email = request.getParameter("email");
             String senha = request.getParameter("senha");
             String pagina = "";
-            
+
             //System.out.println(email);
             //System.out.println(senha);
             
             Usuario user = this.buscarUsuario(email, senha);
             if(user != null) {
                 request.getSession().setAttribute("Usuario", user);
-                pagina = "/views/home.jsp";
+                pagina = "/home.jsp";
+                System.out.println("Usuário logado com sucesso");
             } else {
                 pagina = "/erro.jsp";
                 request.setAttribute("ErroMSG", "Usuário não encontrado");

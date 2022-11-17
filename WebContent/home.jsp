@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:useBean id="Destino" scope="session" type="model.Cidade"></jsp:useBean>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!-- =======================
 Header -->
-<%@include file="../include/cabecalho_paginas.jsp"%>
-<%@include file="../include/menu_paginas.jsp"%>
+<%@include file="include/cabecalho_default.jsp"%>
+<%@include file="include/menu_default.jsp"%>
 
 	<!-- =======================
 	Content START -->
 	<main>
 		<section>
 			<div class="container-home-img">
-				<img src="../assets/images/home/fundo.jpg" class="img-fluid" alt="...">
+				<img src="assets/images/home/fundo.jpg" class="img-fluid" alt="...">
 			</div>
-			<div class="container">
+			<div class="container px-0">
 				<div class="container-home">
 					<div class="container-home-link">
 						<a href="">
@@ -23,41 +25,36 @@ Header -->
 							<i class="bi bi-geo-alt"></i>
 							<h4>Como Chegar</h4>
 						</a>
-						<a href="dicasUteis.jsp">
+						<a href="views/dicasUteis.jsp">
 							<i class="bi bi-info-circle"></i>
 							<h4>Dicas Úteis</h4>
 						</a>
 					</div>
 				</div>
+				<div class="container-destino">
+					<div class="row">
+						<div class="col-md-6">
+							<h1 class="fw-bold">Resultados da busca por: <span><c:out value="${Destino.cidade}"></c:out></span></h1>
+						</div>
+						<div class="col-md-6 d-md-flex justify-content-md-end">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item">
+										<span id="valorDolar"></span>
+										<img src="assets/images/cotacao_dollar.png" width="22" height="22">
+									</li>
+		                            <li class="breadcrumb-item">
+		                            	<span id="description"></span>
+										<img src="assets/images/weather.png" width="28" height="28">
+		                            </li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<!-- =======================
-		SOBRE START -->		
-		<article class="container container-resultado-busca">
-			<div class="row">
-				<div class="col-md-6">
-					<h1 class="fw-bold">Resultados da busca por: <span>São Paulo</span></h1>
-				</div>
-				<div class="col-md-6 d-md-flex justify-content-md-end">
-					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb">
-							<li class="breadcrumb-item">
-								<span id="valorDolar"></span>
-								<img src="../assets/images/cotacao_dollar.png" width="22" height="22">
-							</li>
-                            <li class="breadcrumb-item">
-                            	<span id="description"></span>
-								<img src="../assets/images/weather.png" width="28" height="28">
-                            </li>
-						</ol>
-					</nav>
-				</div>
-			</div>
-		</article>
-		<!-- =======================
-		SOBRE END -->
-				
 		<!-- =======================
 		CARDS START -->
 		<article class="container-home-wrapper">
@@ -65,112 +62,112 @@ Header -->
 				<div class="slide-container">
 					<div class="card-wrapper swiper-wrapper">
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_locadora.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_locadora.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Aluguel de Carro</h5>
 									<p class="card-text">
 										De carros populares a super esportivos, veja as principais locadoras de veículos da cidade de São Paulo.
 									</p>
-									<a href="aluguelCarros.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/aluguelCarros.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_cultura.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_cultura.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Cultura</h5>
 									<p class="card-text">
 										São Paulo é uma cidade multi-cultural, de museus as mais diversificadas feiras e exposições, explore.
 									</p>
-									<a href="cultura.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/cultura.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_entretenimento.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_entretenimento.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Entretenimento</h5>
 									<p class="card-text">
 										Os melhores entretenimentos para quem busca experiências incríveis e inesquecíveis na cidade de São Paulo.
 									</p>
-									<a href="entretenimento.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/entretenimento.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_gastronomia.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_gastronomia.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Gastronomia</h5>
 									<p class="card-text">
 										São Paulo impressiona pela diversidade de sua gastronomia, veja os restaurantes em destaque.
 									</p>
-									<a href="restaurante.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/restaurante.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_historia.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_historia.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">História</h5>
 									<p class="card-text">
 										Os melhores passeios para quem quer explorar um pouco mais da história da cidade de São Paulo.
 									</p>
-									<a href="historia.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/historia.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_hotel.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_hotel.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Hospedagens</h5>
 									<p class="card-text">
 										Veja os hotéis em destaque na cidade de São Paulo, explore suas acomodações e serviços.
 									</p>
-									<a href="hotel.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/hotel.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_parque.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_parque.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Parques</h5>
 									<p class="card-text">
 										Seja para dar uma caminhada, fazer um belo piqui-nique ou apenas para relaxar embaixo de uma árvore, São Paulo oferece diversos parques.
 									</p>
-									<a href="parque.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/parque.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
 							</div>
 						</div>
 						<div class="card swiper-slide">
-							<img src="../assets/images/home/card_vida_noturna.jpg" class="card-img" alt="...">
+							<img src="assets/images/home/card_vida_noturna.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
 									<h5 class="card-title text-light fw-bold">Vida Noturna</h5>
 									<p class="card-text">
 										São Paulo a cidade que não dorme, possui uma noite vibrante com as melhores casas noturnas do país.
 									</p>
-									<a href="vidaNoturna.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
+									<a href="views/vidaNoturna.jsp" class="btn btn-link text-white p-0 mb-0">Clique aqui
 										<i class="fa-solid fa-arrow-right-long fa-fw"></i>
 									</a>
 								</div>
@@ -222,7 +219,7 @@ Header -->
 			<div class="container swiper">
 				<div class="slide-container-destaques">
 					<div class="card-wrapper swiper-wrapper">
-						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(../assets/images/home/card_gastronomia_destaque.jpg);">
+						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(assets/images/home/card_gastronomia_destaque.jpg);">
 							<div class="row mt-auto mb-auto justify-content-end">
 								<div class="col-md-8">
 									<div class="card-body">
@@ -257,7 +254,7 @@ Header -->
 								</div>
 							</div>
 						</div>
-						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(../assets/images/home/card_hotel_destaque.jpg);">
+						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(assets/images/home/card_hotel_destaque.jpg);">
 							<div class="row mt-auto mb-auto justify-content-end">
 								<div class="col-md-8">
 									<div class="card-body">
@@ -292,7 +289,7 @@ Header -->
 								</div>
 							</div>
 						</div>
-						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(../assets/images/home/card_entretenimento_destaque.jpg);">
+						<div class="card swiper-slide swiper-slide-destaques" style="background-image:url(assets/images/home/card_entretenimento_destaque.jpg);">
 							<div class="row mt-auto mb-auto justify-content-end">
 								<div class="col-md-8">
 									<div class="card-body">
@@ -341,4 +338,4 @@ Header -->
 
 <!-- =======================
 Footer -->
-<%@include file="../include/rodape_paginas.jsp"%>
+<%@include file="include/rodape_default.jsp"%>

@@ -13,7 +13,7 @@
 					<h1><c:out value="${ErroMSG}"/></h1>
 				</div>
 				<div class="col-6">
-					<a href="views/home.jsp" class="btn btn-outline-primary">Voltar</a>
+					<a href="index.jsp" class="btn btn-outline-primary">Voltar</a>
 				</div>
 			</div>
 		</article>

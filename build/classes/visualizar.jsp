@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Restaurante" scope="session" type="model.Restaurante"></jsp:useBean>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.Avaliacao" %>
 
@@ -8,8 +9,8 @@
 <%@page import="model.Foto" %>
 
 <!----- Header ----->
-<%@include file="../../include/cabecalho_sub_paginas.jsp"%>
-<%@include file="../../include/menu_sub_paginas.jsp"%>
+<%@include file="../../include/cabecalho_default.jsp"%>
+<%@include file="../../include/menu_default.jsp"%>
 
 <!----- Content ----->
 <main>
@@ -252,7 +253,7 @@
 </main>
 
 <!----- Footer ----->
-<%@include file="../../include/rodape_sub_paginas.jsp"%>
+<%@include file="../../include/rodape_default.jsp"%>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA32PDmcZkbv37_Jb-GU9ZOTu9OW4j1n4o" defer></script>
 <script src="./assets/js/geolocalizacao.js"></script>
 <script>geolocation("<c:out value='${Restaurante.endereco}'></c:out>, <c:out value='${Restaurante.numero}'></c:out><c:out value='${Restaurante.endereco.bairro}'></c:out> CEP: <c:out value='${Restaurante.endereco.cep}'></c:out>");</script>

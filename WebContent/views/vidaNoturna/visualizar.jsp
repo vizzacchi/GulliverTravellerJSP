@@ -6,8 +6,8 @@
 <%@page import="model.Avaliacao" %>
 
 <!----- Header ----->
-<%@include file="../../include/cabecalho_sub_paginas.jsp"%>
-<%@include file="../../include/menu_sub_paginas.jsp"%>
+<%@include file="../../include/cabecalho_default.jsp"%>
+<%@include file="../../include/menu_default.jsp"%>
 
 <!----- Content ----->
 <main>
@@ -206,7 +206,7 @@
 </main>
 
 <!----- Footer ----->
-<%@include file="../../include/rodape_sub_paginas.jsp"%>
+<%@include file="../../include/rodape_default.jsp"%>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA32PDmcZkbv37_Jb-GU9ZOTu9OW4j1n4o" defer></script>
 <script src="../../assets/js/geolocalizacao.js"></script>
 <script>geolocation("<c:out value='${VidaNoturna.endereco.tipoLogradouro}'></c:out><c:out value='${VidaNoturna.endereco}'></c:out>,<c:out value='${VidaNoturna.numero}'></c:out><c:out value='${VidaNoturna.endereco.bairro}'></c:out> CEP: <c:out value='${VidaNoturna.endereco.cep}'></c:out>");</script>

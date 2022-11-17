@@ -16,8 +16,8 @@
 					</div>
                 </div>
             </div>
-        </footer>        
-        
+        </footer>
+
         <!------ Avaliação ------>
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
 			<div class="modal-dialog">
@@ -58,8 +58,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
+		</div>		
+		
 		<!------ V Libras ------>
 		<div vw class="enabled">
 			<div vw-access-button class="active"></div>
@@ -67,13 +67,19 @@
 				<div class="vw-plugin-top-wrapper"></div>
 			</div>
 		</div>
-
+		
 		<!----- JavaScript ----->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="assets/js/cookies.js" defer></script>
+		<script type="text/javascript" src="assets/js/accessibility-dark-mode.js"></script>
+		<script type="text/javascript" src="assets/js/cotacao-dolar.js"></script>
+		<script type="text/javascript" src="assets/js/geolocalizacao.js"></script>
+		<script type="text/javascript" src="assets/js/weather.js"></script>		
+		<script type="text/javascript" src="assets/js/api-cep.js"></script>		
+		<script type="text/javascript" src="assets/js/swiper-bundle.min.js"></script>
+		<script type="text/javascript" src="assets/js/swiper-config.js"></script>
 		<script type="text/javascript" src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 		<script type="text/javascript">new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
-		<script type="text/javascript" src="assets/js/accessibility-dark-mode.js"></script>
-		<script type="text/javascript" src="assets/js/geolocalizacao.js"></script>
 	</body>
 </html>

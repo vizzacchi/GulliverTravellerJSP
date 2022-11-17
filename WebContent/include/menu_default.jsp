@@ -9,7 +9,6 @@
 	            </button>
 	            <div class="collapse navbar-collapse" id="nav-navbar">
 	                <ul class="navbar-nav">
-	                	<li class="nav-item"><a href="views/home.jsp" class="nav-link">Home</a></li>
 	                    <li class="nav-item"><a href="views/aluguelCarros.jsp" class="nav-link">Aluguel de carros</a></li>
 	                    <li class="nav-item"><a href="views/cultura.jsp" class="nav-link">Cultura</a></li>
 	                    <li class="nav-item"><a href="views/entretenimento.jsp" class="nav-link">Entretenimento</a></li>
@@ -20,14 +19,14 @@
 	                    <li class="nav-item"><a href="views/vidaNoturna.jsp" class="nav-link">Vida noturna</a></li>
 	                </ul>
 	                
-	                <!----- Cadastrar ----->
+	                <!----- CADASTRAR ----->
 	            	<ul class="navbar-nav ms-auto pe-3">
 	            		<li class="nav-item">
 	            			<a href="views/cadastro.jsp" class="btn btn-outline-warning">Cadastro</a>
 	            		</li>
 					</ul>
 	            
-		            <!--- Accessibility --->
+		            <!--- ACCESSIBILITY --->
 		            <ul class="navbar-nav pe-3">
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,7 +47,7 @@
 						</li>
 					</ul>
 		
-		            <!------- Login ------->
+		            <!------- LOGIN ------->
 					<ul class="navbar-nav">
 						<li class="nav-item">
 							<a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
@@ -60,7 +59,7 @@
 	        </div>
 	    </nav>
 	
-	    <!----- Offcanvas ----->
+	    <!----- OFFCANVAS ----->
 	    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
 	        <div class="offcanvas-header">
 	            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Login</h5>
@@ -76,38 +75,38 @@
 	                </li>
 	            </ul>
 	            <div class="tab-content" id="pills-tabContent">
-	
-	                <!------ Sign in ------>
+	            
+	                <!------ SIGN IN ------>
 	                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-	                    <form method="" action="" autocomplete="off">
+	                    <form method="POST" action="login" autocomplete="off">
 	                        <div class="form-floating mb-3">
-	                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="name@example.com">
-	                            <label for="floatingInput">Email address</label>
+	                            <input type="email" class="form-control" id="email" name="email">
+	                            <label for="email">E-mail</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
-	                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="123456">
-	                            <label for="floatingPassword">Password</label>
+	                            <input type="password" class="form-control" id="senha" name="senha">
+	                            <label for="senha">Senha</label>
 	                        </div>
 	                        <div class="text-end">
-	                            <button type="submit" class="btn btn-green w-50">Login</button>
+	                            <button type="submit" class="btn btn-primary w-50">Login</button>
 	                        </div>
 	                    </form>
 	                </div>
 	
-	                <!------ Sign up ------>
+	                <!------ SIGN UP ------>
 	                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-	                    <form method="Post" action="cadastrar_usuario" autocomplete="off">
+	                    <form method="POST" action="cadastrar_usuario" autocomplete="off">
 	                        <div class="form-floating mb-3">
-	                            <input type="email" class="form-control" id="usuario" name="usuario" placeholder="Usuário" value="user">
-	                            <label for="floatingInput">User</label>
+	                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Nome">
+	                            <label for="usuario">Nome</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
-	                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" value="name@example.com">
-	                            <label for="floatingInput">Email address</label>
+	                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+	                            <label for="email">E-mail</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
-	                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Password" value="123456">
-	                            <label for="floatingPassword">Password</label>
+	                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+	                            <label for="senha">Senha</label>
 	                        </div>
 	                        <div class="text-end">
 	                            <button type="submit" class="btn btn-primary w-50">Cadastrar</button>

@@ -9,7 +9,6 @@
 	            </button>
 	            <div class="collapse navbar-collapse" id="nav-navbar">
 	                <ul class="navbar-nav">
-	                	<li class="nav-item"><a href="../views/home.jsp" class="nav-link">Home</a></li>
 	                    <li class="nav-item"><a href="../views/aluguelCarros.jsp" class="nav-link">Aluguel de carros</a></li>
 	                    <li class="nav-item"><a href="../views/cultura.jsp" class="nav-link">Cultura</a></li>
 	                    <li class="nav-item"><a href="../views/entretenimento.jsp" class="nav-link">Entretenimento</a></li>

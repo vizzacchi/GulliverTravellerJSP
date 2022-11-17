@@ -49,10 +49,7 @@ public class Ponto {
 		this.telefone = telefone;
 		this.fotos = fotos;
 		this.faixaPreco = faixaPreco;
-		this.avaliacoes = avaliacoes;
 		this.destino = destino;
-		this.numAvaliacao = numAvaliacao;
-	    this.mediaAvaliacao = mediaAvaliacao;
 	}
 	
 	//GETTERS AND SETTERS
