@@ -115,7 +115,12 @@
 
 									</div>
 									<div class="modal-footer">
+									<%if(session.getAttribute("Usuario")!=null){%>
 										<button type="button" class="btn btn-green" data-bs-toggle="modal" data-bs-target="#modal-cad-avaliacao">Inserir Comentários</button>
+									<%}else{ %>
+										<button type="button" class="btn btn-green" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasNavbar">Faça seu login para deixar para avaliar</button>
+										
+									<% } %>
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 									</div>
 								</div>

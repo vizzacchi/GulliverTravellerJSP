@@ -25,7 +25,7 @@ public class Login extends HttpServlet {
             Usuario user = this.buscarUsuario(email, senha);
             if(user != null) {
                 request.getSession().setAttribute("Usuario", user);
-                pagina = "/home.jsp";
+                pagina ="/home.jsp";
                 System.out.println("Usuário logado com sucesso");
             } else {
                 pagina = "/erro.jsp";

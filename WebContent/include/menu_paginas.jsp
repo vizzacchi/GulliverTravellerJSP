@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%if(session.getAttribute("Usuario")!=null){%>
+	<jsp:useBean id="Usuario" scope="session" type="model.Usuario"></jsp:useBean>
+<% } %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="model.Usuario" %>
+	
+	
 	<header>
 	    <nav class="navbar navbar-expand-lg navbar-dark bg-blue fixed-top">
 	        <div class="container-fluid">
@@ -13,8 +21,8 @@
 	                    <li class="nav-item"><a href="../views/cultura.jsp" class="nav-link">Cultura</a></li>
 	                    <li class="nav-item"><a href="../views/entretenimento.jsp" class="nav-link">Entretenimento</a></li>
 	                    <li class="nav-item"><a href="../views/restaurante.jsp" class="nav-link">Gastronomia</a></li>
-	                    <li class="nav-item"><a href="../views/historia.jsp" class="nav-link">HistÛria</a></li>
-	                    <li class="nav-item"><a href="../views/hotel.jsp" class="nav-link">HotÈis</a></li>
+	                    <li class="nav-item"><a href="../views/historia.jsp" class="nav-link">Hist√≥ria</a></li>
+	                    <li class="nav-item"><a href="../views/hotel.jsp" class="nav-link">Hot√©is</a></li>
 	                    <li class="nav-item"><a href="../views/parque.jsp" class="nav-link">Parques</a></li>
 	                    <li class="nav-item"><a href="../views/vidaNoturna.jsp" class="nav-link">Vida noturna</a></li>
 	                </ul>
@@ -22,7 +30,9 @@
 	            	<!----- Cadastrar ----->
 	            	<ul class="navbar-nav ms-auto pe-3">
 	            		<li class="nav-item">
+	            		<%if(session.getAttribute("Usuario")!=null){%>
 	            			<a href="../views/cadastro.jsp" class="btn btn-outline-warning">Cadastro</a>
+	            		<% } %>
 	            		</li>
 					</ul>
 	            
@@ -42,7 +52,7 @@
 								<li><a href="#" class="dropdown-item" onclick="aumenta()"><i class="bi bi-zoom-in text-end pe-1"></i>Aumenta Fonte</a></li>
 								<li><a href="#" class="dropdown-item" onclick="diminui()"><i class="bi bi-zoom-out text-end pe-1"></i>Diminui Fonte</a></li>
 								<li><a href="#" class="dropdown-item" onclick="dislexia()"><i class="bi bi-type pe-1"></i>Fonte Dislexia</a></li>
-								<li><a href="#" class="dropdown-item" onclick="roboto()"><i class="bi bi-type pe-1"></i>Fonte Padr„o</a></li>
+								<li><a href="#" class="dropdown-item" onclick="roboto()"><i class="bi bi-type pe-1"></i>Fonte Padr√£o</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -65,7 +75,15 @@
 	            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Login</h5>
 	            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 	        </div>
+	        
 	        <div class="offcanvas-body">
+	        <%if(session.getAttribute("Usuario")!=null){
+	        	Usuario logado = new Usuario();
+				logado = (Usuario)session.getAttribute("Usuario");
+					
+					out.print("Bem vindo " + logado.getNome() + " - cod." + logado.getId());
+				}else{
+				%>
 	            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 	                <li class="nav-item" role="presentation">
 	                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Entrar</button>
@@ -75,7 +93,6 @@
 	                </li>
 	            </ul>
 	            <div class="tab-content" id="pills-tabContent">
-	
 	                <!------ Sign in ------>
 	                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 	                    <form method="POST" action="../login" autocomplete="off">
@@ -97,7 +114,7 @@
 	                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 	                    <form method="POST" action="../cadastrar_usuario" autocomplete="off">
 	                        <div class="form-floating mb-3">
-	                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usu·rio" value="user">
+	                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usu√°rio" value="user">
 	                            <label for="usuario">User</label>
 	                        </div>
 	                        <div class="form-floating mb-3">
@@ -113,7 +130,9 @@
 	                        </div>
 	                    </form>
 	                </div>
+	                
 	            </div>
+	            <%} %>
 	        </div>
 	    </div>
 	</header>

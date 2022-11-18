@@ -114,12 +114,64 @@
 
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-green" data-bs-toggle="collapse" data-bs-target="#collapseExample">Inserir Comentários</button>
+									<%if(session.getAttribute("Usuario")!=null){%>
+										<button type="button" class="btn btn-green" data-bs-toggle="modal" data-bs-target="#modal-cad-avaliacao">Inserir Comentários</button>
+									<%}else{ %>
+										<button type="button" class="btn btn-green" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasNavbar">Faça seu login para deixar para avaliar</button>
+									<% } %>
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 									</div>
 								</div>
 							</div>
 						</div>
+						<!--- Modal Cad Avaliações --->
+						<div class="modal fade" id="modal-cad-avaliacao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							<div class="modal-dialog modal-lg modal-dialog-scrollable">
+								<div class="modal-content">
+									<div class="modal-header">
+									<h5 class="modal-title" id="staticBackdropLabel">Cadastro de avaliação</h5>
+									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+									    <form method="POST" action="avaliacao.do" class="content" autocomplete="off">
+									    	<h6 class="mb-2 text-primary">Faça sua avaliação:</h6>
+								            <div class="row mt-3">
+								            	<div class="col-md-4 mb-6">
+								            		<label for="id-ponto">Cod. Ponto</label>
+								            		<input type="text" class="form-control" id="id-ponto" name="id-ponto" readonly value="<c:out value='${Entretenimento.id}'></c:out>">
+								            	</div>
+								            	<div class="col-md-8 mb-6">
+								            		<label for="nome-ponto">Nome Ponto Turístico</label>
+								            		<input type="text" class="form-control" id="nome-ponto" name="nome-ponto" readonly value="<c:out value='${Entretenimento.nome}'></c:out>">
+								            	</div>
+								            	
+								            </div>
+								            <div class="row mt-3">
+								            	<div class="col-md-4 mb-6">
+								                    <div>
+						              					<label for="nota">Qual a sua nota?</label>
+						                				<input id="nota" name="nota" type="range" oninput="getElementById('exibePercent').innerHTML = this.value;"
+						                    				min="0" max="5" value="5" step="0.5" />
+						                				<span id="exibePercent"> 5</span>
+						                				
+								                	</div>
+								                </div>
+								                <div class="col-md-8 mb-6">
+													<div>
+														<label for="floatingTextarea2">Descrição:</label>
+														<textarea class="form-control" placeholder="Justifique a sua nota..." id="avaliacao" name="avaliacao" style="height: 100px"></textarea>
+													</div>
+								                </div>
+								            </div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-green" data-bs-toggle="modal">Salvar</button>
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+											</div>
+										</form>
+								</div>
+								</div>
+							</div>
+						</div>		
 		
 						<!------ Informações ------>
 						<table class="table">
