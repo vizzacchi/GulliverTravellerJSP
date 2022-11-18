@@ -346,7 +346,8 @@ CARD */
     box-shadow: var(--box-shadow)
 }
 .card,
-.card.swiper-slide img {
+.card.swiper-slide > .card-gradient,
+.card.swiper-slide > img {
 	border-radius: var(--border-radius)
 }
 
@@ -368,6 +369,12 @@ CARD */
 
 .card.swiper-slide {
 	height: 28em
+}
+.card.swiper-slide > .card-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(0deg, #3D405B, transparent)
 }
 .card.swiper-slide img {
 	height: 100vh

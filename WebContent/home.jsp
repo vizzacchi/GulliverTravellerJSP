@@ -62,6 +62,7 @@ Header -->
 				<div class="slide-container">
 					<div class="card-wrapper swiper-wrapper">
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_locadora.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -76,6 +77,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_cultura.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -90,6 +92,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_entretenimento.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -104,6 +107,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_gastronomia.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -118,6 +122,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_historia.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -132,6 +137,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_hotel.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -146,6 +152,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_parque.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -160,6 +167,7 @@ Header -->
 							</div>
 						</div>
 						<div class="card swiper-slide">
+							<div class="card-gradient"></div>
 							<img src="assets/images/home/card_vida_noturna.jpg" class="card-img" alt="...">
 							<div class="card-img-overlay d-flex">
 								<div class="card-text mt-auto">
@@ -248,7 +256,7 @@ Header -->
 										    </p>
 										</div>
 										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-											<a href="#" class="btn btn-dark mb-0">Detalhes</a>
+											<a href="restaurante.do?id=17" class="btn btn-dark mb-0">Detalhes</a>
 										</div>
 									</div>
 								</div>
@@ -283,7 +291,7 @@ Header -->
 										    </p>
 										</div>
 										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-											<a href="#" class="btn btn-dark mb-0">Detalhes</a>
+											<a href="hotel.do?id=8" class="btn btn-dark mb-0">Detalhes</a>
 										</div>
 									</div>
 								</div>
@@ -318,7 +326,7 @@ Header -->
 										    </p>
 										</div>
 										<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-											<a href="#" class="btn btn-dark mb-0">Detalhes</a>
+											<a href="entretenimento.do?id=38" class="btn btn-dark mb-0">Detalhes</a>
 										</div>
 									</div>
 								</div>
