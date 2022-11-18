@@ -148,7 +148,7 @@
 								                    <div>
 						              					<label for="nota">Qual a sua nota?</label>
 						                				<input id="nota" name="nota" type="range" oninput="getElementById('exibePercent').innerHTML = this.value;"
-						                    				min="0" max="5" value="5" step="0.1" />
+						                    				min="0" max="5" value="5" step="0.5" />
 						                				<span id="exibePercent"> 5</span>
 						                				
 								                	</div>

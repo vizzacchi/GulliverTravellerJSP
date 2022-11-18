@@ -8,10 +8,10 @@
 		<article class="container">
 			<div class="row">
 				<div class="col-6">
-					<h1>Usuário cadastrado com sucesso.</h1>
+					<h1>Cadastrado realizado com sucesso.</h1>
 				</div>
 				<div class="col-6">
-					<a href="views/home.jsp" class="btn btn-outline-primary">Voltar</a>
+					<a href="home.jsp" class="btn btn-outline-primary">Voltar</a>
 				</div>
 			</div>
 		</article>

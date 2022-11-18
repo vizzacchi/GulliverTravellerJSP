@@ -46,7 +46,7 @@ public class CadastrarAvaliacao extends HttpServlet {
 			//Cadastrando os dados do metodo create(avaliacaoDAO)
 			avaliacaoDao.create(avaliacaoPost);
 			
-			pagina = "/views/hotel/visualizar.jsp";
+			pagina = "/sucesso.jsp";
 			
 			// redirecionando para a página resultante
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
