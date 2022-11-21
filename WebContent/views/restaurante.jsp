@@ -61,11 +61,9 @@
 		<!------ Card ------>
 	    <article class="container">
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-				<%
-			    ListarRestaurante restaurante = new ListarRestaurante(); 
-			            ArrayList<Restaurante> lista = restaurante.listarRestaurante();
-			    %>			
-			   <% for (Restaurante r: lista) { %>
+				<% ListarRestaurante restaurante = new ListarRestaurante(); 
+			    	ArrayList<Restaurante> lista = restaurante.listarRestaurante();
+			   	for (Restaurante r: lista) { %>
 				   <div class="col d-flex">
 				       <div class="card card-d-flex">
 				           <a href="../restaurante.do?id=<%=r.getId() %>">
@@ -75,7 +73,7 @@
 				               <h5 class="card-title text-center fw-bold"><%=r.getNome() %></h5>
 				               <div class="card-rate text-center row mb-2">
                                	  <div class="col text-start text-nowrap">
-										<%=r.getMediaAvaliacao() %>
+                               	  	  <%=r.getMediaAvaliacao() %>
 	                              </div>
 	                              <div class="col text-end">
                                       <i class="bi bi-currency-dollar text-success"></i>

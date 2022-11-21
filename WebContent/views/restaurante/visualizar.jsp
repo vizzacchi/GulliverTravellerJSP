@@ -35,9 +35,7 @@
 	</section>
 	<article class="container">
 		<div id="photo-gallery" class="mb-3 px-0 py-0">
-			<%
-		    	ArrayList<Foto> lista = Restaurante.getFotos();
-		    %>			
+			<% ArrayList<Foto> lista = Restaurante.getFotos(); %>
 			<% for (Foto r: lista) { %>
 				<img src="<%=r.getFoto() %>" class="<% if (lista.indexOf(r) == 0) { %> image-grid-col-2 image-grid-row-2 <% } %>" alt="<%=r.getDescricao() %>" title="<%=r.getTitulo() %>">			
 			<% } %>
@@ -91,44 +89,39 @@
 												<label for="floatingTextarea2">Deixe seu comentário...</label>
 											</div>
 										</div>
-		
-										
 												
-				<%
-			    ArrayList<Avaliacao> listaAvaliacao = Restaurante.getAvaliacoes();
-					
-			    %>			
-			   <% for (Avaliacao r: listaAvaliacao) { %>
 										<!----- Comentários ----->
-										<div class="border p-3 mb-3">
-											<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
-												<div class="col">
-													<h5>
-														<%=r.getUsuario() %><br><%=r.getData() %>
-													</h5>
+										<% ArrayList<Avaliacao> listaAvaliacao = Restaurante.getAvaliacoes(); %>
+			   							<% for (Avaliacao r: listaAvaliacao) { %>
+											<div class="border p-3 mb-3">
+												<div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
+													<div class="col">
+														<h5>
+															<%=r.getUsuario() %><br><%=r.getData() %>
+														</h5>
+													</div>
+													<div class="col text-end">
+														<%=r.getNota() %>
+													</div>
 												</div>
-												<div class="col text-end">
-													<%=r.getNota() %>
-												</div>
+												<p>
+													<%=r.getComentario() %>
+												</p>
 											</div>
-											<p>
-												<%=r.getComentario() %>
-											</p>
-										</div>
-							<% } %>
+										<% } %>
 									</div>
 									<div class="modal-footer">
-									<%if(session.getAttribute("Usuario")!=null){%>
-										<button type="button" class="btn btn-green" data-bs-toggle="modal" data-bs-target="#modal-cad-avaliacao">Inserir Comentários</button>
-									<%}else{ %>
-										<button type="button" class="btn btn-green" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasNavbar">Faça seu login para deixar para avaliar</button>
-										
-									<% } %>
+										<% if(session.getAttribute("Usuario") != null) { %>
+											<button type="button" class="btn btn-green" data-bs-toggle="modal" data-bs-target="#modal-cad-avaliacao">Inserir Comentários</button>
+										<% } else { %>
+											<button type="button" class="btn btn-green" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasNavbar">Faça seu login para deixar para avaliar</button>
+										<% } %>
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 									</div>
 								</div>
 							</div>
 						</div>
+						
 						<!--- Modal Cad Avaliações --->
 						<div class="modal fade" id="modal-cad-avaliacao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 							<div class="modal-dialog modal-lg modal-dialog-scrollable">
@@ -173,7 +166,7 @@
 												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
 											</div>
 										</form>
-								</div>
+									</div>
 								</div>
 							</div>
 						</div>		

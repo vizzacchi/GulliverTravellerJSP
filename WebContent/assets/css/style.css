@@ -374,7 +374,7 @@ CARD */
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: linear-gradient(0deg, #3D405B, transparent)
+	background-image: linear-gradient(0deg, #323232, transparent)
 }
 .card.swiper-slide img {
 	height: 100vh

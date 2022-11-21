@@ -78,7 +78,4 @@ public class Avaliacao {
         return "Avaliacao [id=" + id + ", nota=" + nota + ", data=" + data + ", comentario=" + comentario + ", usuario="
                 + usuario + ", idPonto=" + idPonto + "]";
     }
-
-    
-	
 }
