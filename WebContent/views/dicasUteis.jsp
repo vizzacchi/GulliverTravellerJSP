@@ -1,37 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    
 <!----- Header ----->
 <%@include file="../include/cabecalho_paginas.jsp"%>
 <%@include file="../include/menu_paginas.jsp"%>
     
-<main class="main-page container">
+	<main class="main-page container">
         <section class="mb-4">
-            <h1 class="text-center">Dicas Úteis</h1>
+            <h1 class="text-center">Dicas Ãšteis</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
                     <li class="breadcrumb-item"><a href="../destino.html">Destino</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dicas Úteis</li>
+                    <li class="breadcrumb-item active" aria-current="page">Dicas Ãšteis</li>
                 </ol>
             </nav>
         </section>
         <article class="row row-cols-1 row-cols-sm-1">
             <div class="col">
 
-                <!------- Descrição ------->
+                <!------- DescriÃ§Ã£o ------->
                 <p class="text-left">
-                    São Paulo é um município brasileiro, capital do estado homônimo e principal centro financeiro,
-                    corporativo e mercantil da América do Sul. É a cidade mais populosa do Brasil, do continente
-                    americano, da lusofonia e de todo o hemisfério sul. São Paulo é a cidade brasileira mais influente
-                    no cenário global, sendo, em 2016, a 11.ª cidade mais globalizada do planeta, recebendo a
-                    classificação de cidade global alfa, por parte do Globalization and World Cities Study Group &
-                    Network (GaWC). O lema da cidade, presente em seu brasão oficial, é Non ducor, duco, frase latina
-                    que significa "Não sou conduzido, conduzo". <br>São Paulo a cidade que nunca para.
+                    SÃ£o Paulo Ã© um municÃ­pio brasileiro, capital do estado homÃ´nimo e principal centro financeiro,
+                    corporativo e mercantil da AmÃ©rica do Sul. Ã‰ a cidade mais populosa do Brasil, do continente
+                    americano, da lusofonia e de todo o hemisfÃ©rio sul. SÃ£o Paulo Ã© a cidade brasileira mais influente
+                    no cenÃ¡rio global, sendo, em 2016, a 11.Âª cidade mais globalizada do planeta, recebendo a
+                    classificaÃ§Ã£o de cidade global alfa, por parte do Globalization and World Cities Study Group &
+                    Network (GaWC). O lema da cidade, presente em seu brasÃ£o oficial, Ã© Non ducor, duco, frase latina
+                    que significa "NÃ£o sou conduzido, conduzo". <br>SÃ£o Paulo a cidade que nunca para.
                 </p>
-                <!------ Avaliações ------>
+                <!------ AvaliaÃ§Ãµes ------>
                 <div class="row mb-4">
                     <div class="col-md-6">
-                        <h6>2.489 avaliações, nota 4,4 estrelas</h6>
+                        <h6>2.489 avaliaÃ§Ãµes, nota 4,4 estrelas</h6>
                         <div class="card-rate">
                             <i class="bi bi-star-fill text-warning"></i>
                             <i class="bi bi-star-fill text-warning"></i>
@@ -44,18 +44,18 @@
                     <div class="col-md-6">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <button type="button" class="btn btn-green" data-bs-toggle="modal"
-                                data-bs-target="#modal-comentarios">Comentários</button>
+                                data-bs-target="#modal-comentarios">ComentÃ¡rios</button>
                         </div>
                     </div>
                 </div>
 
-                <!--- Modal Avaliações --->
+                <!--- Modal AvaliaÃ§Ãµes --->
                 <div class="modal fade" id="modal-comentarios" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Todas as avaliações</h5>
+                                <h5 class="modal-title" id="staticBackdropLabel">Todas as avaliaÃ§Ãµes</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
@@ -63,11 +63,11 @@
                                 <div class="collapse" id="collapseExample">
                                     <div class="form-floating">
                                         <textarea class="form-control" id="floatingTextarea2"></textarea>
-                                        <label for="floatingTextarea2">Deixe seu comentário...</label>
+                                        <label for="floatingTextarea2">Deixe seu comentÃ¡rio...</label>
                                     </div>
                                 </div>
 
-                                <!----- Comentários ----->
+                                <!----- ComentÃ¡rios ----->
                                 <div class="border p-3 mb-3">
                                     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 g-4 mb-4">
                                         <div class="col">
@@ -82,7 +82,7 @@
                                         </div>
                                     </div>
                                     <p>
-                                        Cidade maravilhosa, onde é possível encontrar diferente culturas e opções de laser.
+                                        Cidade maravilhosa, onde Ã© possÃ­vel encontrar diferente culturas e opÃ§Ãµes de laser.
                                     </p>
                                 </div>
                                 <div class="border p-3 mb-3">
@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                     <p>
-                                        Cidade onde é possível encontrar todos os tipos de gastronomia.
+                                        Cidade onde Ã© possÃ­vel encontrar todos os tipos de gastronomia.
                                     </p>
                                 </div>
                                 <div class="border p-3 mb-3">
@@ -117,37 +117,37 @@
                                     </div>
                                     <p>
                                         Adoooooro esse lugar...
-                                        Não importa sua origem, São Paulo irá te surpreender.
+                                        NÃ£o importa sua origem, SÃ£o Paulo irÃ¡ te surpreender.
                                     </p>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-green" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseExample">Inserir Comentários</button>
+                                    data-bs-target="#collapseExample">Inserir ComentÃ¡rios</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!------ Informações ------>
+                <!------ InformaÃ§Ãµes ------>
                 <table class="table">
                     <tbody>
                         <tr>
                             <td class="fw-bold"><i class="bi bi-calendar-event mx-2"></i> Quando ir</td>
-                            <td class="text-end">Os melhroes meses para se visitar São Paulo é Janeiro e Julho, meses de férias escolares a cidade fica mais vazia e a locomoção é mais fácil.</td>
+                            <td class="text-end">Os melhroes meses para se visitar SÃ£o Paulo Ã© Janeiro e Julho, meses de fÃ©rias escolares a cidade fica mais vazia e a locomoÃ§Ã£o Ã© mais fÃ¡cil.</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold"><i class="bi bi-thermometer-sun mx-2"></i> Temperatura Média Anual</td>
-                            <td class="text-end">18,5°C</td>
+                            <td class="fw-bold"><i class="bi bi-thermometer-sun mx-2"></i> Temperatura MÃ©dia Anual</td>
+                            <td class="text-end">18,5Â°C</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Fuso Horário</td>
-                            <td class="text-end"> UTC-3 Horário oficial de Brasilia</td>
+                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Fuso HorÃ¡rio</td>
+                            <td class="text-end"> UTC-3 HorÃ¡rio oficial de Brasilia</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold"><i class="bi bi-hourglass-split mx-2"></i> Tempo Médio de Permanência</td>
-                            <td class="text-end">Lazer - 15 dias<br>Negócios - 7 dias<br></td>
+                            <td class="fw-bold"><i class="bi bi-hourglass-split mx-2"></i> Tempo MÃ©dio de PermanÃªncia</td>
+                            <td class="text-end">Lazer - 15 dias<br>NegÃ³cios - 7 dias<br></td>
                         </tr>
                         <tr>
                             <td class="fw-bold"><i class="bi bi-translate mx-2"></i>Idioma</td>
@@ -162,7 +162,7 @@
                             <td class="text-end">Real Brasileiro R$</td>
                         </tr>
                         <tr>
-                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Documentos Necessários</td>
+                            <td class="fw-bold"><i class="bi bi-clock mx-2"></i> Documentos NecessÃ¡rios</td>
                             <td class="text-end">
                                 Se estrangeiro Passorte
                             </td>
@@ -173,5 +173,5 @@
         </article>
     </main>
     
-  <!----- Footer ----->
+<!----- Footer ----->
 <%@include file="../include/rodape_paginas.jsp"%>

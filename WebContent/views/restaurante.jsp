@@ -73,7 +73,7 @@
 				               <h5 class="card-title text-center fw-bold"><%=r.getNome() %></h5>
 				               <div class="card-rate text-center row mb-2">
                                	  <div class="col text-start text-nowrap">
-                               	  	  <%=r.getMediaAvaliacao() %>
+                               	  		<%=r.getMediaAvaliacao() %>
 	                              </div>
 	                              <div class="col text-end">
                                       <i class="bi bi-currency-dollar text-success"></i>
